@@ -23,12 +23,11 @@ svg.diagram{display:block;width:100%;border-radius:10px;background:#fff;box-shad
 </head>
 <body>
 <h1>GT GEAR × 더현대 팝업 — 브랜드 집기 배치도</h1>
-<div class="meta">부천 현대 중동 유플렉스 04/17 오픈 기준 · Razer 스타일</div>
+<div class="meta">부천 현대 중동 유플렉스 04/17 오픈 기준 · 전 브랜드 아일랜드 평대 1,600×900mm · 탑뷰</div>
 <div class="tabs" id="tabs"></div>
 <div id="sects"></div>
 
 <script>
-// ─── 색상 클래스 맵 ────────────────────────────────────────────
 const COLORS = {
   amber:{bg:'#FAEEDA',bd:'#BA7517',th:'#412402',ts:'#633806'},
   coral:{bg:'#FAECE7',bd:'#D85A30',th:'#4A1B0C',ts:'#712B13'},
@@ -40,478 +39,668 @@ const COLORS = {
   pink: {bg:'#FBEAF0',bd:'#D4537E',th:'#4B1528',ts:'#72243E'},
 };
 
-// ─── 브랜드 데이터 ─────────────────────────────────────────────
 const BRANDS = [
 
 // ══════════════════════════════════
-// 🔴 Razer
+// 🔴 Razer — 아일랜드 평대 1대
 // ══════════════════════════════════
-{id:'razer', label:'🔴 Razer', info:'집기 1대 · 29종 · 참여확정', fixtures:[
+{id:'razer', label:'🔴 Razer', info:'아일랜드 평대 1대 · 29종 · 참여확정', fixtures:[
   {
-    name:'집기 — 마우스 · 키보드 · EVA-02 콜라보 · 헤드셋 · 컨트롤러',
-    sub:'마우스 4종 · 패드 5종 · 키보드 3종 · EVA-02 3종 · 헤드셋 4종 · 컨트롤러 8종 · 모바일 2종',
+    name:'평대 — 마우스 · 키보드 · EVA-02 · 헤드셋 · 컨트롤러 · 모바일',
+    sub:'1,600×900mm · 탑뷰 · 앞줄(소품/패드) → 중간줄(마우스/헤드셋/컨트롤러) → 뒷줄(키보드/히어로)',
     rows:[
+      // 앞줄
       [
-        {col:'teal',label:'FOCUS 01',sub:'마우스 + Gigantus V2 Pro 패드',items:[
-          {t:'Viper V4 Pro Black / White ⭐NEW',d:'무선 마우스 2종 · 8K 폴링레이트'},
-          {t:'DeathAdder V4 Pro Black / White',d:'무선 마우스 2종'},
-          {t:'Gigantus V2 Pro Balance/Control/Max/Speed',d:'패드 4종 · 각 76,900원 · 신규출시'},
+        {col:'teal',label:'앞줄 A',sub:'Gigantus V2 Pro 패드 평면 진열',items:[
+          {t:'Gigantus V2 Pro Balance / Control',d:'패드 2종 · 평면 펼침 진열 · 각 76,900원'},
+          {t:'Gigantus V2 Pro Max / Speed',d:'패드 2종 · 신규출시'},
         ]},
-        {col:'blue',label:'FOCUS 02',sub:'키보드',items:[
-          {t:'Razer Pro Type Ultra Ergo ⭐NEW',d:'무선 인체공학 키보드'},
-          {t:'Huntsman V3 Pro 8KHz TKL KR',d:'유선 TKL · 아날로그 광학스위치'},
-          {t:'Huntsman V3 Pro 8KHz KR',d:'풀배열 · 아날로그 광학스위치'},
+        {col:'coral',label:'앞줄 B',sub:'EVA-02 콜라보 패드 + 모바일',items:[
+          {t:'Gigantus V2 XXL EVA-02',d:'에반게리온 콜라보 패드 · 평면 펼침 연출'},
+          {t:'Kishi V3 PRO · Kishi V3 PRO XL',d:'모바일 컨트롤러 2종 · 구매증정 핑거슬리브'},
         ]},
-        {col:'coral',label:'FOCUS 03',sub:'EVA-02 콜라보',items:[
-          {t:'Viper V3 Pro EVA-02',d:'마우스 · 에반게리온 콜라보'},
-          {t:'BlackWidow V4 TKL HyperSpeed EVA-02',d:'키보드 · 에반게리온 콜라보'},
-          {t:'Gigantus V2 XXL EVA-02',d:'패드 · 집기 위 펼쳐 연출'},
-        ]},
-      ],[
-        {col:'gray',label:'서브 01',sub:'헤드셋',items:[
+        {col:'gray',label:'앞줄 C',sub:'헤드셋 박스 진열',items:[
           {t:'BlackShark V3 X HyperSpeed Xbox BK/WH',d:'무선 헤드셋 2종'},
           {t:'BlackShark V3 Pro for Xbox BK/WH',d:'프리미엄 무선 헤드셋 2종'},
         ]},
-        {col:'purple',label:'서브 02',sub:'컨트롤러',items:[
+      ],
+      // 중간줄
+      [
+        {col:'teal',label:'중간 A',sub:'마우스 — Viper · DeathAdder',items:[
+          {t:'Viper V4 Pro Black / White ⭐NEW',d:'무선 · 8K 폴링레이트 · ₩219,000'},
+          {t:'DeathAdder V4 Pro Black / White',d:'무선 마우스 2종'},
+        ]},
+        {col:'coral',label:'중간 B',sub:'EVA-02 마우스 + 키보드',items:[
+          {t:'Viper V3 Pro EVA-02',d:'에반게리온 콜라보 마우스'},
+          {t:'BlackWidow V4 TKL HyperSpeed EVA-02',d:'에반게리온 콜라보 키보드'},
+        ]},
+        {col:'purple',label:'중간 C',sub:'컨트롤러 박스 진열',items:[
           {t:'Wolverine V3 Pro BK/WH · Tournament BK/WH',d:'Xbox 컨트롤러 4종'},
           {t:'Wolverine V3 8K PC · Raiju V3 Pro BK/WH',d:'PC / PS5 컨트롤러 4종'},
         ]},
-        {col:'amber',label:'서브 03',sub:'모바일 컨트롤러',items:[
-          {t:'Kishi V3 PRO',d:'스마트폰 연결형 · 구매증정 게이밍 핑거슬리브'},
-          {t:'Kishi V3 PRO XL',d:'태블릿 최대 13인치 지원'},
+      ],
+      // 뒷줄
+      [
+        {col:'blue',label:'뒷줄 A',sub:'키보드 히어로 라인업',items:[
+          {t:'Huntsman V3 Pro 8KHz TKL KR',d:'유선 TKL · 아날로그 광학스위치'},
+          {t:'Huntsman V3 Pro 8KHz KR',d:'풀배열 · 아날로그 광학스위치'},
         ]},
-      ]
+        {col:'blue',label:'뒷줄 B',sub:'신제품 키보드 히어로 ⭐',items:[
+          {t:'Razer Pro Type Ultra Ergo ⭐NEW',d:'무선 인체공학 키보드 · 단독 히어로 연출'},
+        ]},
+        {col:'gray',label:'뒷줄 C',sub:'구매 증정 안내',items:[
+          {t:'Viper/DeathAdder 구매 → 파우치 증정',d:'증정품 별도 진열'},
+          {t:'Kishi V3 PRO 구매 → 핑거슬리브 증정',d:'모바일 구매 증정'},
+        ]},
+      ],
     ],
-    guide:'동선: 입구 → FOCUS 01 Viper V4 Pro 신제품 강조 → FOCUS 02 키보드 → FOCUS 03 EVA-02 콜라보 → 하단 서브존 · 구매증정: Viper/DeathAdder→파우치 · Kishi→핑거슬리브',
+    guide:'앞줄: 패드 평면 진열 + 헤드셋 박스 → 중간줄: 마우스·EVA-02·컨트롤러 → 뒷줄: 키보드 히어로 (Pro Type Ultra Ergo 단독 강조)',
   },
 ]},
 
 // ══════════════════════════════════
-// 🟡 Pulsar
+// 🟡 Pulsar — 아일랜드 평대 2대
 // ══════════════════════════════════
-{id:'pulsar', label:'🟡 Pulsar', info:'집기 2대 · 43종 · 참여확정', fixtures:[
+{id:'pulsar', label:'🟡 Pulsar', info:'아일랜드 평대 2대 · 43종 · 참여확정', fixtures:[
   {
-    name:'집기 A — CrazyLight 마우스 + 패드',
-    sub:'마우스 18종 · 패드 7종 · 팔토시 4종',
+    name:'평대 A — CrazyLight 마우스 + 패드 (그룹 1~6)',
+    sub:'1,600×900mm · 패드 위에 마우스 올리는 방식 · 그룹별 패드 컬러로 존 구분',
     rows:[
+      // 앞줄: 패드 평면
       [
-        {col:'amber',label:'FOCUS 01',sub:'그룹 1 · CrazyLight 컬러',items:[
+        {col:'amber',label:'앞줄 A',sub:'그룹1 패드 + 액세서리',items:[
+          {t:'ParaControl v2 XL Black (490×420)',d:'패드 · 24,000원 · 그룹1 존 기준'},
+          {t:'ParaGlide XL Orange / Black',d:'패드 2종 · 그룹5·6 존'},
+        ]},
+        {col:'amber',label:'앞줄 B',sub:'그룹2·4 패드',items:[
+          {t:'ParaControl v2 XL Red (490×420)',d:'패드 · 그룹2 존'},
+          {t:'Saturn Pro XL Radiant Ruby',d:'패드 · 59,000원 · 그룹4 존'},
+        ]},
+        {col:'gray',label:'앞줄 C',sub:'팔토시 · 소품 진열',items:[
+          {t:'Arm Sleeve Long M WH · L BK',d:'팔토시 2종 · 14,800원'},
+          {t:'Open Palm Long M WH · L BK',d:'팔토시 2종 · 19,800원'},
+        ]},
+      ],
+      // 중간줄: 마우스 그룹별
+      [
+        {col:'amber',label:'중간 A',sub:'그룹1·2 · CrazyLight 컬러',items:[
           {t:'X2 Aqua Zest · Volt Shadow · Sunset Haze',d:'마우스 3종 · 149,000원'},
-          {t:'ParaControl v2 XL Black',d:'마우스패드 · 490×420mm · 24,000원'},
-        ]},
-        {col:'amber',label:'FOCUS 02',sub:'그룹 2 · Seoul ED + Xlite',items:[
           {t:'X2 Seoul ED · Xlite Jet BK · Uyuni WH',d:'마우스 3종 · 149,000원'},
-          {t:'ParaControl v2 XL Red',d:'마우스패드 · 24,000원'},
         ]},
-        {col:'blue',label:'FOCUS 03',sub:'그룹 3 · BlueArchive 콜라보',items:[
-          {t:'X2M Hoshino · Shiroko · Nonomi',d:'마우스 3종 · 169,000원'},
-          {t:'별도 연출 패드',d:'콜라보 포인트 연출 권장'},
+        {col:'blue',label:'중간 B',sub:'그룹3 · BlueArchive 콜라보',items:[
+          {t:'X2M Hoshino · Shiroko · Nonomi',d:'마우스 3종 · 169,000원 · 콜라보 포인트'},
         ]},
-      ],[
-        {col:'coral',label:'서브 01',sub:'그룹 4 · T1/PRX ED',items:[
-          {t:'X2 T1 ED Black · T1 ED Red · PRX ED',d:'마우스 3종 · 159,000원'},
-          {t:'Saturn Pro XL Radiant Ruby',d:'패드 · 59,000원'},
+        {col:'coral',label:'중간 C',sub:'그룹4·5·6 · 한정 에디션',items:[
+          {t:'X2 T1 ED BK · T1 ED RD · PRX ED',d:'3종 · 159,000원'},
+          {t:'X2N Jet BK · Uyuni WH · Wildscape',d:'3종 · 149,000원'},
+          {t:'X2H BadSeedTech · X2 Boardzy · Bruce Lee',d:'3종 · 159~169,000원'},
         ]},
-        {col:'coral',label:'서브 02',sub:'그룹 5 · X2N Mini',items:[
-          {t:'X2N Jet BK · Uyuni WH · Wildscape',d:'마우스 3종 · 149,000원'},
-          {t:'ParaGlide XL Orange',d:'패드 · 24,000원'},
-        ]},
-        {col:'purple',label:'서브 03',sub:'그룹 6 · 한정 에디션',items:[
-          {t:'X2H BadSeedTech · X2 Boardzy ED',d:'마우스 2종 · 159,000원'},
-          {t:'X2 Bruce Lee 85th ED',d:'마우스 · 169,000원 · ParaGlide XL BK'},
-        ]},
-      ]
-    ],
-    guide:'동선: 입구 → FOCUS 01 컬러 CrazyLight → FOCUS 02 Seoul/Xlite → FOCUS 03 BlueArchive 콜라보 → 하단 서브존',
-  },{
-    name:'집기 B — 프로 시그니처 · 키보드 · 액세서리',
-    sub:'마우스 5종 · 키보드 2종 · 액세서리 5종 · 팔토시 4종',
-    rows:[
+      ],
+      // 뒷줄: 액세서리 히어로
       [
-        {col:'teal',label:'FOCUS 01',sub:'그룹 7 · 프로 시그니처',items:[
+        {col:'gray',label:'뒷줄 A',sub:'액세서리 바스켓형',items:[
+          {t:'UHMW-PE Dot Skates',d:'8,900원'},
+          {t:'Superglide Universal · Type-C',d:'각 24,800원'},
+          {t:'Supergrip Universal 1 · 2',d:'각 9,400원'},
+        ]},
+        {col:'amber',label:'뒷줄 B',sub:'유리 패드 히어로',items:[
+          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 유리 패드 단독 연출'},
+          {t:'superglide Pad v3 XL Red Type-S',d:'119,000원'},
+        ]},
+        {col:'amber',label:'뒷줄 C',sub:'나머지 CrazyLight',items:[
+          {t:'X2 CrazyLight Seoul ED · Bruce Lee 85th',d:'프리미엄 한정 에디션 포인트'},
+        ]},
+      ],
+    ],
+    guide:'앞줄: 패드 평면 + 팔토시 소품 → 중간줄: 마우스 그룹별 존 (패드 위에 올리기) → 뒷줄: 유리패드 히어로 + 액세서리 바스켓',
+  },
+  {
+    name:'평대 B — 프로 시그니처 · 키보드 · 액세서리 (그룹 7~12)',
+    sub:'1,600×900mm · 프리미엄 라인업 · 선수 POP 카드 필수',
+    rows:[
+      // 앞줄
+      [
+        {col:'gray',label:'앞줄 A',sub:'액세서리 소품 바스켓',items:[
+          {t:'Superglide Universal · Type-C · Dot Skates',d:'피트·글라이드 액세서리 5종 · 바스켓형'},
+          {t:'Supergrip Pre-Cut Universal 1 · 2',d:'그립 2종 · 9,400원'},
+        ]},
+        {col:'coral',label:'앞줄 B',sub:'팔토시',items:[
+          {t:'Arm Sleeve Long M WH · L BK',d:'14,800원'},
+          {t:'Open Palm Long M WH · L BK',d:'19,800원'},
+        ]},
+        {col:'teal',label:'앞줄 C',sub:'superglide 유리패드',items:[
+          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · eS HE 70 키보드 옆 배치'},
+          {t:'superglide Pad v3 XL Red Type-S',d:'119,000원 · PCMK 3 HE 옆 배치'},
+        ]},
+      ],
+      // 중간줄
+      [
+        {col:'teal',label:'중간 A',sub:'그룹7 · 프로 시그니처',items:[
           {t:'Susanto-X Medium Black',d:'169,000원 · 선수 POP 카드'},
           {t:'TenZ Signature Edition',d:'169,000원'},
           {t:'ZYWOO the Chosen Mini WH',d:'189,000원'},
         ]},
-        {col:'teal',label:'FOCUS 02',sub:'그룹 9 · Lab.X2F + eS FS-1',items:[
-          {t:'Lab.X2F Mini Black',d:'169,000원'},
-          {t:'eS FS-1 Pulsar eS Blue',d:'230,000원 + superglide Pad v3 XL WH'},
+        {col:'teal',label:'중간 B',sub:'그룹9 · Lab.X2F + eS FS-1',items:[
+          {t:'Lab.X2F Mini Black',d:'169,000원 · 유선 전용'},
+          {t:'eS FS-1 Pulsar eS Blue',d:'230,000원'},
         ]},
-        {col:'blue',label:'FOCUS 03',sub:'그룹 11-12 · 키보드',items:[
-          {t:'PCMK 3 HE TKL White ANSI',d:'239,000원 · HE 자석스위치 8K'},
-          {t:'eS HE 70',d:'289,000원 + superglide Pad v3 XL RD'},
+        {col:'blue',label:'중간 C',sub:'그룹10 · 팔토시 추가',items:[
+          {t:'팔토시 전 라인업 체험 진열',d:'Arm Sleeve / Open Palm 비교'},
         ]},
-      ],[
-        {col:'gray',label:'서브 01',sub:'그룹 8 · 액세서리',items:[
-          {t:'UHMW-PE Dot Skates',d:'8,900원'},
-          {t:'Superglide Universal · Type-C',d:'각 24,800원'},
-          {t:'Supergrip Universal 1 · 2',d:'각 9,400원 · 바스켓형 진열'},
+      ],
+      // 뒷줄
+      [
+        {col:'blue',label:'뒷줄 A',sub:'PCMK 3 HE TKL — 키보드 히어로',items:[
+          {t:'PCMK 3 HE TKL White ANSI',d:'239,000원 · HE 자석스위치 8K · Rapid Trigger'},
         ]},
-        {col:'coral',label:'서브 02',sub:'그룹 10 · 팔토시',items:[
-          {t:'Arm Sleeve Long M WH · L BK',d:'14,800원'},
-          {t:'Open Palm Long M WH · L BK',d:'19,800원'},
+        {col:'blue',label:'뒷줄 B',sub:'eS HE 70 — 키보드 히어로 ★',items:[
+          {t:'eS HE 70',d:'289,000원 · Hall Effect 8K · 최고가 히어로'},
         ]},
-        {col:'gray',label:'전시 TIP',sub:'운영 가이드',items:[
-          {t:'선수 POP 카드 필수',d:'FOCUS 01 구역 부착'},
-          {t:'액세서리 바스켓형 진열',d:'소형 제품 카테고리별 분류'},
+        {col:'gray',label:'뒷줄 C',sub:'운영 TIP',items:[
+          {t:'프로 시그니처 선수 POP 카드',d:'FOCUS 구역 필수 부착'},
+          {t:'키보드 체험 연결 케이블 준비',d:'유선 체험용 USB-C 케이블'},
         ]},
-      ]
+      ],
     ],
-    guide:'동선: 입구 → FOCUS 01 프로시그니처 (선수 POP) → FOCUS 02 Lab.X2F+eS → FOCUS 03 키보드 → 하단 서브존',
+    guide:'앞줄: 소품 액세서리·팔토시 → 중간줄: 프로 시그니처 마우스 (선수 POP 카드) → 뒷줄: 키보드 히어로 (PCMK·eS HE 70)',
   },
 ]},
 
 // ══════════════════════════════════
-// 🟢 Groovestone
+// 🟢 Groovestone — 아일랜드 평대 1대
 // ══════════════════════════════════
-{id:'groovestone', label:'🟢 Groovestone', info:'집기 1대 · 8종 · 참여확정', fixtures:[
+{id:'groovestone', label:'🟢 Groovestone', info:'아일랜드 평대 1대 · 8종 · 참여확정', fixtures:[
   {
-    name:'집기 — 수제윤활 컬러 에디션',
-    sub:'유선 키보드 8종 · 컬러별 45g/38g 선택형 · 입문~프리미엄 포트폴리오',
+    name:'평대 — 수제윤활 컬러 에디션 · 입문~프리미엄',
+    sub:'1,600×900mm · 컬러별 좌→우 그라데이션 배치 · 앞줄(비교 체험) → 뒷줄(히어로)',
     rows:[
+      // 앞줄
       [
-        {col:'green',label:'FOCUS 01',sub:'애플라떼 (그린)',items:[
+        {col:'green',label:'앞줄 A',sub:'애플라떼 — 38g vs 45g 비교',items:[
           {t:'GV10 수제윤활 애플라떼 45g',d:'밀키S축 저소음 · 129,000원'},
           {t:'GV10 수제윤활 애플라떼 38g',d:'밀키S축 저소음 · 129,000원'},
         ]},
-        {col:'amber',label:'FOCUS 02',sub:'따뜻한크레용 (오렌지)',items:[
+        {col:'amber',label:'앞줄 B',sub:'따뜻한크레용 — 38g vs 45g 비교',items:[
           {t:'GV10 수제윤활 따뜻한크레용 45g',d:'밀키S축 저소음 · 129,000원'},
           {t:'GV10 수제윤활 따뜻한크레용 38g',d:'밀키S축 저소음 · 129,000원'},
         ]},
-        {col:'pink',label:'FOCUS 03',sub:'젤리냥 (핑크)',items:[
+        {col:'pink',label:'앞줄 C',sub:'젤리냥 — 38g vs 45g 비교',items:[
           {t:'GV10 수제윤활 젤리냥 45g',d:'밀키S축 저소음 · 134,000원'},
           {t:'GV10 수제윤활 젤리냥 38g',d:'밀키S축 저소음 · 134,000원'},
         ]},
-      ],[
-        {col:'gray',label:'서브 01',sub:'스탠다드 라인 (입문)',items:[
+      ],
+      // 중간줄 (비어있거나 POP 카드)
+      [
+        {col:'gray',label:'중간 A',sub:'입문 라인 — GS10R',items:[
           {t:'GS10R 표준윤활 띠아모',d:'하늬축 저소음 · 79,000원 · 입문 포지션'},
         ]},
-        null, // 빈 공간
-        {col:'teal',label:'서브 02',sub:'프리미엄 라인 (8K)',items:[
+        {col:'gray',label:'중간 B',sub:'비교 체험 안내 POP',items:[
+          {t:'38g vs 45g 타건감 비교 체험존',d:'키보드 직접 눌러볼 수 있도록 설치'},
+        ]},
+        {col:'teal',label:'중간 C',sub:'프리미엄 — 8K 라인',items:[
           {t:'GV10M-8K 수제윤활 따뜻한크레용',d:'밀키축 38g · 8,000Hz · 159,000원'},
         ]},
-      ]
+      ],
+      // 뒷줄 히어로
+      [
+        {col:'green',label:'뒷줄 A',sub:'애플라떼 히어로 연출',items:[
+          {t:'GV10 수제윤활 애플라떼 — 대표 색상',d:'조명 아래 컬러 강조 연출'},
+        ]},
+        {col:'amber',label:'뒷줄 B ★',sub:'따뜻한크레용 8K 히어로',items:[
+          {t:'GV10M-8K 수제윤활 따뜻한크레용',d:'최고 프리미엄 · 159,000원 · 단독 히어로'},
+        ]},
+        {col:'pink',label:'뒷줄 C',sub:'젤리냥 히어로 연출',items:[
+          {t:'GV10 수제윤활 젤리냥 — 대표 색상',d:'핑크 컬러 포인트 강조'},
+        ]},
+      ],
     ],
-    guide:'동선: 입구 → 컬러별 FOCUS 존 (애플라떼→크레용→젤리냥 순) → 하단 스탠다드/프리미엄 비교',
+    guide:'앞줄: 3컬러 × 38g·45g 비교 체험 진열 → 중간줄: 입문(GS10R)·체험안내·8K 프리미엄 → 뒷줄: 컬러별 히어로 + 8K 단독 강조',
   },
 ]},
 
 // ══════════════════════════════════
-// 🌿 Epomaker · Kiboom · Cherry
+// 🌿 Epomaker · Kiboom · Cherry — 아일랜드 평대 2대
 // ══════════════════════════════════
-{id:'epo', label:'🌿 Epo·Kiboom·Cherry', info:'집기 2대 · 43종 · 에포메이커코리아 (1개 업체)', fixtures:[
+{id:'epo', label:'🌿 Epo·Kiboom·Cherry', info:'아일랜드 평대 2대 · 43종 · 에포메이커코리아', fixtures:[
   {
-    name:'집기 A — Kiboom (좌) + Cherry (우)',
-    sub:'Kiboom 키보드 9종 + 키캡 1종 · Cherry 키보드 11종 + 마우스/콤보/패드 8종',
+    name:'평대 A — Kiboom (좌) + Cherry (우)',
+    sub:'1,600×900mm · 좌: Kiboom 키보드·키캡 / 우: Cherry 키보드·마우스·패드',
     rows:[
+      // 앞줄
       [
-        {col:'purple',label:'FOCUS 01',sub:'Kiboom · 키보드 존',items:[
-          {t:'팬텀 81 라이트 BK / 민트 / 그린',d:'75% 유무선 · 149,000원'},
-          {t:'팬텀 81 V3 아크릴 투명 / 핑크',d:'75% 유무선 · 259,000원'},
-          {t:'팬텀 98 아크릴 BK/투명/핑크/보라',d:'98K 유무선 · 299,000원'},
+        {col:'purple',label:'앞줄 A',sub:'Kiboom 키캡 · 소품',items:[
+          {t:'Cosydiaries 개구리 키캡 세트',d:'43,900원 · MX 호환 · 평면 진열'},
         ]},
-        {col:'coral',label:'FOCUS 02',sub:'Cherry · 키보드 존',items:[
-          {t:'MX 8.3 TKL 8K 무선 실버/핑크',d:'TKL · 369,000원 · 마패 증정'},
-          {t:'MX 8.2 PRO TMR TKL 3종',d:'TMR자석 8K · 249~280,000원'},
-          {t:'MX 10.1 무선 8K 4종 · K5 PRO · K37',d:'6종 · 54,000~299,000원'},
-        ]},
-      ],[
-        {col:'purple',label:'서브 01',sub:'Kiboom · 키캡 존',items:[
-          {t:'Cosydiaries 개구리 키캡 세트',d:'43,900원 · MX 호환'},
-        ]},
-        {col:'coral',label:'서브 02',sub:'Cherry · 마우스·콤보·패드',items:[
+        {col:'coral',label:'앞줄 B',sub:'Cherry 마우스 · 패드 · 콤보',items:[
           {t:'MW5500 무선 화이트/블루/레드',d:'마우스 3종 · 89,000원'},
           {t:'DW 2380 콤보 핑크/그린/화이트',d:'무선 키마 세트 · 31,900원'},
           {t:'GP6 마우스패드 블랙/레드',d:'460×400×4mm · 26,900원'},
         ]},
-      ]
-    ],
-    guide:'동선: 입구 → Kiboom 팬텀 라인업 체험 → Cherry 프리미엄 키보드 → 하단 키캡/마우스 서브',
-  },{
-    name:'집기 B — Epomaker 팜레스트 · 키캡',
-    sub:'팜레스트 5종 · 실리콘 키캡 4종 · 젤리 키캡 3종 · 총 12종',
-    rows:[
-      [
-        {col:'teal',label:'FOCUS 01',sub:'팜레스트 존',items:[
-          {t:'구름젤 팜레스트 투명',d:'메모리폼 젤 소재 · 34,900원'},
-          {t:'구름젤 팜레스트 그린 / 핑크',d:'34,900원'},
-          {t:'구름젤 팜레스트 블루 / 퍼플',d:'34,900원'},
+        {col:'gray',label:'앞줄 C',sub:'POP 카드 · 안내물',items:[
+          {t:'Kiboom vs Cherry 브랜드 비교 POP',d:'존 구분 안내 카드'},
         ]},
-        {col:'teal',label:'FOCUS 02',sub:'키캡 존',items:[
+      ],
+      // 중간줄
+      [
+        {col:'purple',label:'중간 A',sub:'Kiboom 팬텀 81 라이트',items:[
+          {t:'팬텀 81 라이트 BK / 민트 / 그린',d:'75% 유무선 · 149,000원'},
+          {t:'팬텀 81 V3 아크릴 투명 / 핑크',d:'75% 유무선 · 259,000원'},
+        ]},
+        {col:'coral',label:'중간 B',sub:'Cherry MX 8.2 / K 시리즈',items:[
+          {t:'MX 8.2 PRO TMR TKL 3종',d:'TMR자석 8K · 249~280,000원'},
+          {t:'MX 10.1 무선 8K 4종',d:'풀배열 무선 8K · 다양한 배열'},
+          {t:'K5 PRO · K37',d:'54,000~134,000원 · 보급형'},
+        ]},
+        {col:'gray',label:'중간 C',sub:'체험 키보드 연결',items:[
+          {t:'타건 체험용 키보드 2대 설치',d:'Kiboom / Cherry 각 1대 체험 가능'},
+        ]},
+      ],
+      // 뒷줄
+      [
+        {col:'purple',label:'뒷줄 A ★',sub:'Kiboom 팬텀 98 히어로',items:[
+          {t:'팬텀 98 아크릴 BK/투명/핑크/보라',d:'98K 유무선 · 299,000원 · 최고가 히어로'},
+        ]},
+        {col:'coral',label:'뒷줄 B ★',sub:'Cherry MX 8.3 TKL 8K 히어로',items:[
+          {t:'MX 8.3 TKL 8K 무선 실버/핑크',d:'TKL · 369,000원 · 마패 증정 · 최고가 히어로'},
+        ]},
+        {col:'gray',label:'뒷줄 C',sub:'증정품 안내',items:[
+          {t:'Cherry MX 8.3 TKL 구매 → 마패 증정',d:'증정품 별도 진열 안내'},
+        ]},
+      ],
+    ],
+    guide:'앞줄: Kiboom 키캡 소품 + Cherry 마우스·패드 → 중간줄: 각 브랜드 중급 키보드 체험 → 뒷줄: 팬텀98·MX8.3 프리미엄 히어로',
+  },
+  {
+    name:'평대 B — Epomaker 팜레스트 · 키캡',
+    sub:'1,600×900mm · 팜레스트 컬러 비교 + 키캡 교체 체험존',
+    rows:[
+      // 앞줄
+      [
+        {col:'teal',label:'앞줄 A',sub:'나비 젤리 키캡 평면 진열',items:[
+          {t:'나비 젤리 키캡 화이트/핑크/블루',d:'PBT 젤리 소재 · 29,900원 · 평면 진열'},
+        ]},
+        {col:'teal',label:'앞줄 B',sub:'이지스실 실리콘 키캡',items:[
           {t:'이지스실 실리콘 WHITE / BLUE',d:'실리콘 키캡 · 39,900원 · MX 호환'},
           {t:'이지스실 실리콘 PURPLE / PINK',d:'실리콘 키캡 · 39,900원'},
-          {t:'나비 젤리 키캡 화이트/핑크/블루',d:'PBT 젤리 소재 · 29,900원'},
         ]},
-      ]
+        {col:'gray',label:'앞줄 C',sub:'키캡 교체 체험 안내',items:[
+          {t:'키캡 교체 체험용 키보드 1대',d:'직접 끼워보는 체험존'},
+        ]},
+      ],
+      // 중간줄
+      [
+        {col:'teal',label:'중간 A',sub:'팜레스트 — 투명/그린/핑크',items:[
+          {t:'구름젤 팜레스트 투명',d:'메모리폼 젤 소재 · 34,900원'},
+          {t:'구름젤 팜레스트 그린 / 핑크',d:'34,900원'},
+        ]},
+        {col:'teal',label:'중간 B',sub:'팜레스트 — 블루/퍼플',items:[
+          {t:'구름젤 팜레스트 블루 / 퍼플',d:'34,900원 · 5컬러 전체 비교 진열'},
+        ]},
+        {col:'gray',label:'중간 C',sub:'컬러 비교 체험',items:[
+          {t:'5컬러 팜레스트 나란히 비교 진열',d:'손목 올려보기 체험 가능'},
+        ]},
+      ],
+      // 뒷줄
+      [
+        {col:'teal',label:'뒷줄 A',sub:'팜레스트 히어로 연출',items:[
+          {t:'구름젤 팜레스트 5컬러 전시',d:'조명 아래 젤 소재 투명도 강조'},
+        ]},
+        {col:'teal',label:'뒷줄 B',sub:'키캡 히어로 연출',items:[
+          {t:'이지스실 실리콘 키캡 교체 키보드',d:'완성 키보드 비주얼 연출'},
+        ]},
+        {col:'gray',label:'뒷줄 C',sub:'브랜드 POP',items:[
+          {t:'Epomaker 브랜드 소개 POP 카드',d:'팜레스트·키캡 특징 안내'},
+        ]},
+      ],
     ],
-    guide:'동선: 팜레스트 색상 비교 체험 (5컬러) → 키캡 교체 체험 (이지스실·나비 젤리)',
+    guide:'앞줄: 키캡 소품 평면 진열 + 체험 키보드 → 중간줄: 팜레스트 5컬러 비교 진열 → 뒷줄: 팜레스트·키캡 히어로 연출',
   },
 ]},
 
 // ══════════════════════════════════
-// 🟣 키케이션
+// 🟣 키케이션 — 아일랜드 평대 2대
 // ══════════════════════════════════
-{id:'keycation', label:'🟣 키케이션', info:'집기 2대 · 108종+ · 키링·테마키캡·1u포인트', fixtures:[
+{id:'keycation', label:'🟣 키케이션', info:'아일랜드 평대 2대 · 108종+ · 키링·테마키캡·1u포인트', fixtures:[
   {
-    name:'집기 A — 키링 · 1u 포인트 · 계단 디피',
-    sub:'키링 7종 · 1u 포인트 키캡 9종 × 6구역 · 계단 디피 히어로',
+    name:'평대 A — 키링 · 1u 포인트 · 계단 디피 키보드',
+    sub:'1,600×900mm · 앞줄(키링 소품) → 중간줄(1u 포인트) → 뒷줄(키보드 히어로)',
     rows:[
+      // 앞줄
       [
-        {col:'purple',label:'FOCUS 01',sub:'키링 시리즈',span:3,items:[
-          {t:'1구·2구·3구·4구키링 · 카일청 · 카일백',d:'키링 6종 · 우측 바나나 키링 핑크 포인트 강조'},
+        {col:'purple',label:'앞줄 A',sub:'키링 소품 — 바스켓형',items:[
+          {t:'1구·2구·3구·4구 키링',d:'4종 · 바스켓형 진열 · 손에 닿기 쉬운 위치'},
+          {t:'카일청 · 카일백 키링',d:'2종 · 소형 액세서리'},
         ]},
-      ],[
-        {col:'gray',label:'서브 01',sub:'1u 포인트 (좌)',items:[
-          {t:'1u 포인트 키캡',d:'9종 × 4구역 · 좌측 열 진열'},
+        {col:'purple',label:'앞줄 B',sub:'바나나 키링 포인트',items:[
+          {t:'바나나 키링 핑크 ⭐',d:'포인트 컬러 · 단독 강조 진열'},
         ]},
-        {col:'gray',label:'서브 02',sub:'계단 디피 (중앙)',items:[
-          {t:'입체포인트 계단 디피',d:'키보드 히어로 · 포인트 키보드 · 넘버패드'},
+        {col:'gray',label:'앞줄 C',sub:'1u 포인트 키캡 (우측 앞)',items:[
+          {t:'1u 포인트 키캡 9종',d:'2구역 · 우측 앞 열 진열'},
         ]},
-        {col:'gray',label:'서브 03',sub:'1u 포인트 (우)',items:[
-          {t:'1u 포인트 키캡',d:'9종 × 2구역 · 우측 열 진열'},
+      ],
+      // 중간줄
+      [
+        {col:'gray',label:'중간 A',sub:'1u 포인트 키캡 (좌)',items:[
+          {t:'1u 포인트 키캡 9종 × 2구역',d:'좌측 중간 진열'},
         ]},
-      ]
+        {col:'purple',label:'중간 B',sub:'계단 디피 (중앙)',items:[
+          {t:'포인트 키보드 · 넘버패드',d:'계단 디피 히어로 배치 · 중앙 강조'},
+        ]},
+        {col:'gray',label:'중간 C',sub:'1u 포인트 키캡 (우)',items:[
+          {t:'1u 포인트 키캡 9종 × 2구역',d:'우측 중간 진열'},
+        ]},
+      ],
+      // 뒷줄
+      [
+        {col:'purple',label:'뒷줄 A',sub:'입체포인트 계단 디피 ★',items:[
+          {t:'계단 디피 키보드 히어로',d:'가장 눈에 띄는 뒷줄 중앙 배치'},
+        ]},
+        {col:'gray',label:'뒷줄 B',sub:'1u 포인트 전체 디스플레이',items:[
+          {t:'1u 포인트 키캡 9종 전 컬러',d:'뒷줄 진열 · 컬러 그라데이션'},
+        ]},
+        {col:'gray',label:'뒷줄 C',sub:'브랜드 POP',items:[
+          {t:'키케이션 브랜드 소개 POP',d:'1u 포인트·키링 특징 안내'},
+        ]},
+      ],
     ],
-    guide:'동선: 입구 → 키링 FOCUS (체험·구매 유도) → 양측 1u 포인트 → 계단 디피 키보드 체험',
-  },{
-    name:'집기 B — 테마 키캡 · 1u 포인트 · 윤활키링',
-    sub:'테마 키캡 8종 · 1u 포인트 9종 × 6구역 · 윤활키링 7종',
+    guide:'앞줄: 키링 소품 바스켓(손에 닿기 쉬운 위치) + 1u 포인트 → 중간줄: 계단 디피 중앙 히어로 + 양측 1u → 뒷줄: 키보드 히어로 강조',
+  },
+  {
+    name:'평대 B — 테마 키캡 · 1u 포인트 · 윤활키링',
+    sub:'1,600×900mm · 인기 테마 키캡 뒷줄 히어로 · 윤활키링 앞줄 소품',
     rows:[
+      // 앞줄
       [
-        {col:'purple',label:'FOCUS 01',sub:'인기 테마 키캡 (상단 1열)',span:3,items:[
-          {t:'삼낭이 · 크림멍멍 · 퍼플수국 · 2D퍼플',d:'인기 테마 키캡 4종 · 상단 1열 풀배치'},
+        {col:'gray',label:'앞줄 A',sub:'윤활키링 소품 바스켓',items:[
+          {t:'윤활키링 7종',d:'바스켓형 진열 · 앞줄 접근 용이'},
         ]},
-      ],[
-        {col:'purple',label:'FOCUS 02',sub:'추가 테마 키캡 (상단 2열)',span:3,items:[
-          {t:'한국의밤 블랙골드 · 호작도 · wob · 공룡',d:'테마 키캡 4종 · 상단 2열'},
+        {col:'gray',label:'앞줄 B',sub:'1u 포인트 키캡 (앞)',items:[
+          {t:'1u 포인트 키캡 9종 × 2구역',d:'앞줄 중앙 진열'},
         ]},
-      ],[
-        {col:'gray',label:'서브 01',sub:'1u 포인트 키캡',items:[
-          {t:'1u 포인트 키캡 9종 × 6구역',d:'하단·중단 진열'},
+        {col:'gray',label:'앞줄 C',sub:'1u 포인트 키캡 (우앞)',items:[
+          {t:'1u 포인트 키캡 9종 × 2구역',d:'앞줄 우측 진열'},
         ]},
-        null,
-        {col:'gray',label:'서브 02',sub:'윤활키링',items:[
-          {t:'윤활키링 7종',d:'바스켓형 진열 권장'},
+      ],
+      // 중간줄
+      [
+        {col:'purple',label:'중간 A',sub:'인기 테마 키캡 1열',items:[
+          {t:'삼낭이 · 크림멍멍 · 퍼플수국 · 2D퍼플',d:'인기 테마 키캡 4종 · 중간 좌'},
         ]},
-      ]
+        {col:'purple',label:'중간 B',sub:'인기 테마 키캡 2열',items:[
+          {t:'한국의밤 블랙골드 · 호작도',d:'테마 키캡 2종'},
+          {t:'wob · 공룡',d:'테마 키캡 2종'},
+        ]},
+        {col:'gray',label:'중간 C',sub:'1u 포인트 (중앙우)',items:[
+          {t:'1u 포인트 키캡 9종 × 2구역',d:'중간 우측 진열'},
+        ]},
+      ],
+      // 뒷줄
+      [
+        {col:'purple',label:'뒷줄 A ★',sub:'테마 키캡 히어로 1',items:[
+          {t:'삼낭이 · 퍼플수국 — 베스트셀러',d:'가장 인기 테마 키캡 단독 강조'},
+        ]},
+        {col:'purple',label:'뒷줄 B ★',sub:'테마 키캡 히어로 2',items:[
+          {t:'한국의밤 블랙골드 · 호작도',d:'아트워크 강조 테마 키캡 히어로'},
+        ]},
+        {col:'gray',label:'뒷줄 C',sub:'브랜드 POP',items:[
+          {t:'테마 키캡 컬렉션 안내 POP',d:'아트워크 설명 · 구매 포인트'},
+        ]},
+      ],
     ],
-    guide:'동선: 입구 → 테마 키캡 1열 → 2열 → 하단 1u 포인트 + 윤활키링',
+    guide:'앞줄: 윤활키링 바스켓 + 1u 포인트 → 중간줄: 테마 키캡 8종 전체 진열 → 뒷줄: 베스트셀러 테마 키캡 히어로 강조',
   },
 ]},
 
 // ══════════════════════════════════
-// 🟠 주연테크
+// 🟠 주연테크 — 아일랜드 평대 1대
 // ══════════════════════════════════
-{id:'juyeon', label:'🟠 주연테크', info:'집기 1대 · 11종 (베스트 판매 순위 기준)', fixtures:[
+{id:'juyeon', label:'🟠 주연테크', info:'아일랜드 평대 1대 · 11종 (베스트 판매 순위 기준)', fixtures:[
   {
-    name:'집기 — 베스트 판매 11종 (4줄 배치)',
-    sub:'GeekStar GKG87 3종 + GKG108 3종 + GK02 · Epomaker TH 2종 · 포켓몬 패드 2종',
+    name:'평대 — 베스트 판매 11종 · 앞→뒤 판매순위 순 배치',
+    sub:'1,600×900mm · 앞줄(TKL 소형) → 중간줄(풀배열) → 뒷줄(프리미엄 히어로)',
     rows:[
-      [{col:'coral',label:'앞줄 ①',sub:'GKG87 TKL 시리즈 (361×145mm)',span:3,items:[
-        {t:'GKG87 뭉돌 WH ★1위 · GKG87AQ MD ★2위',d:'TKL 유무선 · 54,900~65,900원'},
-        {t:'GKG87 뭉돌 BK ★6위',d:'TKL 유무선 · 54,900원'},
-      ]}],
-      [{col:'coral',label:'중간1 ②',sub:'GK02 히어로 + GKG108 풀배열 (445×140mm)',span:3,items:[
-        {t:'GeekStar GK02 ★3위',d:'풀배열 저소음 · 21,900원 · 주력 히어로'},
-        {t:'GKG108AQ MD ★4위 · GKG108SS ★5위',d:'풀배열 유무선 · 75,900~79,900원'},
-      ]}],
-      [{col:'gray',label:'중간2 ③',sub:'GKG108 계속 (445×140mm)',span:3,items:[
-        {t:'GKG108 뭉돌 WH ★7위 · 저소음 WH ★8위',d:'풀배열 유무선 · 89,000~94,000원'},
-        {t:'GKG108 뭉돌 BK ★9위',d:'풀배열 유무선 · 89,000원'},
-      ]}],
+      // 앞줄: TKL
       [
-        {col:'gray',label:'뒷줄 ④',sub:'Epomaker TH 시리즈',span:2,items:[
-          {t:'TH99 PRO White Blue ★10위',d:'99K 유무선 · 139,000원 ⚠️재고 소량(8개)'},
-          {t:'TH108 White Blue ★11위',d:'풀배열 유무선 · 119,000원'},
+        {col:'coral',label:'앞줄 A',sub:'GKG87 TKL ★1위 · ★2위',items:[
+          {t:'GKG87 뭉돌 WH ★1위',d:'TKL 유무선 · 54,900원'},
+          {t:'GKG87AQ MD ★2위',d:'TKL 유무선 · 마크다운 에디션 · 65,900원'},
         ]},
-        {col:'teal',label:'패드',sub:'포켓몬 장패드',items:[
+        {col:'coral',label:'앞줄 B',sub:'GKG87 TKL ★6위 · GK02 ★3위',items:[
+          {t:'GKG87 뭉돌 BK ★6위',d:'TKL 유무선 · 54,900원'},
+          {t:'GeekStar GK02 ★3위',d:'풀배열 저소음 · 21,900원 · 히어로'},
+        ]},
+        {col:'teal',label:'앞줄 C',sub:'포켓몬 장패드 세로 전시',items:[
           {t:'포켓몬 장패드 뮤 / 피카츄',d:'2종 · 29,000원 · 세로 세워 전시'},
         ]},
-      ]
+      ],
+      // 중간줄: GKG108 풀배열
+      [
+        {col:'coral',label:'중간 A',sub:'GKG108 풀배열 ★4위 · ★5위',items:[
+          {t:'GKG108AQ MD ★4위',d:'풀배열 유무선 · 75,900원'},
+          {t:'GKG108SS ★5위',d:'풀배열 유무선 · 79,900원'},
+        ]},
+        {col:'gray',label:'중간 B',sub:'GKG108 ★7위 · ★8위 · ★9위',items:[
+          {t:'GKG108 뭉돌 WH ★7위',d:'풀배열 유무선 · 89,000원'},
+          {t:'GKG108 저소음 WH ★8위',d:'풀배열 유무선 · 94,000원'},
+          {t:'GKG108 뭉돌 BK ★9위',d:'풀배열 유무선 · 89,000원'},
+        ]},
+        {col:'gray',label:'중간 C',sub:'타건 체험',items:[
+          {t:'체험용 키보드 1대',d:'GKG108 계열 타건 체험 가능'},
+        ]},
+      ],
+      // 뒷줄: Epomaker 프리미엄
+      [
+        {col:'gray',label:'뒷줄 A',sub:'Epomaker TH99 PRO ★10위',items:[
+          {t:'TH99 PRO White Blue ★10위',d:'99K 유무선 · 139,000원 · ⚠️재고 소량(8개)'},
+        ]},
+        {col:'gray',label:'뒷줄 B ★',sub:'Epomaker TH108 ★11위 히어로',items:[
+          {t:'TH108 White Blue ★11위',d:'풀배열 유무선 · 119,000원 · 프리미엄 히어로'},
+        ]},
+        {col:'teal',label:'뒷줄 C',sub:'포켓몬 장패드 세로 전시',items:[
+          {t:'포켓몬 장패드 세로 연출',d:'평대 뒷줄 모서리 세워 전시 · 시각 포인트'},
+        ]},
+      ],
     ],
-    guide:'배치 컨셉: 베스트 판매 순위 순서대로 4줄 전시 · GK02(3위)를 중간 히어로로 강조 · 포켓몬 패드 세로 전시',
+    guide:'앞줄: TKL 소형 키보드(GKG87) + GK02 히어로 + 포켓몬패드 → 중간줄: GKG108 풀배열 9종 체험 → 뒷줄: Epomaker TH 프리미엄',
   },
 ]},
 
 // ══════════════════════════════════
-// 🎀 로이체
+// 🎀 로이체 — 아일랜드 평대 1대
 // ══════════════════════════════════
-{id:'royche', label:'🎀 로이체', info:'집기 2대 · 56종+ · 캐릭터 IP 7종', fixtures:[
+{id:'royche', label:'🎀 로이체', info:'아일랜드 평대 1대 · 56종+ · 캐릭터 IP 7종', fixtures:[
   {
-    name:'집기 A — 산리오 · 잔망루피',
-    sub:'산리오 11종 (마우스·키캡·키링) · 잔망루피 6종 · 라이프 액세서리 공용',
+    name:'평대 — 1,600×900mm · 탑뷰 배치',
+    sub:'산리오 18종 · 잔망루피 18종 · 미피 7종 · 스누피 10종 · 조앤프렌즈 4종 · BTS 1종 · 다이노탱 1종',
     rows:[
+      // 앞줄
       [
-        {col:'pink',label:'FOCUS 01',sub:'산리오',items:[
-          {t:'버티컬마우스 3종',d:'산리오 캐릭터 디자인'},
-          {t:'레진키캡 5종',d:'산리오 IP · 포인트 전시'},
-          {t:'키캡키링 3종',d:'소품 바스켓형 진열'},
+        {col:'pink',label:'앞줄 A',sub:'산리오 — 소품',items:[
+          {t:'모니터 방향제 3종',d:'마이멜로디·쿠로미·시나모롤 · 평면 진열'},
+          {t:'키캡 키링 3종 ⭐NEW',d:'시나모롤·포차코·헬로키티 · 04/10↑'},
+          {t:'모니터 피규어 4종',d:'쿠로미·시나모롤·헬로키티·포차코'},
         ]},
-        {col:'pink',label:'FOCUS 02',sub:'잔망루피',items:[
-          {t:'버티컬마우스 · 피규어마우스',d:'잔망루피 캐릭터'},
-          {t:'마우스 2종',d:'무선 마우스'},
-          {t:'레진키캡 2종',d:'잔망루피 IP'},
+        {col:'blue',label:'앞줄 B',sub:'잔망루피 — 패드·피규어',items:[
+          {t:'마우스패드 · 손목쿠션패드',d:'평면 진열 · 200×200mm / 186.5×266mm'},
+          {t:'모니터 피규어 6종',d:'감격·둥절·갓생·어쩔·당당·두근'},
         ]},
-        {col:'gray',label:'서브 01',sub:'라이프 액세서리',items:[
-          {t:'미니시계 · 모니터방향제',d:'산리오·잔망루피 공용'},
-          {t:'미니피규어 · 무드등',d:'디스플레이 소품 연출'},
+        {col:'amber',label:'앞줄 C',sub:'스누피·미피 — 소품',items:[
+          {t:'스누피 마우스패드 2종',d:'바이올렛·베이지 · 200×200mm'},
+          {t:'미피 마우스패드 · 미니피규어 2종',d:'미피·보리스 · 모니터 부착형'},
+          {t:'미피 차량용 방향제 2종',d:'미피·보리스 · 송풍구 클립형'},
         ]},
-      ]
+      ],
+      // 중간줄
+      [
+        {col:'pink',label:'중간 A',sub:'산리오 — 박스 진열',items:[
+          {t:'레진 포인트 키캡 5종',d:'마이멜로디·쿠로미·시나모롤·포차코·헬로키티 · ₩24,900'},
+          {t:'무소음 미니 탁상시계 3종',d:'쿠로미·시나모롤·헬로키티 · ₩17,900'},
+          {t:'헬로키티 블루투스 노래방 스피커',d:'BT5.4 · 5W · 마이크 2ea · ₩52,900'},
+        ]},
+        {col:'blue',label:'중간 B',sub:'잔망루피 — 박스 진열',items:[
+          {t:'레진 포인트 키캡 2종',d:'포근루피·껄껄루피 · MX호환 · ₩22,900'},
+          {t:'멀티페어링 블루투스 마우스',d:'3기기 · 1200DPI · ₩24,900'},
+          {t:'블루투스 피규어 마우스',d:'BT+2.4GHz · ₩27,900'},
+          {t:'무소음 탁상시계 (베이비루피)',d:'₩17,900'},
+          {t:'블루투스 스피커 마이크세트',d:'BT5.4 · 5W · ₩46,900'},
+        ]},
+        {col:'amber',label:'중간 C',sub:'스누피·미피·조앤 — 박스',items:[
+          {t:'스누피 무선 마우스 3종',d:'바이올렛·베이지·핑크 · ₩24,900'},
+          {t:'스누피 피규어 마우스 · USB허브',d:'₩29,900 · PD60W 허브'},
+          {t:'미피 멀티페어링 마우스·방향제',d:'₩26,900 / ₩19,900'},
+          {t:'조앤 마우스·레진키캡·탁상시계 ⭐NEW',d:'04/05~04/10 입고 예정'},
+        ]},
+      ],
+      // 뒷줄 히어로
+      [
+        {col:'pink',label:'뒷줄 A',sub:'산리오·잔망루피 버티컬 마우스',items:[
+          {t:'산리오 버티컬 마우스 3종',d:'헬로키티·포차코·쿠로미 · USB-C·2.4GHz · ₩54,900'},
+          {t:'2024 잔망루피 버티컬 마우스',d:'USB-C·2.4GHz · ₩54,900'},
+          {t:'베이비잔망루피 실리콘 무드등',d:'500mAh · 터치식 · ₩22,900'},
+        ]},
+        {col:'amber',label:'뒷줄 B',sub:'스누피 버티컬 · BT스피커',items:[
+          {t:'스누피 버티컬 마우스',d:'USB-C·2.4GHz · ₩56,900'},
+          {t:'잔망루피 BT 마이크 · BT 스피커',d:'BT5.0 · 5W · ₩39,900 / ₩36,900'},
+        ]},
+        {col:'purple',label:'뒷줄 C ★',sub:'BTS · 다이노탱 — 히어로',items:[
+          {t:'BTS 기계식 키보드 ★',d:'98키 · Tri-mode · 가스켓 · ₩129,000'},
+          {t:'다이노탱 무선충전 무드등 세트 ★',d:'15W QC3.0 · 분리형 무드등 · ₩44,900'},
+        ]},
+      ],
     ],
-    guide:'동선: 입구 → 산리오 FOCUS (인지도 높음) → 잔망루피 FOCUS → 서브 라이프 소품',
-  },{
-    name:'집기 B — 스누피 · 미피 · BTS · 다이노탱',
-    sub:'스누피 6종 · 미피/조앤프렌즈 6종 · BTS 키보드 · 다이노탱 무드등 · 총 15종+',
+    guide:'앞줄: 마우스패드·소형 피규어·방향제·키링 (평면 진열) → 중간줄: 마우스·키캡·시계 (박스 세워서) → 뒷줄: 버티컬 마우스·BTS·다이노탱 히어로',
+  },
+]},
+
+
+// ══════════════════════════════════
+// ⚫ SteelSeries — 아일랜드 평대 1대
+// ══════════════════════════════════
+{id:'steelseries', label:'⚫ SteelSeries', info:'아일랜드 평대 1대 · 12종 · 헤드셋/키보드/마우스/패드', fixtures:[
+  {
+    name:'평대 — 헤드셋 · 키보드 · 마우스 · 마우스패드 12종',
+    sub:'1,600×900mm · 앞줄(패드·마우스 소품) → 중간줄(헤드셋·키보드 체험) → 뒷줄(프리미엄 히어로)',
     rows:[
+      // 앞줄
       [
-        {col:'blue',label:'FOCUS 01',sub:'스누피',items:[
-          {t:'버티컬마우스 · 피규어마우스',d:'스누피 IP'},
-          {t:'무선마우스 3종',d:'스누피 캐릭터'},
-          {t:'USB허브',d:'스누피 디자인'},
+        {col:'gray',label:'앞줄 A',sub:'QcK 마우스패드 평면 진열',items:[
+          {t:'QcK Heavy Large',d:'스테디셀러 · 450×400×6mm · ₩42,400'},
+          {t:'QcK Heavy XXL 블랙/화이트',d:'스테디셀러 · 900×400×4mm · ₩52,400'},
         ]},
-        {col:'blue',label:'FOCUS 02',sub:'미피 · 조앤프렌즈',items:[
-          {t:'무선마우스 · 마우스패드',d:'미피 IP'},
-          {t:'미니피규어 · 방향제',d:'조앤프렌즈'},
-          {t:'탁상시계 · 레진키캡',d:'미피 소품'},
+        {col:'gray',label:'앞줄 B',sub:'마우스 입문 라인',items:[
+          {t:'Prime Gaming Mouse',d:'유선 · 18000dpi/450ips/50G · 69g · ₩89,000'},
+          {t:'Rival 3 WL Gen 2 블랙/화이트',d:'무선 · 2.4GHz/BT · 18000dpi · 95g · ₩89,000'},
         ]},
-        {col:'gray',label:'서브 01',sub:'BTS · 다이노탱',items:[
-          {t:'BTS 기계식 키보드',d:'BTS IP 공식 굿즈'},
-          {t:'다이노탱 무선충전 무드등',d:'USB 무선충전 내장'},
+        {col:'teal',label:'앞줄 C',sub:'Aerox 3 Wireless Gen 2 ⭐NEW',items:[
+          {t:'Aerox 3 Wireless Gen 2 블랙/화이트/마젠타',d:'⭐4월 신제품 · 4K폴링 · 26000dpi · IP54방수 · 68g · ₩149,000'},
         ]},
-      ]
+      ],
+      // 중간줄
+      [
+        {col:'blue',label:'중간 A',sub:'Arctis GameBuds · Nova 5',items:[
+          {t:'Arctis GameBuds 블랙/화이트/오렌지',d:'게이밍 이어폰 · 2.4GHz/BT · ₩239,000'},
+          {t:'Arctis Nova 5 블랙/화이트',d:'헤드셋 스테디셀러 · ₩199,000'},
+        ]},
+        {col:'blue',label:'중간 B',sub:'Arctis Nova 7 Gen 2',items:[
+          {t:'Arctis Nova 7 Gen 2 블랙/화이트/마젠타',d:'2.4GHz+블루투스 동시재생 · ₩299,000'},
+        ]},
+        {col:'gray',label:'중간 C',sub:'Apex Pro TKL Gen 3 체험',items:[
+          {t:'Apex Pro TKL Gen 3 KR 블랙/화이트',d:'TKL · 자석축 래피드 트리거 · 3중흡음재 · ₩359,000'},
+        ]},
+      ],
+      // 뒷줄 히어로
+      [
+        {col:'gray',label:'뒷줄 A ★',sub:'Apex Pro Gen 3 풀사이즈 히어로',items:[
+          {t:'Apex Pro Gen 3 US 블랙',d:'풀사이즈 · 자석축 래피드 트리거 · 키 개별 윤활 · ₩399,000'},
+        ]},
+        {col:'gray',label:'뒷줄 B',sub:'QcK Pro Balance 세워 전시',items:[
+          {t:'QcK Pro Balance Large',d:'프리미엄 패드 · 490×420×3.5mm · 세워 전시 · ₩74,900'},
+        ]},
+        {col:'gray',label:'뒷줄 C ★',sub:'Arctis Nova Elite 최고가 히어로',items:[
+          {t:'Arctis Nova Elite 블랙/세이지&골드',d:'무선 Hi-Res 인증 · 프리미엄 최고가 · ₩979,000'},
+        ]},
+      ],
     ],
-    guide:'동선: 입구 → 스누피 FOCUS (높은 인지도) → 미피/조앤 FOCUS → BTS·다이노탱 서브',
+    guide:'앞줄: QcK 패드 평면 + 마우스 입문 + Aerox3 신제품 → 중간줄: 헤드셋 라인업 + TKL 키보드 체험 → 뒷줄: Apex Pro 풀배열·Nova Elite 프리미엄 히어로',
   },
 ]},
 
 ]; // end BRANDS
 
-// ─── SVG 렌더링 함수 ──────────────────────────────────────────
+// ─── SVG 렌더링 ───────────────────────────────────────────────
 function buildSVG(fx) {
-  const PAD = 18;
-  const GAP = 12;
-  const USABLE = 660; // 18*2 포함 전체 = 660+18*2=696 → 660을 usable 폭으로 사용
-  const TOTAL_W = 680;
+  const PAD = 18, GAP = 12, USABLE = 660, TOTAL_W = 680;
 
-  // 각 행의 존 너비 계산
   function rowZoneW(row) {
     const nonNull = row.filter(z=>z!==null);
     const totalSpan = nonNull.reduce((s,z)=>(s+(z.span||1)),0);
     return (USABLE - (totalSpan-1)*GAP - PAD*2) / totalSpan;
   }
-
-  // 존 하나의 높이 계산
-  function zoneH(zone) {
-    if(!zone) return 0;
-    return 50 + zone.items.length * 44;
-  }
-
-  // 각 행의 최대 높이
-  function rowH(row) {
-    return Math.max(...row.map(z=>zoneH(z)));
-  }
+  function zoneH(zone) { if(!zone) return 0; return 50 + zone.items.length * 44; }
+  function rowH(row) { return Math.max(...row.map(z=>zoneH(z))); }
 
   const rows = fx.rows;
   const rHeights = rows.map(rowH);
-  const y_first = 70;
-  const ROW_GAP = 14;
+  const y_first = 70, ROW_GAP = 14;
+  let yPositions = [], y = y_first;
+  rHeights.forEach(h => { yPositions.push(y); y += h + ROW_GAP; });
 
-  let yPositions = [];
-  let y = y_first;
-  rHeights.forEach(h => {
-    yPositions.push(y);
-    y += h + ROW_GAP;
-  });
-
-  const guideY = y + 6;
-  const guideH = fx.guide ? 72 : 0;
+  const guideY = y + 6, guideH = fx.guide ? 72 : 0;
   const outerBottom = guideY + guideH + 10;
   const SVG_H = outerBottom + 14;
-
   let s = '';
 
-  // 배경
   s += `<rect width="${TOTAL_W}" height="${SVG_H}" fill="white" rx="10"/>`;
-
-  // 타이틀
   s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="700" x="${TOTAL_W/2}" y="22" text-anchor="middle" fill="#1a1a18">${fx.name}</text>`;
   s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="38" text-anchor="middle" fill="#888">${fx.sub}</text>`;
-
-  // 외곽 집기 테두리
   s += `<rect x="10" y="46" width="660" height="${outerBottom-46}" rx="10" fill="none" stroke="#bbb" stroke-width="1.5"/>`;
 
-  // 행별 렌더링
   rows.forEach((row, rowIdx) => {
     const ry = yPositions[rowIdx];
-    const rh = rHeights[rowIdx];
     const unitW = rowZoneW(row);
-
-    // 첫 행 "FOCUS 존" 라벨
-    if(rowIdx === 0) {
-      s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="62" text-anchor="middle" fill="#aaa">— FOCUS 존 (메인) —</text>`;
-    }
+    if(rowIdx === 0) s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="62" text-anchor="middle" fill="#aaa">▲ 앞면 — 방문객 주동선</text>`;
 
     let cx = PAD;
     row.forEach((zone) => {
-      if(!zone) {
-        // null zone → 빈 공간 (1 span)
-        cx += unitW + GAP;
-        return;
-      }
-      const span = zone.span || 1;
-      const zw = unitW * span + GAP * (span-1);
+      if(!zone) { cx += unitW + GAP; return; }
+      const span = zone.span||1;
+      const zw = unitW*span + GAP*(span-1);
       const zh = zoneH(zone);
-      const zx = cx;
-      const C = COLORS[zone.col] || COLORS.gray;
-      const midX = zx + zw/2;
+      const C = COLORS[zone.col]||COLORS.gray;
+      const midX = cx + zw/2;
 
-      // 큰 존 rect (배경)
-      s += `<rect x="${zx}" y="${ry}" width="${zw}" height="${zh}" rx="8" fill="${C.bg}" stroke="${C.bd}" stroke-width="0.8"/>`;
-
-      // 존 라벨 배지
-      const badgeW = 56;
-      const badgeH = 18;
-      s += `<rect x="${zx+8}" y="${ry+8}" width="${badgeW}" height="${badgeH}" rx="4" fill="${C.bd}"/>`;
-      s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" x="${zx+8+badgeW/2}" y="${ry+20}" text-anchor="middle" fill="white">${zone.label}</text>`;
-
-      // 존 부제
+      s += `<rect x="${cx}" y="${ry}" width="${zw}" height="${zh}" rx="8" fill="${C.bg}" stroke="${C.bd}" stroke-width="0.8"/>`;
+      const bw=56, bh=18;
+      s += `<rect x="${cx+8}" y="${ry+8}" width="${bw}" height="${bh}" rx="4" fill="${C.bd}"/>`;
+      s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" x="${cx+8+bw/2}" y="${ry+20}" text-anchor="middle" fill="white">${zone.label}</text>`;
       s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" x="${midX}" y="${ry+36}" text-anchor="middle" fill="${C.th}">${zone.sub}</text>`;
 
-      // 아이템별 서브 rect
       zone.items.forEach((item, i) => {
-        const iy = ry + 46 + i * 44;
-        const ix = zx + 8;
-        const iw = zw - 16;
-
+        const iy = ry+46+i*44, ix = cx+8, iw = zw-16;
         s += `<rect x="${ix}" y="${iy}" width="${iw}" height="38" rx="5" fill="rgba(255,255,255,0.65)" stroke="${C.bd}" stroke-width="0.5"/>`;
         s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" x="${ix+iw/2}" y="${iy+13}" text-anchor="middle" fill="${C.th}">${item.t}</text>`;
         s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="${ix+iw/2}" y="${iy+27}" text-anchor="middle" fill="${C.ts}">${item.d}</text>`;
       });
-
       cx += zw + GAP;
     });
   });
 
-  // 동선 가이드
   if(fx.guide) {
     s += `<rect x="20" y="${guideY}" width="640" height="${guideH-4}" rx="8" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="5 3"/>`;
-    s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" x="${TOTAL_W/2}" y="${guideY+16}" text-anchor="middle" fill="#aaa">동선 가이드</text>`;
+    s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" x="${TOTAL_W/2}" y="${guideY+16}" text-anchor="middle" fill="#aaa">배치 가이드</text>`;
     s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="${guideY+34}" text-anchor="middle" fill="#888">${fx.guide}</text>`;
-    // 집기 사이즈 표시
-    s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="648" y="${outerBottom+8}" text-anchor="end" fill="#bbb">1,600 × 900 mm</text>`;
+    s += `<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="648" y="${outerBottom+8}" text-anchor="end" fill="#bbb">1,600 × 900 mm · 아일랜드 평대</text>`;
   }
-
   return `<svg class="diagram" viewBox="0 0 ${TOTAL_W} ${SVG_H}" xmlns="http://www.w3.org/2000/svg">${s}</svg>`;
 }
 
-// ─── 탭 + 콘텐츠 렌더링 ──────────────────────────────────────
+// ─── 탭 + 콘텐츠 ─────────────────────────────────────────────
 const tabsEl = document.getElementById('tabs');
 const sectsEl = document.getElementById('sects');
 
 BRANDS.forEach((brand, bi) => {
-  // 탭 버튼
   const btn = document.createElement('button');
-  btn.className = 'tab' + (bi===0?' on':'');
+  btn.className = 'tab'+(bi===0?' on':'');
   btn.textContent = brand.label;
   btn.onclick = () => {
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
@@ -521,42 +710,33 @@ BRANDS.forEach((brand, bi) => {
   };
   tabsEl.appendChild(btn);
 
-  // 섹션
   const sect = document.createElement('div');
-  sect.className = 'sect' + (bi===0?' on':'');
+  sect.className = 'sect'+(bi===0?' on':'');
   sect.id = 'sect-'+brand.id;
-
   let html = `<div class="brand-info">${brand.info}</div>`;
-
   brand.fixtures.forEach((fx, fi) => {
     html += `<div class="fx-wrap">
       <div class="fx-title">${fx.name}</div>
       ${buildSVG(fx)}
-      <div class="fx-dl"><button class="dl-btn" onclick="dlSVG('${brand.id}-${fi}')">PNG 저장</button></div>
+      <div class="fx-dl"><button class="dl-btn" onclick="dlSVG('${brand.id}-${fi}')">SVG 저장</button></div>
     </div>`;
   });
-
   sect.innerHTML = html;
   sectsEl.appendChild(sect);
 });
 
-// ─── PNG 다운로드 ─────────────────────────────────────────────
 function dlSVG(id) {
-  // id = brand.id + '-' + fixIndex → 해당 섹션에서 순서대로 찾기
   const parts = id.split('-');
   const fi = parseInt(parts[parts.length-1]);
   const brandId = parts.slice(0,parts.length-1).join('-');
   const sect = document.getElementById('sect-'+brandId);
-  const svgs = sect.querySelectorAll('svg.diagram');
-  const svg = svgs[fi];
+  const svg = sect.querySelectorAll('svg.diagram')[fi];
   if(!svg) return;
-
-  const xmlStr = new XMLSerializer().serializeToString(svg);
-  const blob = new Blob([xmlStr], {type:'image/svg+xml'});
-  const url = URL.createObjectURL(blob);
+  const blob = new Blob([new XMLSerializer().serializeToString(svg)], {type:'image/svg+xml'});
   const a = document.createElement('a');
-  a.href = url; a.download = `배치도_${id}.svg`; a.click();
-  URL.revokeObjectURL(url);
+  a.href = URL.createObjectURL(blob);
+  a.download = `배치도_${id}.svg`;
+  a.click();
 }
 </script>
 </body>
