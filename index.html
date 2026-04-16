@@ -97,47 +97,56 @@ const BRANDS = [
 // ══════════════════════════════════
 {id:'pulsar', label:'🟡 Pulsar', info:'아일랜드 평대 2대 · 42종 · 부천 현백 기준 (엑셀 위치도 반영)', fixtures:[
   { name:'평대 A — CrazyLight 마우스 (구역 1~6)',
-    sub:'1,600×900mm · 좌(구역1·2·3) / 우(구역4·5·6) · 2열 × 3행 · 패드 위에 마우스 올리기',
+    sub:'1,600×900mm · 구역 1→2→3→4→5→6 순서 · 패드 위에 마우스 올리기',
     rows:[
-      // ── 앞줄 ── 구역1(좌) / 구역4(우)
+      // ── 구역 1 ──
       [
-        {col:'amber',label:'구역 1',sub:'X2 CrazyLight 3종 + 커스텀 유리패드 디스플레이',items:[
+        {col:'amber',label:'구역 1',span:3,sub:'X2 CrazyLight 3종 + 커스텀 유리패드 디스플레이',items:[
           {t:'X2 CrazyLight Sunset Haze',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2 CrazyLight Volt Shadow',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2 CrazyLight Aqua Zest',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
-        {col:'coral',label:'구역 4',sub:'T1 ED × 2 + PRX ED × 1 + 커스텀 유리패드',items:[
+      ],
+      // ── 구역 2 ──
+      [
+        {col:'amber',label:'구역 2',span:3,sub:'Xlite 2종 + X2 Seoul ED + ParaControl v2 Red',items:[
+          {t:'Xlite CrazyLight Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
+          {t:'Xlite CrazyLight Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
+          {t:'X2 CrazyLight Seoul ED',d:'149,000원 · 30% 할인 · 104,300원'},
+          {t:'ParaControl v2 Mouse Pad XL Red (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
+        ]},
+      ],
+      // ── 구역 3 ──
+      [
+        {col:'blue',label:'구역 3 ★',span:3,sub:'BlueArchive 콜라보 3종 + ParaControl v2 Black',items:[
+          {t:'X2 CrazyLight Medium BlueArchive Hoshino',d:'169,000원 · 10% 할인 · 152,100원'},
+          {t:'X2 CrazyLight Medium BlueArchive Shiroko',d:'169,000원 · 10% 할인 · 152,100원'},
+          {t:'X2 CrazyLight Medium BlueArchive Nonomi',d:'169,000원 · 10% 할인 · 152,100원'},
+          {t:'ParaControl v2 Mouse Pad XL Black (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
+        ]},
+      ],
+      // ── 구역 4 ──
+      [
+        {col:'coral',label:'구역 4',span:3,sub:'T1 ED × 2 + PRX ED × 1 + 커스텀 유리패드',items:[
           {t:'X2 CrazyLight T1 ED Black',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight T1 ED Red',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight PRX ED',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
       ],
-      // ── 중간줄 ── 구역2(좌) / 구역5(우)
+      // ── 구역 5 ──
       [
-        {col:'amber',label:'구역 2',sub:'Xlite 2종 + X2 Seoul ED + ParaControl v2 Red',items:[
-          {t:'Xlite CrazyLight Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'Xlite CrazyLight Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'X2 CrazyLight Seoul ED',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'ParaControl v2 Mouse Pad XL Red (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
-        ]},
-        {col:'amber',label:'구역 5',sub:'X2N 3종 + ParaGlide XL Orange',items:[
+        {col:'amber',label:'구역 5',span:3,sub:'X2N 3종 + ParaGlide XL Orange',items:[
           {t:'X2N CrazyLight Mini Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2N CrazyLight Mini Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2N CrazyLight Mini Wildscape Ocean',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'ParaGlide Mouse Pad XL Orange',d:'24,000원 · 30% 할인 · 16,800원'},
         ]},
       ],
-      // ── 뒷줄 ── 구역3(좌) / 구역6(우)
+      // ── 구역 6 ──
       [
-        {col:'blue',label:'구역 3 ★',sub:'BlueArchive 콜라보 3종 + ParaControl v2 Black',items:[
-          {t:'X2 CrazyLight Medium BlueArchive Hoshino',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'X2 CrazyLight Medium BlueArchive Shiroko',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'X2 CrazyLight Medium BlueArchive Nonomi',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'ParaControl v2 Mouse Pad XL Black (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
-        ]},
-        {col:'coral',label:'구역 6',sub:'한정 에디션 3종 + ParaGlide XL Black',items:[
+        {col:'coral',label:'구역 6',span:3,sub:'한정 에디션 3종 + ParaGlide XL Black',items:[
           {t:'X2H CrazyLight BadSeedTech ED',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight Boardzy ED',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight Bruce Lee 85th ED',d:'169,000원 · 10% 할인 · 152,100원'},
@@ -145,20 +154,40 @@ const BRANDS = [
         ]},
       ],
     ],
-    guide:'앞줄: 구역1(X2 CL 3종) / 구역4(T1·PRX 3종) → 중간줄: 구역2(Xlite·Seoul) / 구역5(X2N 3종) → 뒷줄: 구역3(BlueArchive ★) / 구역6(BadSeedTech·Boardzy·Bruce Lee)',
+    guide:'구역1(X2 CL 3종) → 구역2(Xlite·Seoul) → 구역3(BlueArchive ★) → 구역4(T1·PRX) → 구역5(X2N 3종) → 구역6(BadSeedTech·Boardzy·Bruce Lee)',
   },
   { name:'평대 B — 프로 시그니처 · 키보드 · 액세서리 (구역 7~12)',
-    sub:'1,600×900mm · 좌(구역7·8·9) / 우(구역10·11·12) · 2열 × 3행',
+    sub:'1,600×900mm · 구역 7→8→9→10→11→12 순서',
     rows:[
-      // ── 앞줄 ── 구역7(좌) / 구역10(우)
+      // ── 구역 7 ──
       [
-        {col:'teal',label:'구역 7 ★',sub:'프로 시그니처 3종 + 커스텀 유리패드 디스플레이',items:[
+        {col:'teal',label:'구역 7 ★',span:3,sub:'프로 시그니처 3종 + 커스텀 유리패드 디스플레이',items:[
           {t:'Susanto-X Medium Black',d:'169,000원 · 10% 할인 · 선수 POP 카드 필수'},
           {t:'TenZ Signature Edition',d:'169,000원 · 10% 할인 · 선수 POP 카드 필수'},
           {t:'ZYWOO the Chosen Mini White',d:'189,000원 · 10% 할인 · 선수 POP 카드 필수'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
-        {col:'gray',label:'구역 10',sub:'팔토시 4종 + 커스텀 유리패드 디스플레이',items:[
+      ],
+      // ── 구역 8 ──
+      [
+        {col:'gray',label:'구역 8',span:3,sub:'액세서리 범용 (Dot Skates · Superglide · Supergrip)',items:[
+          {t:'UHMW-PE Dot Skates',d:'8,900원 · 30% 할인 · 6,230원'},
+          {t:'Superglide for Universal White (6mm+9mm)',d:'24,800원 · 30% 할인 · 17,360원'},
+          {t:'Superglide Type-C for Universal White',d:'24,800원 · 30% 할인 · 17,360원'},
+          {t:'Supergrip Pre-Cut Universal 1 · 2',d:'각 9,400원 · 30% 할인 · 6,580원'},
+        ]},
+      ],
+      // ── 구역 9 ──
+      [
+        {col:'teal',label:'구역 9',span:3,sub:'Lab.X2F + eS FS-1 + superglide White',items:[
+          {t:'Lab.X2F Mini Black',d:'169,000원 · 10% 할인 · 152,100원'},
+          {t:'eS FS-1 Pulsar eS Blue',d:'230,000원 · 10% 할인 · 207,000원'},
+          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원 · X2F 옆 배치'},
+        ]},
+      ],
+      // ── 구역 10 ──
+      [
+        {col:'gray',label:'구역 10',span:3,sub:'팔토시 4종 + 커스텀 유리패드 디스플레이',items:[
           {t:'Arm Sleeve Long M White',d:'14,800원 · 30% 할인 · 10,360원'},
           {t:'Arm Sleeve Long L Black',d:'14,800원 · 30% 할인 · 10,360원'},
           {t:'Open Palm Long M White',d:'19,800원 · 30% 할인 · 13,860원'},
@@ -166,34 +195,23 @@ const BRANDS = [
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
       ],
-      // ── 중간줄 ── 구역8(좌) / 구역11(우)
+      // ── 구역 11 ──
       [
-        {col:'gray',label:'구역 8',sub:'액세서리 범용 (Dot Skates · Superglide · Supergrip)',items:[
-          {t:'UHMW-PE Dot Skates',d:'8,900원 · 30% 할인 · 6,230원'},
-          {t:'Superglide for Universal White (6mm+9mm)',d:'24,800원 · 30% 할인 · 17,360원'},
-          {t:'Superglide Type-C for Universal White',d:'24,800원 · 30% 할인 · 17,360원'},
-          {t:'Supergrip Pre-Cut Universal 1 · 2',d:'각 9,400원 · 30% 할인 · 6,580원'},
-        ]},
-        {col:'blue',label:'구역 11',sub:'PCMK 3 HE TKL + superglide Red',items:[
+        {col:'blue',label:'구역 11',span:3,sub:'PCMK 3 HE TKL + superglide Red',items:[
           {t:'PCMK 3 HE TKL White ANSI',d:'239,000원 · 30% 할인 · 167,300원 · HE 자석스위치 · Rapid Trigger'},
           {t:'superglide Pad v3 XL Red Type-S',d:'119,000원 · 30% 할인 · 83,300원 · PCMK 옆 배치'},
         ]},
       ],
-      // ── 뒷줄 ── 구역9(좌) / 구역12(우)
+      // ── 구역 12 ──
       [
-        {col:'teal',label:'구역 9',sub:'Lab.X2F + eS FS-1 + superglide White',items:[
-          {t:'Lab.X2F Mini Black',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'eS FS-1 Pulsar eS Blue',d:'230,000원 · 10% 할인 · 207,000원'},
-          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원 · X2F 옆 배치'},
-        ]},
-        {col:'blue',label:'구역 12 ★',sub:'eS HE 70 + superglide Green + White',items:[
+        {col:'blue',label:'구역 12 ★',span:3,sub:'eS HE 70 + superglide Green + White',items:[
           {t:'eS HE 70 ANSI Black',d:'289,000원 · 30% 할인 · 202,300원 · Hall Effect 8K · 최고가 히어로'},
           {t:'superglide Pad v3 XL Green Type-S',d:'119,000원 · 30% 할인 · 83,300원 · eS HE 70 옆 배치'},
           {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
         ]},
       ],
     ],
-    guide:'앞줄: 구역7(프로 시그니처 ★) / 구역10(팔토시 4종) → 중간줄: 구역8(액세서리 범용) / 구역11(PCMK+Red패드) → 뒷줄: 구역9(X2F·FS-1·White패드) / 구역12(eS HE 70+Green패드 ★)',
+    guide:'구역7(프로 시그니처 ★) → 구역8(액세서리 범용) → 구역9(X2F·FS-1·White패드) → 구역10(팔토시 4종) → 구역11(PCMK+Red패드) → 구역12(eS HE 70+Green패드 ★)',
   },
 ]},
 // ══════════════════════════════════
