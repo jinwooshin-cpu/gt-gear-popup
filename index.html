@@ -97,56 +97,44 @@ const BRANDS = [
 // ══════════════════════════════════
 {id:'pulsar', label:'🟡 Pulsar', info:'아일랜드 평대 2대 · 42종 · 부천 현백 기준 (엑셀 위치도 반영)', fixtures:[
   { name:'평대 A — CrazyLight 마우스 (구역 1~6)',
-    sub:'1,600×900mm · 구역 1→2→3→4→5→6 순서 · 패드 위에 마우스 올리기',
+    sub:'1,600×900mm · 앞줄(1·2·3) / 뒷줄(4·5·6) · 3열 × 2행 · 패드 위에 마우스 올리기',
     rows:[
-      // ── 구역 1 ──
+      // ── 앞줄: 구역1 | 구역2 | 구역3 ──
       [
-        {col:'amber',label:'구역 1',span:3,sub:'X2 CrazyLight 3종 + 커스텀 유리패드 디스플레이',items:[
+        {col:'amber',label:'앞줄 A · 구역 1',sub:'X2 CrazyLight 3종 + 커스텀 유리패드',items:[
           {t:'X2 CrazyLight Sunset Haze',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2 CrazyLight Volt Shadow',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2 CrazyLight Aqua Zest',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
-      ],
-      // ── 구역 2 ──
-      [
-        {col:'amber',label:'구역 2',span:3,sub:'Xlite 2종 + X2 Seoul ED + ParaControl v2 Red',items:[
+        {col:'amber',label:'앞줄 B · 구역 2',sub:'Xlite 2종 + X2 Seoul ED + ParaControl v2 Red',items:[
           {t:'Xlite CrazyLight Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'Xlite CrazyLight Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2 CrazyLight Seoul ED',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'ParaControl v2 Mouse Pad XL Red (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
         ]},
-      ],
-      // ── 구역 3 ──
-      [
-        {col:'blue',label:'구역 3 ★',span:3,sub:'BlueArchive 콜라보 3종 + ParaControl v2 Black',items:[
+        {col:'blue',label:'앞줄 C · 구역 3 ★',sub:'BlueArchive 콜라보 3종 + ParaControl v2 Black',items:[
           {t:'X2 CrazyLight Medium BlueArchive Hoshino',d:'169,000원 · 10% 할인 · 152,100원'},
           {t:'X2 CrazyLight Medium BlueArchive Shiroko',d:'169,000원 · 10% 할인 · 152,100원'},
           {t:'X2 CrazyLight Medium BlueArchive Nonomi',d:'169,000원 · 10% 할인 · 152,100원'},
           {t:'ParaControl v2 Mouse Pad XL Black (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
         ]},
       ],
-      // ── 구역 4 ──
+      // ── 뒷줄: 구역4 | 구역5 | 구역6 ──
       [
-        {col:'coral',label:'구역 4',span:3,sub:'T1 ED × 2 + PRX ED × 1 + 커스텀 유리패드',items:[
+        {col:'coral',label:'뒷줄 A · 구역 4',sub:'T1 ED × 2 + PRX ED × 1 + 커스텀 유리패드',items:[
           {t:'X2 CrazyLight T1 ED Black',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight T1 ED Red',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight PRX ED',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
-      ],
-      // ── 구역 5 ──
-      [
-        {col:'amber',label:'구역 5',span:3,sub:'X2N 3종 + ParaGlide XL Orange',items:[
+        {col:'amber',label:'뒷줄 B · 구역 5',sub:'X2N 3종 + ParaGlide XL Orange',items:[
           {t:'X2N CrazyLight Mini Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2N CrazyLight Mini Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'X2N CrazyLight Mini Wildscape Ocean',d:'149,000원 · 30% 할인 · 104,300원'},
           {t:'ParaGlide Mouse Pad XL Orange',d:'24,000원 · 30% 할인 · 16,800원'},
         ]},
-      ],
-      // ── 구역 6 ──
-      [
-        {col:'coral',label:'구역 6',span:3,sub:'한정 에디션 3종 + ParaGlide XL Black',items:[
+        {col:'coral',label:'뒷줄 C · 구역 6',sub:'한정 에디션 3종 + ParaGlide XL Black',items:[
           {t:'X2H CrazyLight BadSeedTech ED',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight Boardzy ED',d:'159,000원 · 10% 할인 · 143,100원'},
           {t:'X2 CrazyLight Bruce Lee 85th ED',d:'169,000원 · 10% 할인 · 152,100원'},
@@ -154,64 +142,52 @@ const BRANDS = [
         ]},
       ],
     ],
-    guide:'구역1(X2 CL 3종) → 구역2(Xlite·Seoul) → 구역3(BlueArchive ★) → 구역4(T1·PRX) → 구역5(X2N 3종) → 구역6(BadSeedTech·Boardzy·Bruce Lee)',
+    guide:'앞줄 A(구역1 · X2 CL) / 앞줄 B(구역2 · Xlite·Seoul) / 앞줄 C(구역3 · BlueArchive ★) → 뒷줄 A(구역4 · T1·PRX) / 뒷줄 B(구역5 · X2N) / 뒷줄 C(구역6 · 한정 에디션)',
   },
   { name:'평대 B — 프로 시그니처 · 키보드 · 액세서리 (구역 7~12)',
-    sub:'1,600×900mm · 구역 7→8→9→10→11→12 순서',
+    sub:'1,600×900mm · 앞줄(7·8·9) / 뒷줄(10·11·12) · 3열 × 2행',
     rows:[
-      // ── 구역 7 ──
+      // ── 앞줄: 구역7 | 구역8 | 구역9 ──
       [
-        {col:'teal',label:'구역 7 ★',span:3,sub:'프로 시그니처 3종 + 커스텀 유리패드 디스플레이',items:[
+        {col:'teal',label:'앞줄 A · 구역 7 ★',sub:'프로 시그니처 3종 + 커스텀 유리패드',items:[
           {t:'Susanto-X Medium Black',d:'169,000원 · 10% 할인 · 선수 POP 카드 필수'},
           {t:'TenZ Signature Edition',d:'169,000원 · 10% 할인 · 선수 POP 카드 필수'},
           {t:'ZYWOO the Chosen Mini White',d:'189,000원 · 10% 할인 · 선수 POP 카드 필수'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
-      ],
-      // ── 구역 8 ──
-      [
-        {col:'gray',label:'구역 8',span:3,sub:'액세서리 범용 (Dot Skates · Superglide · Supergrip)',items:[
+        {col:'gray',label:'앞줄 B · 구역 8',sub:'액세서리 범용 (Dot Skates · Superglide · Supergrip)',items:[
           {t:'UHMW-PE Dot Skates',d:'8,900원 · 30% 할인 · 6,230원'},
           {t:'Superglide for Universal White (6mm+9mm)',d:'24,800원 · 30% 할인 · 17,360원'},
           {t:'Superglide Type-C for Universal White',d:'24,800원 · 30% 할인 · 17,360원'},
           {t:'Supergrip Pre-Cut Universal 1 · 2',d:'각 9,400원 · 30% 할인 · 6,580원'},
         ]},
-      ],
-      // ── 구역 9 ──
-      [
-        {col:'teal',label:'구역 9',span:3,sub:'Lab.X2F + eS FS-1 + superglide White',items:[
+        {col:'teal',label:'앞줄 C · 구역 9',sub:'Lab.X2F + eS FS-1 + superglide White',items:[
           {t:'Lab.X2F Mini Black',d:'169,000원 · 10% 할인 · 152,100원'},
           {t:'eS FS-1 Pulsar eS Blue',d:'230,000원 · 10% 할인 · 207,000원'},
-          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원 · X2F 옆 배치'},
+          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
         ]},
       ],
-      // ── 구역 10 ──
+      // ── 뒷줄: 구역10 | 구역11 | 구역12 ──
       [
-        {col:'gray',label:'구역 10',span:3,sub:'팔토시 4종 + 커스텀 유리패드 디스플레이',items:[
+        {col:'gray',label:'뒷줄 A · 구역 10',sub:'팔토시 4종 + 커스텀 유리패드',items:[
           {t:'Arm Sleeve Long M White',d:'14,800원 · 30% 할인 · 10,360원'},
           {t:'Arm Sleeve Long L Black',d:'14,800원 · 30% 할인 · 10,360원'},
           {t:'Open Palm Long M White',d:'19,800원 · 30% 할인 · 13,860원'},
           {t:'Open Palm Long L Black',d:'19,800원 · 30% 할인 · 13,860원'},
           {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
         ]},
-      ],
-      // ── 구역 11 ──
-      [
-        {col:'blue',label:'구역 11',span:3,sub:'PCMK 3 HE TKL + superglide Red',items:[
+        {col:'blue',label:'뒷줄 B · 구역 11',sub:'PCMK 3 HE TKL + superglide Red',items:[
           {t:'PCMK 3 HE TKL White ANSI',d:'239,000원 · 30% 할인 · 167,300원 · HE 자석스위치 · Rapid Trigger'},
           {t:'superglide Pad v3 XL Red Type-S',d:'119,000원 · 30% 할인 · 83,300원 · PCMK 옆 배치'},
         ]},
-      ],
-      // ── 구역 12 ──
-      [
-        {col:'blue',label:'구역 12 ★',span:3,sub:'eS HE 70 + superglide Green + White',items:[
+        {col:'blue',label:'뒷줄 C · 구역 12 ★',sub:'eS HE 70 + superglide Green + White',items:[
           {t:'eS HE 70 ANSI Black',d:'289,000원 · 30% 할인 · 202,300원 · Hall Effect 8K · 최고가 히어로'},
-          {t:'superglide Pad v3 XL Green Type-S',d:'119,000원 · 30% 할인 · 83,300원 · eS HE 70 옆 배치'},
+          {t:'superglide Pad v3 XL Green Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
           {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
         ]},
       ],
     ],
-    guide:'구역7(프로 시그니처 ★) → 구역8(액세서리 범용) → 구역9(X2F·FS-1·White패드) → 구역10(팔토시 4종) → 구역11(PCMK+Red패드) → 구역12(eS HE 70+Green패드 ★)',
+    guide:'앞줄 A(구역7 · 프로 시그니처 ★) / 앞줄 B(구역8 · 액세서리) / 앞줄 C(구역9 · X2F·FS-1) → 뒷줄 A(구역10 · 팔토시) / 뒷줄 B(구역11 · PCMK) / 뒷줄 C(구역12 · eS HE 70 ★)',
   },
 ]},
 // ══════════════════════════════════
@@ -710,31 +686,31 @@ const BRANDS = [
 
 // ─── SVG 렌더링 ─────────────────────────────────────────────────
 function buildSVG(fx) {
-  const PAD=18,GAP=12,USABLE=660,TOTAL_W=680;
+  const PAD=14,GAP=10,USABLE=660,TOTAL_W=680;
   function rowZoneW(row){
     const nonNull=row.filter(z=>z!==null);
     const totalSpan=nonNull.reduce((s,z)=>(s+(z.span||1)),0);
     return (USABLE-(totalSpan-1)*GAP-PAD*2)/totalSpan;
   }
-  function zoneH(zone){if(!zone)return 0;return 50+zone.items.length*44;}
+  function zoneH(zone){if(!zone)return 0;return 44+zone.items.length*34;}
   function rowH(row){return Math.max(...row.map(z=>zoneH(z)));}
   const rows=fx.rows;
   const rHeights=rows.map(rowH);
-  const y_first=70,ROW_GAP=14;
+  const y_first=62,ROW_GAP=10;
   let yPositions=[],y=y_first;
   rHeights.forEach(h=>{yPositions.push(y);y+=h+ROW_GAP;});
-  const guideY=y+6,guideH=fx.guide?72:0;
-  const outerBottom=guideY+guideH+10;
-  const SVG_H=outerBottom+14;
+  const guideY=y+4,guideH=fx.guide?56:0;
+  const outerBottom=guideY+guideH+8;
+  const SVG_H=outerBottom+12;
   let s='';
   s+=`<rect width="${TOTAL_W}" height="${SVG_H}" fill="white" rx="10"/>`;
-  s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" font-weight="700" x="${TOTAL_W/2}" y="22" text-anchor="middle" fill="#1a1a18">${fx.name}</text>`;
-  s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="38" text-anchor="middle" fill="#888">${fx.sub}</text>`;
-  s+=`<rect x="10" y="46" width="660" height="${outerBottom-46}" rx="10" fill="none" stroke="#bbb" stroke-width="1.5"/>`;
+  s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" font-weight="700" x="${TOTAL_W/2}" y="18" text-anchor="middle" fill="#1a1a18">${fx.name}</text>`;
+  s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="${TOTAL_W/2}" y="32" text-anchor="middle" fill="#888">${fx.sub}</text>`;
+  s+=`<rect x="10" y="40" width="660" height="${outerBottom-40}" rx="10" fill="none" stroke="#bbb" stroke-width="1.5"/>`;
   rows.forEach((row,rowIdx)=>{
     const ry=yPositions[rowIdx];
     const unitW=rowZoneW(row);
-    if(rowIdx===0) s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="62" text-anchor="middle" fill="#aaa">▲ 앞면 — 방문객 주동선</text>`;
+    if(rowIdx===0) s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="${TOTAL_W/2}" y="55" text-anchor="middle" fill="#aaa">▲ 앞면 — 방문객 주동선</text>`;
     let cx=PAD;
     row.forEach((zone)=>{
       if(!zone){cx+=unitW+GAP;return;}
@@ -743,25 +719,25 @@ function buildSVG(fx) {
       const zh=zoneH(zone);
       const C=COLORS[zone.col]||COLORS.gray;
       const midX=cx+zw/2;
-      s+=`<rect x="${cx}" y="${ry}" width="${zw}" height="${zh}" rx="8" fill="${C.bg}" stroke="${C.bd}" stroke-width="0.8"/>`;
-      const bw=56,bh=18;
-      s+=`<rect x="${cx+8}" y="${ry+8}" width="${bw}" height="${bh}" rx="4" fill="${C.bd}"/>`;
-      s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" x="${cx+8+bw/2}" y="${ry+20}" text-anchor="middle" fill="white">${zone.label}</text>`;
-      s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" x="${midX}" y="${ry+36}" text-anchor="middle" fill="${C.th}">${zone.sub}</text>`;
+      s+=`<rect x="${cx}" y="${ry}" width="${zw}" height="${zh}" rx="6" fill="${C.bg}" stroke="${C.bd}" stroke-width="0.8"/>`;
+      const bw=Math.min(zw-10, 68),bh=16;
+      s+=`<rect x="${cx+6}" y="${ry+6}" width="${bw}" height="${bh}" rx="3" fill="${C.bd}"/>`;
+      s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="700" x="${cx+6+bw/2}" y="${ry+17}" text-anchor="middle" fill="white">${zone.label}</text>`;
+      s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="600" x="${midX}" y="${ry+30}" text-anchor="middle" fill="${C.th}">${zone.sub}</text>`;
       zone.items.forEach((item,i)=>{
-        const iy=ry+46+i*44,ix=cx+8,iw=zw-16;
-        s+=`<rect x="${ix}" y="${iy}" width="${iw}" height="38" rx="5" fill="rgba(255,255,255,0.65)" stroke="${C.bd}" stroke-width="0.5"/>`;
-        s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" font-weight="600" x="${ix+iw/2}" y="${iy+13}" text-anchor="middle" fill="${C.th}">${item.t}</text>`;
-        s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="${ix+iw/2}" y="${iy+27}" text-anchor="middle" fill="${C.ts}">${item.d}</text>`;
+        const iy=ry+36+i*34, ix=cx+5, iw=zw-10;
+        s+=`<rect x="${ix}" y="${iy}" width="${iw}" height="30" rx="4" fill="rgba(255,255,255,0.65)" stroke="${C.bd}" stroke-width="0.5"/>`;
+        s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="600" x="${ix+iw/2}" y="${iy+11}" text-anchor="middle" fill="${C.th}">${item.t}</text>`;
+        s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="8" x="${ix+iw/2}" y="${iy+22}" text-anchor="middle" fill="${C.ts}">${item.d}</text>`;
       });
       cx+=zw+GAP;
     });
   });
   if(fx.guide){
-    s+=`<rect x="20" y="${guideY}" width="640" height="${guideH-4}" rx="8" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="5 3"/>`;
-    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" font-weight="700" x="${TOTAL_W/2}" y="${guideY+16}" text-anchor="middle" fill="#aaa">배치 가이드</text>`;
-    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="11" x="${TOTAL_W/2}" y="${guideY+34}" text-anchor="middle" fill="#888">${fx.guide}</text>`;
-    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="648" y="${outerBottom+8}" text-anchor="end" fill="#bbb">1,600 × 900 mm · 아일랜드 평대</text>`;
+    s+=`<rect x="18" y="${guideY}" width="644" height="${guideH-4}" rx="6" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>`;
+    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="700" x="${TOTAL_W/2}" y="${guideY+13}" text-anchor="middle" fill="#aaa">배치 가이드</text>`;
+    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" x="${TOTAL_W/2}" y="${guideY+28}" text-anchor="middle" fill="#888">${fx.guide}</text>`;
+    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" x="648" y="${outerBottom+6}" text-anchor="end" fill="#bbb">1,600 × 900 mm · 아일랜드 평대</text>`;
   }
   return `<svg class="diagram" viewBox="0 0 ${TOTAL_W} ${SVG_H}" xmlns="http://www.w3.org/2000/svg">${s}</svg>`;
 }
