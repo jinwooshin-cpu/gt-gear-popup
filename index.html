@@ -3,788 +3,1266 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>GT GEAR × 더현대 팝업 — 집기 배치도</title>
+<title>GT GEAR 부천 팝업 14일 종합 매출 대시보드</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f4ef;padding:20px;color:#1a1a18}
-h1{font-size:16px;font-weight:700;margin:0 0 3px}
-.meta{font-size:12px;color:#888;margin:0 0 14px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
-button.tab{padding:6px 14px;border:1px solid #d4d3cc;border-radius:8px;cursor:pointer;font-size:12px;font-weight:500;background:#fff;color:#666;font-family:inherit;transition:.1s}
-button.tab.on{background:#1a1a18;color:#fff;border-color:#1a1a18}
-.sect{display:none}.sect.on{display:block}
-.brand-info{font-size:11px;color:#888;margin:0 0 10px}
-.fx-wrap{margin:0 0 18px}
-.fx-title{font-size:11px;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px}
-.fx-dl{display:flex;justify-content:flex-end;margin:5px 0 0}
-.dl-btn{padding:4px 12px;background:#1a1a18;color:#fff;border:none;border-radius:6px;font-size:11px;cursor:pointer;font-family:inherit}
-svg.diagram{display:block;width:100%;border-radius:10px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  :root {
+    --bg: #0a0e13;
+    --bg-2: #131820;
+    --panel: #1c2330;
+    --panel-2: #242c3b;
+    --line: #2c3445;
+    --line-2: #3a4255;
+    --txt: #e8ecf2;
+    --txt-2: #b8c2cf;
+    --txt-3: #6b7686;
+    --good: #5fbf7f;
+    --warn: #ff6b6b;
+    --accent: #ffb454;
+    --info: #59c2ff;
+    --gold: #ffd166;
+    /* 브랜드 컬러 */
+    --b-kication: #ff8fab;
+    --b-loyche: #b392f0;
+    --b-keychron: #59c2ff;
+    --b-pulsar: #ffd93d;
+    --b-abko: #e63946;
+    --b-jooyon: #06d6a0;
+    --b-groovestone: #c9a96e;
+    --b-razer: #44d62c;
+    --b-kiboom: #ff6b9d;
+    --b-cox: #ff9854;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    background: var(--bg); color: var(--txt);
+    line-height: 1.5; font-size: 14px;
+    min-height: 100vh; padding: 24px;
+  }
+  .container { max-width: 1500px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    padding-bottom: 20px; margin-bottom: 20px; gap: 24px; flex-wrap: wrap;
+    border-bottom: 2px solid var(--gold);
+    position: relative;
+  }
+  .header h1 {
+    font-family: 'Noto Serif KR', serif; font-weight: 900;
+    font-size: 32px; letter-spacing: -0.02em; line-height: 1.1;
+  }
+  .header h1 em {
+    color: var(--gold); font-style: italic; font-weight: 900;
+  }
+  .header-meta { font-size: 12px; color: var(--txt-3); margin-top: 6px; }
+  .header-meta strong { color: var(--gold); }
+  .verified-pill {
+    display: inline-block; background: var(--good); color: #0a0e13;
+    padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; font-family: 'JetBrains Mono', monospace;
+  }
+  .closing-pill {
+    display: inline-block; background: var(--warn); color: white;
+    padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; font-family: 'JetBrains Mono', monospace;
+    margin-left: 6px;
+  }
+
+  /* HERO Banner */
+  .hero-banner {
+    background: linear-gradient(135deg, var(--bg-2), var(--panel));
+    border: 1px solid var(--gold);
+    border-radius: 12px; padding: 28px 32px;
+    margin-bottom: 20px; position: relative; overflow: hidden;
+  }
+  .hero-banner::before {
+    content: ''; position: absolute; top: 0; right: 0;
+    width: 280px; height: 100%;
+    background: radial-gradient(ellipse at right, rgba(255,209,102,0.18), transparent);
+  }
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--gold); letter-spacing: 0.25em;
+    margin-bottom: 8px; font-weight: 700;
+  }
+  .hero-headline {
+    font-family: 'Noto Serif KR', serif; font-size: 28px;
+    font-weight: 900; line-height: 1.2; margin-bottom: 10px;
+  }
+  .hero-headline em { color: var(--gold); font-style: italic; }
+  .hero-sub { color: var(--txt-2); font-size: 13px; line-height: 1.6; max-width: 70%; }
+  .hero-roi {
+    position: absolute; right: 32px; top: 50%; transform: translateY(-50%);
+    text-align: right;
+  }
+  .hero-roi-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--txt-3); letter-spacing: 0.2em;
+  }
+  .hero-roi-val {
+    font-family: 'Noto Serif KR', serif; font-size: 56px;
+    font-weight: 900; color: var(--gold); line-height: 1; letter-spacing: -0.03em;
+  }
+  .hero-roi-val small { font-size: 26px; }
+
+  /* KPI */
+  .kpi-strip {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 12px; margin-bottom: 20px;
+  }
+  .kpi-card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 16px 18px; position: relative;
+  }
+  .kpi-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+  }
+  .kpi-card.good::before { background: var(--good); }
+  .kpi-card.info::before { background: var(--info); }
+  .kpi-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--txt-3); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 6px;
+  }
+  .kpi-value {
+    font-family: 'Noto Serif KR', serif; font-size: 24px;
+    font-weight: 900; letter-spacing: -0.01em; line-height: 1;
+  }
+  .kpi-value small { font-size: 12px; color: var(--txt-3); font-weight: 500; margin-left: 4px; }
+  .kpi-change {
+    margin-top: 8px; font-size: 12px;
+    color: var(--txt-2);
+  }
+  .kpi-change.up { color: var(--good); }
+
+  /* Section */
+  section {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; padding: 20px; margin-bottom: 20px;
+  }
+  .section-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-title {
+    font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700;
+  }
+  .section-title small {
+    font-family: 'IBM Plex Sans KR'; font-size: 11px;
+    color: var(--txt-3); margin-left: 8px; font-weight: 400;
+  }
+
+  .row { display: grid; gap: 20px; margin-bottom: 20px; }
+  .row-2 { grid-template-columns: 1.4fr 1fr; }
+  .row-2-eq { grid-template-columns: 1fr 1fr; }
+
+  /* Wave chart */
+  .wave-wrapper { width: 100%; position: relative; padding: 12px 0; }
+  svg.wave-chart { width: 100%; height: 320px; display: block; }
+
+  /* Brand ranking horizontal bars */
+  .brand-rank-list {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .brand-rank-item {
+    display: grid; grid-template-columns: 28px 1fr 110px 70px;
+    align-items: center; gap: 12px;
+    padding: 8px 10px; border-radius: 6px;
+    transition: background 0.15s;
+    font-size: 12px;
+  }
+  .brand-rank-item:hover { background: var(--bg-2); }
+  .br-rank {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--txt-3); text-align: center; font-weight: 700;
+  }
+  .br-rank.gold { color: var(--gold); font-size: 14px; }
+  .br-info {
+    display: flex; flex-direction: column; gap: 4px;
+    min-width: 0;
+  }
+  .br-name {
+    font-weight: 700; font-size: 13px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .br-bar-wrap {
+    height: 14px; background: var(--bg-2); border-radius: 3px;
+    overflow: hidden; position: relative;
+  }
+  .br-bar-fill {
+    height: 100%; border-radius: 3px;
+    transition: width .8s cubic-bezier(.2,.7,.3,1);
+  }
+  .br-qty {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--txt-3); white-space: nowrap;
+    margin-left: 6px;
+  }
+  .br-rev {
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    text-align: right; font-weight: 700;
+    white-space: nowrap;
+  }
+  .br-pct {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--txt-3); text-align: right;
+  }
+  .br-pct.gold { color: var(--gold); font-weight: 700; }
+
+  /* Category groups */
+  .cat-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .cat-card {
+    background: var(--bg-2); border-left: 3px solid var(--info);
+    border-radius: 6px; padding: 14px 16px;
+  }
+  .cat-card.k1 { border-left-color: var(--b-loyche); }
+  .cat-card.k2 { border-left-color: var(--b-keychron); }
+  .cat-card.k3 { border-left-color: var(--b-pulsar); }
+  .cat-card.k4 { border-left-color: var(--b-groovestone); }
+  .cat-card.k5 { border-left-color: var(--b-razer); }
+  .cat-name {
+    font-family: 'Noto Serif KR'; font-size: 14px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .cat-stats {
+    display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px;
+  }
+  .cat-rev {
+    font-family: 'Noto Serif KR'; font-size: 22px; font-weight: 900;
+  }
+  .cat-pct {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--txt-3);
+  }
+  .cat-detail {
+    font-size: 11px; color: var(--txt-2);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* TOP SKU table */
+  .top-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .top-table th {
+    background: var(--panel-2); padding: 10px 8px; text-align: left;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--txt-3); letter-spacing: 0.1em; text-transform: uppercase;
+    border-bottom: 1px solid var(--line);
+  }
+  .top-table th.num { text-align: right; }
+  .top-table td { padding: 8px; border-bottom: 1px dotted var(--line); }
+  .top-table td.num { text-align: right; font-family: 'JetBrains Mono', monospace; }
+  .top-table tr:hover td { background: var(--panel-2); }
+  .rank {
+    display: inline-block; width: 22px; height: 22px;
+    line-height: 22px; text-align: center; border-radius: 50%;
+    background: var(--info); color: #0a0e13; font-weight: 900;
+    font-size: 11px; font-family: 'JetBrains Mono', monospace;
+  }
+  .rank.gold { background: var(--gold); }
+
+  .brand-tag {
+    display: inline-block; font-size: 10px; padding: 2px 8px;
+    border-radius: 3px; font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+  }
+  .bt-kication { background: rgba(255,143,171,0.2); color: var(--b-kication); }
+  .bt-loyche { background: rgba(179,146,240,0.2); color: var(--b-loyche); }
+  .bt-keychron { background: rgba(89,194,255,0.2); color: var(--b-keychron); }
+  .bt-pulsar { background: rgba(255,217,61,0.2); color: var(--b-pulsar); }
+  .bt-abko { background: rgba(230,57,70,0.2); color: var(--b-abko); }
+  .bt-jooyon { background: rgba(6,214,160,0.2); color: var(--b-jooyon); }
+  .bt-groovestone { background: rgba(201,169,110,0.2); color: var(--b-groovestone); }
+  .bt-razer { background: rgba(68,214,44,0.2); color: var(--b-razer); }
+  .bt-kiboom { background: rgba(255,107,157,0.2); color: var(--b-kiboom); }
+  .bt-cox { background: rgba(255,152,84,0.2); color: var(--b-cox); }
+  .bt-default { background: rgba(107,118,134,0.2); color: var(--txt-2); }
+
+  /* Stacked area chart wrapper */
+  svg.stacked-chart { width: 100%; height: 360px; display: block; }
+
+  /* W1 vs W2 brand compare */
+  .w-compare-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 10px; margin-top: 10px;
+  }
+  .w-compare-card {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 6px; padding: 10px; text-align: center;
+  }
+  .wc-brand {
+    font-size: 11px; font-weight: 700; margin-bottom: 6px;
+  }
+  .wc-bars {
+    display: flex; align-items: flex-end; justify-content: center;
+    gap: 4px; height: 60px; margin-bottom: 8px;
+  }
+  .wc-bar {
+    width: 18px; background: var(--info); border-radius: 2px 2px 0 0;
+  }
+  .wc-bar.w1 { background: var(--accent); opacity: 0.6; }
+  .wc-bar.w2 { background: var(--info); }
+  .wc-change {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-weight: 700;
+  }
+  .wc-change.up { color: var(--good); }
+  .wc-change.down { color: var(--warn); }
+  .wc-change.flat { color: var(--txt-2); }
+
+  /* Performance Matrix (객단가 × 매출 산점도) */
+  .matrix-wrap { width: 100%; padding: 12px 0; }
+  svg.matrix { width: 100%; height: 380px; display: block; }
+
+  /* Insights */
+  .insight-card {
+    background: var(--bg-2); border-left: 3px solid var(--accent);
+    padding: 12px 14px; border-radius: 4px;
+    font-size: 12px; line-height: 1.6; margin-bottom: 10px;
+  }
+  .insight-card.good { border-left-color: var(--good); }
+  .insight-card.warn { border-left-color: var(--warn); }
+  .insight-card.info { border-left-color: var(--info); }
+  .insight-card.gold { border-left-color: var(--gold); }
+  .insight-card strong { color: var(--accent); }
+  .insight-card.good strong { color: var(--good); }
+  .insight-card.warn strong { color: var(--warn); }
+  .insight-card.info strong { color: var(--info); }
+  .insight-card.gold strong { color: var(--gold); }
+  .insight-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    margin-bottom: 4px; opacity: 0.8;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 24px; padding: 16px;
+    text-align: center; font-size: 11px;
+    color: var(--txt-3); border-top: 1px solid var(--line);
+  }
+
+  /* 저성과 SKU 섹션 */
+  .unsold-brand-card {
+    background: var(--bg-2); border: 1px solid var(--line);
+    border-radius: 8px; padding: 0;
+    margin-bottom: 12px; overflow: hidden;
+  }
+  .unsold-brand-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 16px; cursor: pointer;
+    background: var(--panel-2);
+    transition: background 0.15s;
+    border-left: 3px solid var(--warn);
+  }
+  .unsold-brand-header:hover { background: var(--panel); }
+  .unsold-brand-name {
+    font-family: 'Noto Serif KR'; font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .unsold-brand-stats {
+    font-size: 11px; color: var(--txt-3);
+    font-family: 'JetBrains Mono', monospace;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .unsold-brand-stats strong { color: var(--warn); }
+  .unsold-toggle {
+    font-size: 12px; color: var(--txt-3); transition: transform .2s;
+  }
+  .unsold-brand-card.open .unsold-toggle { transform: rotate(90deg); }
+  .unsold-list {
+    padding: 0; max-height: 0; overflow: hidden;
+    transition: max-height .3s;
+  }
+  .unsold-brand-card.open .unsold-list {
+    max-height: 1200px; overflow-y: auto;
+  }
+  .unsold-item {
+    display: grid; grid-template-columns: 1fr auto auto auto;
+    gap: 12px; align-items: center;
+    padding: 8px 16px; border-bottom: 1px dotted var(--line);
+    font-size: 12px;
+  }
+  .unsold-item:last-child { border-bottom: none; }
+  .unsold-item:hover { background: var(--panel-2); }
+  .unsold-name { font-size: 12px; }
+  .unsold-qty-badge {
+    display: inline-block;
+    width: 30px; height: 22px; line-height: 22px;
+    text-align: center; border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    font-weight: 700;
+  }
+  .unsold-qty-badge.zero { background: var(--warn); color: white; }
+  .unsold-qty-badge.low { background: var(--accent); color: #0a0e13; }
+  .unsold-qty-badge.three { background: var(--line-2); color: var(--txt-2); }
+  .unsold-price {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--txt-2); text-align: right;
+    min-width: 90px;
+  }
+  .unsold-rev {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--txt-3); text-align: right;
+    min-width: 80px;
+  }
+
+  @media (max-width: 1100px) {
+    .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+    .row-2, .row-2-eq { grid-template-columns: 1fr; }
+    .cat-grid { grid-template-columns: 1fr; }
+    .w-compare-grid { grid-template-columns: repeat(3, 1fr); }
+    svg.wave-chart { height: 240px; }
+    svg.matrix { height: 320px; }
+    .hero-roi { position: static; transform: none; margin-top: 16px; text-align: left; }
+    .hero-sub { max-width: 100%; }
+    .brand-rank-item { 
+      grid-template-columns: 24px 1fr 90px;
+      gap: 10px;
+      padding: 8px;
+    }
+    .br-pct { display: none; }
+    .br-rev { font-size: 12px; }
+    .br-name { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
-<h1>GT GEAR × 더현대 팝업 — 브랜드 집기 배치도</h1>
-<div class="meta">부천 현대 중동 유플렉스 04/17 오픈 기준 · 전 브랜드 아일랜드 평대 1,600×900mm · 탑뷰</div>
-<div class="tabs" id="tabs"></div>
-<div id="sects"></div>
-<script>
-const COLORS = {
-  amber:{bg:'#FAEEDA',bd:'#BA7517',th:'#412402',ts:'#633806'},
-  coral:{bg:'#FAECE7',bd:'#D85A30',th:'#4A1B0C',ts:'#712B13'},
-  teal: {bg:'#E1F5EE',bd:'#1D9E75',th:'#085041',ts:'#0F6E56'},
-  purple:{bg:'#EEEDFE',bd:'#7F77DD',th:'#26215C',ts:'#3C3489'},
-  blue: {bg:'#E6F1FB',bd:'#378ADD',th:'#042C53',ts:'#185FA5'},
-  green:{bg:'#EAF3DE',bd:'#639922',th:'#173404',ts:'#27500A'},
-  gray: {bg:'#F1EFE8',bd:'#888780',th:'#2C2C2A',ts:'#5F5E5A'},
-  pink: {bg:'#FBEAF0',bd:'#D4537E',th:'#4B1528',ts:'#72243E'},
-  red:  {bg:'#FDECEA',bd:'#C0392B',th:'#4A0E09',ts:'#7B1E18'},
-};
-const BRANDS = [
-// ══════════════════════════════════
-// 🔴 Razer — 아일랜드 평대 1대
-// ══════════════════════════════════
-{id:'razer', label:'🔴 Razer', info:'아일랜드 평대 1대 · 24종 · 부천 현백 최종 리스트', fixtures:[
-  { name:'평대 — 마우스 · 키보드 · EVA-02 · 헤드셋 · 컨트롤러',
-    sub:'1,600×900mm · 앞줄(패드/헤드셋) → 중간줄(마우스/EVA-02/컨트롤러) → 뒷줄(키보드 히어로)',
-    rows:[
-      [
-        {col:'teal',label:'앞줄 A',sub:'Gigantus V2 Pro L 패드 4종 평면 진열',items:[
-          {t:'Gigantus V2 Pro L Balance / Control',d:'패드 2종 · 평면 펼침 진열'},
-          {t:'Gigantus V2 Pro L Max Control / Speed',d:'패드 2종 · 평면 펼침 진열'},
-        ]},
-        {col:'coral',label:'앞줄 B',sub:'EVA-02 콜라보 패드 + 마우스 + 키보드',items:[
-          {t:'Gigantus V2 XXL EVA-02',d:'에반게리온 콜라보 패드 · 평면 펼침 연출'},
-          {t:'Viper V3 Pro EVA-02',d:'에반게리온 2호기 콜라보 마우스'},
-          {t:'BlackWidow V4 TKL HyperSpeed EVA-02',d:'에반게리온 2호기 콜라보 키보드'},
-        ]},
-        {col:'gray',label:'앞줄 C',sub:'헤드셋 4종 박스 진열',items:[
-          {t:'BlackShark V3 X HyperSpeed for Xbox BK/WH',d:'무선 헤드셋 2종'},
-          {t:'BlackShark V3 Pro for Xbox BK/WH',d:'프리미엄 무선 헤드셋 2종'},
-        ]},
-      ],
-      [
-        {col:'teal',label:'중간 A',sub:'마우스 주력 라인업',items:[
-          {t:'Viper V4 Pro Black / White',d:'무선 · 8K 폴링레이트'},
-          {t:'DeathAdder V4 Pro Black / White',d:'무선 마우스 2종'},
-          {t:'Pro Click V2 Vertical',d:'버티컬 마우스 · 인체공학'},
-          {t:'Viper V3 Pro SE',d:'특별 에디션 마우스'},
-        ]},
-        {col:'purple',label:'중간 B',sub:'컨트롤러 박스 진열',items:[
-          {t:'Wolverine V3 Pro 8K PC · Tournament Edition 8K PC',d:'PC 게임패드 2종 · 8,000Hz 지원'},
-          {t:'Raiju V3 Pro Black / White',d:'PS5 공식 인증 컨트롤러 2종'},
-        ]},
-        {col:'blue',label:'중간 C',sub:'키보드 히어로 라인업',items:[
-          {t:'Huntsman V3 Pro 8KHz TKL KR',d:'유선 TKL · 아날로그 광학스위치'},
-          {t:'Huntsman V3 Pro 8KHz KR',d:'풀배열 · 아날로그 광학스위치'},
-        ]},
-      ],
-      [
-        {col:'blue',label:'뒷줄 A',sub:'Huntsman V3 Pro 히어로',items:[
-          {t:'Huntsman V3 Pro 8KHz KR ★',d:'풀배열 · 최고가 키보드 히어로'},
-          {t:'Huntsman V3 Pro 8KHz TKL KR',d:'TKL · 아날로그 광학스위치'},
-        ]},
-        {col:'blue',label:'뒷줄 B ★',sub:'Pro Type Ergo 단독 히어로',items:[
-          {t:'Razer Pro Type Ergo',d:'무선 인체공학 키보드 · 단독 히어로 연출'},
-        ]},
-        {col:'gray',label:'뒷줄 C',sub:'구매 증정 안내',items:[
-          {t:'Viper V4 Pro / DeathAdder V4 Pro 구매 → 마우스 파우치 증정',d:'증정품 별도 진열'},
-          {t:'구매 시 레이저 쇼핑백 증정',d:'전 제품 적용'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: V2 Pro L 패드 4종 + EVA-02 콜라보 3종 + 헤드셋 4종 → 중간줄: 마우스 7종 + 컨트롤러 4종 + Huntsman 키보드 → 뒷줄: Huntsman 히어로 + Pro Type Ergo ★ 단독',
-  },
-]},
-// ══════════════════════════════════
-// 🟡 Pulsar — 아일랜드 평대 2대
-// ══════════════════════════════════
-{id:'pulsar', label:'🟡 Pulsar', info:'아일랜드 평대 2대 · 42종 · 부천 현백 기준 (엑셀 위치도 반영)', fixtures:[
-  { name:'평대 A — CrazyLight 마우스 (구역 1~6)',
-    sub:'1,600×900mm · 앞줄(1·2·3) / 뒷줄(4·5·6) · 3열 × 2행 · 패드 위에 마우스 올리기',
-    rows:[
-      // ── 앞줄: 구역1 | 구역2 | 구역3 ──
-      [
-        {col:'amber',label:'앞줄 A · 구역 1',sub:'X2 CrazyLight 3종 + 커스텀 유리패드',items:[
-          {t:'X2 CrazyLight Sunset Haze',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'X2 CrazyLight Volt Shadow',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'X2 CrazyLight Aqua Zest',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
-        ]},
-        {col:'amber',label:'앞줄 B · 구역 2',sub:'Xlite 2종 + X2 Seoul ED + ParaControl v2 Red',items:[
-          {t:'Xlite CrazyLight Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'Xlite CrazyLight Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'X2 CrazyLight Seoul ED',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'ParaControl v2 Mouse Pad XL Red (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
-        ]},
-        {col:'blue',label:'앞줄 C · 구역 3 ★',sub:'BlueArchive 콜라보 3종 + ParaControl v2 Black',items:[
-          {t:'X2 CrazyLight Medium BlueArchive Hoshino',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'X2 CrazyLight Medium BlueArchive Shiroko',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'X2 CrazyLight Medium BlueArchive Nonomi',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'ParaControl v2 Mouse Pad XL Black (490×420)',d:'24,000원 · 30% 할인 · 16,800원'},
-        ]},
-      ],
-      // ── 뒷줄: 구역4 | 구역5 | 구역6 ──
-      [
-        {col:'coral',label:'뒷줄 A · 구역 4',sub:'T1 ED × 2 + PRX ED × 1 + 커스텀 유리패드',items:[
-          {t:'X2 CrazyLight T1 ED Black',d:'159,000원 · 10% 할인 · 143,100원'},
-          {t:'X2 CrazyLight T1 ED Red',d:'159,000원 · 10% 할인 · 143,100원'},
-          {t:'X2 CrazyLight PRX ED',d:'159,000원 · 10% 할인 · 143,100원'},
-          {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
-        ]},
-        {col:'amber',label:'뒷줄 B · 구역 5',sub:'X2N 3종 + ParaGlide XL Orange',items:[
-          {t:'X2N CrazyLight Mini Jet Black',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'X2N CrazyLight Mini Uyuni White',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'X2N CrazyLight Mini Wildscape Ocean',d:'149,000원 · 30% 할인 · 104,300원'},
-          {t:'ParaGlide Mouse Pad XL Orange',d:'24,000원 · 30% 할인 · 16,800원'},
-        ]},
-        {col:'coral',label:'뒷줄 C · 구역 6',sub:'한정 에디션 3종 + ParaGlide XL Black',items:[
-          {t:'X2H CrazyLight BadSeedTech ED',d:'159,000원 · 10% 할인 · 143,100원'},
-          {t:'X2 CrazyLight Boardzy ED',d:'159,000원 · 10% 할인 · 143,100원'},
-          {t:'X2 CrazyLight Bruce Lee 85th ED',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'ParaGlide Mouse Pad XL Black',d:'24,000원 · 30% 할인 · 16,800원'},
-        ]},
-      ],
-    ],
-    guide:'앞줄 A(구역1 · X2 CL) / 앞줄 B(구역2 · Xlite·Seoul) / 앞줄 C(구역3 · BlueArchive ★) → 뒷줄 A(구역4 · T1·PRX) / 뒷줄 B(구역5 · X2N) / 뒷줄 C(구역6 · 한정 에디션)',
-  },
-  { name:'평대 B — 프로 시그니처 · 키보드 · 액세서리 (구역 7~12)',
-    sub:'1,600×900mm · 앞줄(7·8·9) / 뒷줄(10·11·12) · 3열 × 2행',
-    rows:[
-      // ── 앞줄: 구역7 | 구역8 | 구역9 ──
-      [
-        {col:'teal',label:'앞줄 A · 구역 7 ★',sub:'프로 시그니처 3종 + 커스텀 유리패드',items:[
-          {t:'Susanto-X Medium Black',d:'169,000원 · 10% 할인 · 선수 POP 카드 필수'},
-          {t:'TenZ Signature Edition',d:'169,000원 · 10% 할인 · 선수 POP 카드 필수'},
-          {t:'ZYWOO the Chosen Mini White',d:'189,000원 · 10% 할인 · 선수 POP 카드 필수'},
-          {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
-        ]},
-        {col:'gray',label:'앞줄 B · 구역 8',sub:'액세서리 범용 (Dot Skates · Superglide · Supergrip)',items:[
-          {t:'UHMW-PE Dot Skates',d:'8,900원 · 30% 할인 · 6,230원'},
-          {t:'Superglide for Universal White (6mm+9mm)',d:'24,800원 · 30% 할인 · 17,360원'},
-          {t:'Superglide Type-C for Universal White',d:'24,800원 · 30% 할인 · 17,360원'},
-          {t:'Supergrip Pre-Cut Universal 1 · 2',d:'각 9,400원 · 30% 할인 · 6,580원'},
-        ]},
-        {col:'teal',label:'앞줄 C · 구역 9',sub:'Lab.X2F + eS FS-1 + superglide White',items:[
-          {t:'Lab.X2F Mini Black',d:'169,000원 · 10% 할인 · 152,100원'},
-          {t:'eS FS-1 Pulsar eS Blue',d:'230,000원 · 10% 할인 · 207,000원'},
-          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
-        ]},
-      ],
-      // ── 뒷줄: 구역10 | 구역11 | 구역12 ──
-      [
-        {col:'gray',label:'뒷줄 A · 구역 10',sub:'팔토시 4종 + 커스텀 유리패드',items:[
-          {t:'Arm Sleeve Long M White',d:'14,800원 · 30% 할인 · 10,360원'},
-          {t:'Arm Sleeve Long L Black',d:'14,800원 · 30% 할인 · 10,360원'},
-          {t:'Open Palm Long M White',d:'19,800원 · 30% 할인 · 13,860원'},
-          {t:'Open Palm Long L Black',d:'19,800원 · 30% 할인 · 13,860원'},
-          {t:'커스텀 유리패드 디스플레이',d:'superglide Pad 전시용 배치'},
-        ]},
-        {col:'blue',label:'뒷줄 B · 구역 11',sub:'PCMK 3 HE TKL + superglide Red',items:[
-          {t:'PCMK 3 HE TKL White ANSI',d:'239,000원 · 30% 할인 · 167,300원 · HE 자석스위치 · Rapid Trigger'},
-          {t:'superglide Pad v3 XL Red Type-S',d:'119,000원 · 30% 할인 · 83,300원 · PCMK 옆 배치'},
-        ]},
-        {col:'blue',label:'뒷줄 C · 구역 12 ★',sub:'eS HE 70 + superglide Green + White',items:[
-          {t:'eS HE 70 ANSI Black',d:'289,000원 · 30% 할인 · 202,300원 · Hall Effect 8K · 최고가 히어로'},
-          {t:'superglide Pad v3 XL Green Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
-          {t:'superglide Pad v3 XL White Type-S',d:'119,000원 · 30% 할인 · 83,300원'},
-        ]},
-      ],
-    ],
-    guide:'앞줄 A(구역7 · 프로 시그니처 ★) / 앞줄 B(구역8 · 액세서리) / 앞줄 C(구역9 · X2F·FS-1) → 뒷줄 A(구역10 · 팔토시) / 뒷줄 B(구역11 · PCMK) / 뒷줄 C(구역12 · eS HE 70 ★)',
-  },
-]},
-// ══════════════════════════════════
-// 🟢 Groovestone — 아일랜드 평대 1대
-// ══════════════════════════════════
-{id:'groovestone', label:'🟢 Groovestone', info:'아일랜드 평대 1대 · 8종 · 참여확정', fixtures:[
-  { name:'평대 — 수제윤활 컬러 에디션 · 입문~프리미엄',
-    sub:'1,600×900mm · 컬러별 좌→우 그라데이션 배치 · 앞줄(비교 체험) → 뒷줄(히어로)',
-    rows:[
-      [
-        {col:'green',label:'앞줄 A',sub:'애플라떼 — 38g vs 45g 비교',items:[
-          {t:'GV10 수제윤활 애플라떼 45g',d:'밀키S축 저소음 · 129,000원'},
-          {t:'GV10 수제윤활 애플라떼 38g',d:'밀키S축 저소음 · 129,000원'},
-        ]},
-        {col:'amber',label:'앞줄 B',sub:'따뜻한크레용 — 38g vs 45g 비교',items:[
-          {t:'GV10 수제윤활 따뜻한크레용 45g',d:'밀키S축 저소음 · 129,000원'},
-          {t:'GV10 수제윤활 따뜻한크레용 38g',d:'밀키S축 저소음 · 129,000원'},
-        ]},
-        {col:'pink',label:'앞줄 C',sub:'젤리냥 — 38g vs 45g 비교',items:[
-          {t:'GV10 수제윤활 젤리냥 45g',d:'밀키S축 저소음 · 134,000원'},
-          {t:'GV10 수제윤활 젤리냥 38g',d:'밀키S축 저소음 · 134,000원'},
-        ]},
-      ],
-      [
-        {col:'gray',label:'중간 A',sub:'입문 라인 — GS10R',items:[
-          {t:'GS10R 표준윤활 띠아모',d:'하늬축 저소음 · 79,000원 · 입문 포지션'},
-        ]},
-        {col:'gray',label:'중간 B',sub:'비교 체험 안내 POP',items:[
-          {t:'38g vs 45g 타건감 비교 체험존',d:'키보드 직접 눌러볼 수 있도록 설치'},
-        ]},
-        {col:'teal',label:'중간 C',sub:'프리미엄 — 8K 라인',items:[
-          {t:'GV10M-8K 수제윤활 따뜻한크레용',d:'밀키축 38g · 8,000Hz · 159,000원'},
-        ]},
-      ],
-      [
-        {col:'green',label:'뒷줄 A',sub:'애플라떼 히어로 연출',items:[
-          {t:'GV10 수제윤활 애플라떼 — 대표 색상',d:'조명 아래 컬러 강조 연출'},
-        ]},
-        {col:'amber',label:'뒷줄 B ★',sub:'따뜻한크레용 8K 히어로',items:[
-          {t:'GV10M-8K 수제윤활 따뜻한크레용',d:'최고 프리미엄 · 159,000원 · 단독 히어로'},
-        ]},
-        {col:'pink',label:'뒷줄 C',sub:'젤리냥 히어로 연출',items:[
-          {t:'GV10 수제윤활 젤리냥 — 대표 색상',d:'핑크 컬러 포인트 강조'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: 3컬러 × 38g·45g 비교 체험 진열 → 중간줄: 입문(GS10R)·체험안내·8K 프리미엄 → 뒷줄: 컬러별 히어로 + 8K 단독 강조',
-  },
-]},
-// ══════════════════════════════════
-// 🌿 Epomaker · Kiboom · Cherry — 아일랜드 평대 2대
-// ══════════════════════════════════
-{id:'epo', label:'🌿 Epo·Kiboom·Cherry', info:'아일랜드 평대 2대 · 43종 · 에포메이커코리아', fixtures:[
-  { name:'평대 A — Kiboom (좌) + Cherry (우)',
-    sub:'1,600×900mm · 좌: Kiboom 키보드·키캡 / 우: Cherry 키보드·마우스·패드',
-    rows:[
-      [
-        {col:'purple',label:'앞줄 A',sub:'Kiboom 키캡 · 소품',items:[
-          {t:'Cosydiaries 개구리 키캡 세트',d:'43,900원 · MX 호환 · 평면 진열'},
-        ]},
-        {col:'coral',label:'앞줄 B',sub:'Cherry 마우스 · 패드 · 콤보',items:[
-          {t:'MW5500 무선 화이트/블루/레드',d:'마우스 3종 · 89,000원'},
-          {t:'DW 2380 콤보 핑크/그린/화이트',d:'무선 키마 세트 · 31,900원'},
-          {t:'GP6 마우스패드 블랙/레드',d:'460×400×4mm · 26,900원'},
-        ]},
-        {col:'gray',label:'앞줄 C',sub:'POP 카드 · 안내물',items:[
-          {t:'Kiboom vs Cherry 브랜드 비교 POP',d:'존 구분 안내 카드'},
-        ]},
-      ],
-      [
-        {col:'purple',label:'중간 A',sub:'Kiboom 팬텀 81 라이트',items:[
-          {t:'팬텀 81 라이트 BK / 민트 / 그린',d:'75% 유무선 · 149,000원'},
-          {t:'팬텀 81 V3 아크릴 투명 / 핑크',d:'75% 유무선 · 259,000원'},
-        ]},
-        {col:'coral',label:'중간 B',sub:'Cherry MX 8.2 / K 시리즈',items:[
-          {t:'MX 8.2 PRO TMR TKL 3종',d:'TMR자석 8K · 249~280,000원'},
-          {t:'MX 10.1 무선 8K 4종',d:'풀배열 무선 8K · 다양한 배열'},
-          {t:'K5 PRO · K37',d:'54,000~134,000원 · 보급형'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'체험 키보드 연결',items:[
-          {t:'타건 체험용 키보드 2대 설치',d:'Kiboom / Cherry 각 1대 체험 가능'},
-        ]},
-      ],
-      [
-        {col:'purple',label:'뒷줄 A ★',sub:'Kiboom 팬텀 98 히어로',items:[
-          {t:'팬텀 98 아크릴 BK/투명/핑크/보라',d:'98K 유무선 · 299,000원 · 최고가 히어로'},
-        ]},
-        {col:'coral',label:'뒷줄 B ★',sub:'Cherry MX 8.3 TKL 8K 히어로',items:[
-          {t:'MX 8.3 TKL 8K 무선 실버/핑크',d:'TKL · 369,000원 · 마패 증정 · 최고가 히어로'},
-        ]},
-        {col:'gray',label:'뒷줄 C',sub:'증정품 안내',items:[
-          {t:'Cherry MX 8.3 TKL 구매 → 마패 증정',d:'증정품 별도 진열 안내'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: Kiboom 키캡 소품 + Cherry 마우스·패드 → 중간줄: 각 브랜드 중급 키보드 체험 → 뒷줄: 팬텀98·MX8.3 프리미엄 히어로',
-  },
-  { name:'평대 B — Epomaker 팜레스트 · 키캡',
-    sub:'1,600×900mm · 팜레스트 컬러 비교 + 키캡 교체 체험존',
-    rows:[
-      [
-        {col:'teal',label:'앞줄 A',sub:'나비 젤리 키캡 평면 진열',items:[
-          {t:'나비 젤리 키캡 화이트/핑크/블루',d:'PBT 젤리 소재 · 29,900원 · 평면 진열'},
-        ]},
-        {col:'teal',label:'앞줄 B',sub:'이지스실 실리콘 키캡',items:[
-          {t:'이지스실 실리콘 WHITE / BLUE',d:'실리콘 키캡 · 39,900원 · MX 호환'},
-          {t:'이지스실 실리콘 PURPLE / PINK',d:'실리콘 키캡 · 39,900원'},
-        ]},
-        {col:'gray',label:'앞줄 C',sub:'키캡 교체 체험 안내',items:[
-          {t:'키캡 교체 체험용 키보드 1대',d:'직접 끼워보는 체험존'},
-        ]},
-      ],
-      [
-        {col:'teal',label:'중간 A',sub:'팜레스트 — 투명/그린/핑크',items:[
-          {t:'구름젤 팜레스트 투명',d:'메모리폼 젤 소재 · 34,900원'},
-          {t:'구름젤 팜레스트 그린 / 핑크',d:'34,900원'},
-        ]},
-        {col:'teal',label:'중간 B',sub:'팜레스트 — 블루/퍼플',items:[
-          {t:'구름젤 팜레스트 블루 / 퍼플',d:'34,900원 · 5컬러 전체 비교 진열'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'컬러 비교 체험',items:[
-          {t:'5컬러 팜레스트 나란히 비교 진열',d:'손목 올려보기 체험 가능'},
-        ]},
-      ],
-      [
-        {col:'teal',label:'뒷줄 A',sub:'팜레스트 히어로 연출',items:[
-          {t:'구름젤 팜레스트 5컬러 전시',d:'조명 아래 젤 소재 투명도 강조'},
-        ]},
-        {col:'teal',label:'뒷줄 B',sub:'키캡 히어로 연출',items:[
-          {t:'이지스실 실리콘 키캡 교체 키보드',d:'완성 키보드 비주얼 연출'},
-        ]},
-        {col:'gray',label:'뒷줄 C',sub:'브랜드 POP',items:[
-          {t:'Epomaker 브랜드 소개 POP 카드',d:'팜레스트·키캡 특징 안내'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: 키캡 소품 평면 진열 + 체험 키보드 → 중간줄: 팜레스트 5컬러 비교 진열 → 뒷줄: 팜레스트·키캡 히어로 연출',
-  },
-]},
-// ══════════════════════════════════
-// 🟣 키케이션 — 아일랜드 평대 2대
-// ══════════════════════════════════
-{id:'keycation', label:'🟣 키케이션', info:'아일랜드 평대 2대 · 108종+ · 키링·테마키캡·1u포인트', fixtures:[
-  { name:'평대 A — 키링 · 1u 포인트 · 계단 디피 키보드',
-    sub:'1,600×900mm · 앞줄(키링 소품) → 중간줄(1u 포인트) → 뒷줄(키보드 히어로)',
-    rows:[
-      [
-        {col:'purple',label:'앞줄 A',sub:'키링 소품 — 바스켓형',items:[
-          {t:'1구·2구·3구·4구 키링',d:'4종 · 바스켓형 진열 · 손에 닿기 쉬운 위치'},
-          {t:'카일청 · 카일백 키링',d:'2종 · 소형 액세서리'},
-        ]},
-        {col:'purple',label:'앞줄 B',sub:'바나나 키링 포인트',items:[
-          {t:'바나나 키링 핑크 ⭐',d:'포인트 컬러 · 단독 강조 진열'},
-        ]},
-        {col:'gray',label:'앞줄 C',sub:'1u 포인트 키캡 (우측 앞)',items:[
-          {t:'1u 포인트 키캡 9종',d:'2구역 · 우측 앞 열 진열'},
-        ]},
-      ],
-      [
-        {col:'gray',label:'중간 A',sub:'1u 포인트 키캡 (좌)',items:[
-          {t:'1u 포인트 키캡 9종 × 2구역',d:'좌측 중간 진열'},
-        ]},
-        {col:'purple',label:'중간 B',sub:'계단 디피 (중앙)',items:[
-          {t:'포인트 키보드 · 넘버패드',d:'계단 디피 히어로 배치 · 중앙 강조'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'1u 포인트 키캡 (우)',items:[
-          {t:'1u 포인트 키캡 9종 × 2구역',d:'우측 중간 진열'},
-        ]},
-      ],
-      [
-        {col:'purple',label:'뒷줄 A',sub:'입체포인트 계단 디피 ★',items:[
-          {t:'계단 디피 키보드 히어로',d:'가장 눈에 띄는 뒷줄 중앙 배치'},
-        ]},
-        {col:'gray',label:'뒷줄 B',sub:'1u 포인트 전체 디스플레이',items:[
-          {t:'1u 포인트 키캡 9종 전 컬러',d:'뒷줄 진열 · 컬러 그라데이션'},
-        ]},
-        {col:'gray',label:'뒷줄 C',sub:'브랜드 POP',items:[
-          {t:'키케이션 브랜드 소개 POP',d:'1u 포인트·키링 특징 안내'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: 키링 소품 바스켓(손에 닿기 쉬운 위치) + 1u 포인트 → 중간줄: 계단 디피 중앙 히어로 + 양측 1u → 뒷줄: 키보드 히어로 강조',
-  },
-  { name:'평대 B — 테마 키캡 · 1u 포인트 · 윤활키링',
-    sub:'1,600×900mm · 인기 테마 키캡 뒷줄 히어로 · 윤활키링 앞줄 소품',
-    rows:[
-      [
-        {col:'gray',label:'앞줄 A',sub:'윤활키링 소품 바스켓',items:[
-          {t:'윤활키링 7종',d:'바스켓형 진열 · 앞줄 접근 용이'},
-        ]},
-        {col:'gray',label:'앞줄 B',sub:'1u 포인트 키캡 (앞)',items:[
-          {t:'1u 포인트 키캡 9종 × 2구역',d:'앞줄 중앙 진열'},
-        ]},
-        {col:'gray',label:'앞줄 C',sub:'1u 포인트 키캡 (우앞)',items:[
-          {t:'1u 포인트 키캡 9종 × 2구역',d:'앞줄 우측 진열'},
-        ]},
-      ],
-      [
-        {col:'purple',label:'중간 A',sub:'인기 테마 키캡 1열',items:[
-          {t:'삼냥이 · 크림멍멍 · 퍼플수국 · 2D퍼플',d:'인기 테마 키캡 4종 · 중간 좌'},
-        ]},
-        {col:'purple',label:'중간 B',sub:'인기 테마 키캡 2열',items:[
-          {t:'한국의방 블랙골드 · 호작도',d:'테마 키캡 2종'},
-          {t:'애플 · 세포라 누디',d:'테마 키캡 2종'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'1u 포인트 (중앙우)',items:[
-          {t:'1u 포인트 키캡 9종 × 2구역',d:'중간 우측 진열'},
-        ]},
-      ],
-      [
-        {col:'purple',label:'뒷줄 A ★',sub:'테마 키캡 히어로 1',items:[
-          {t:'삼냥이 · 퍼플수국 — 베스트셀러',d:'가장 인기 테마 키캡 단독 강조'},
-        ]},
-        {col:'purple',label:'뒷줄 B ★',sub:'테마 키캡 히어로 2',items:[
-          {t:'한국의방 블랙골드 · 호작도',d:'아트워크 강조 테마 키캡 히어로'},
-        ]},
-        {col:'gray',label:'뒷줄 C',sub:'브랜드 POP',items:[
-          {t:'테마 키캡 컬렉션 안내 POP',d:'아트워크 설명 · 구매 포인트'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: 윤활키링 바스켓 + 1u 포인트 → 중간줄: 테마 키캡 8종 전체 진열 → 뒷줄: 베스트셀러 테마 키캡 히어로 강조',
-  },
-]},
-// ══════════════════════════════════
-// 🔴 ABKO · COX · Chilkey — 아일랜드 평대 2대
-// ══════════════════════════════════
-{id:'abko', label:'🔴 ABKO · COX · Chilkey', info:'아일랜드 평대 2대 · 25종 (Chilkey 9 · ABKO 14 · COX 2) · 부천 현백 기준', fixtures:[
-  { name:'평대 A — Chilkey + ABKO 프리미엄 라인 + COX',
-    sub:'1,600×900mm · 앞줄(TKL·A108K·COX) → 중간줄(ND104 컬러별) → 뒷줄(AF108PRO 독거미 콜라보 ★)',
-    rows:[
-      [
-        {col:'teal',label:'앞줄 A',sub:'Chilkey ND TKL Flex Cut 1.2mm (3종)',items:[
-          {t:'ND TKL Tri-mode · Milky Green',d:'1.2mm Flex Cut · 유무선 · 가스켓 마운트'},
-          {t:'ND TKL Tri-mode · Pure White',d:'1.2mm Flex Cut · 유무선 · 가스켓 마운트'},
-          {t:'ND TKL Tri-mode · Sky Blue',d:'1.2mm Flex Cut · 유무선 · 가스켓 마운트'},
-        ]},
-        {col:'blue',label:'앞줄 B',sub:'ABKO A108K 유무선 BT 퀵스왑 (3종)',items:[
-          {t:'A108K 마일드블루 — 맘모스 스위치',d:'104키 · Tri-mode BT · 핫스왑'},
-          {t:'A108K 피오니 — 맘모스 스위치',d:'104키 · Tri-mode BT · 핫스왑'},
-          {t:'A108K 피오니 — Bsun 벚꽃 (Silent)',d:'104키 · Tri-mode BT · 저소음'},
-        ]},
-        {col:'coral',label:'앞줄 C',sub:'COX CS108 유무선 BT 퀵스왑 (2종)',items:[
-          {t:'CS108 소프트스카이 — 맘모스 스위치',d:'108키 · Tri-mode BT · 핫스왑'},
-          {t:'CS108 소프트스카이 — Bsun 벚꽃 (Silent)',d:'108키 · Tri-mode BT · 저소음'},
-        ]},
-      ],
-      [
-        {col:'amber',label:'중간 A',sub:'Chilkey ND104 Lumen Yellow × 2스위치',items:[
-          {t:'ND104 Lumen Yellow — BREEZE',d:'1.6mm Non-Flex Cut · Tri-mode · 선형 타건감'},
-          {t:'ND104 Lumen Yellow — WS Silent Linear',d:'1.6mm Non-Flex Cut · Tri-mode · 저소음'},
-        ]},
-        {col:'gray',label:'중간 B ★',sub:'Chilkey ND104 Shadow Black × 2스위치 — 히어로',items:[
-          {t:'ND104 Shadow Black — BREEZE',d:'1.6mm Non-Flex Cut · Tri-mode · 플래그십'},
-          {t:'ND104 Shadow Black — WS Silent Linear',d:'1.6mm Non-Flex Cut · Tri-mode · 저소음 최상위'},
-        ]},
-        {col:'pink',label:'중간 C',sub:'Chilkey ND104 Soft Pink × 2스위치',items:[
-          {t:'ND104 Soft Pink — BREEZE',d:'1.6mm Non-Flex Cut · Tri-mode · 파스텔'},
-          {t:'ND104 Soft Pink — WS Silent Linear',d:'1.6mm Non-Flex Cut · Tri-mode · 저소음'},
-        ]},
-      ],
-      [
-        {col:'red',label:'뒷줄 A ★',sub:'ABKO AF108PRO 독거미 콜라보 3종 — 히어로',items:[
-          {t:'AF108PRO 코랄블루 — KTT 저소음너울',d:'유무선 · 독거미 IP 콜라보 · 저소음 스위치'},
-          {t:'AF108PRO 코랄블루 — LEOBOG 세이야',d:'유무선 · 독거미 IP 콜라보 · 세이야 스위치'},
-          {t:'AF108PRO 코랄블루 — LEOBOG 소복눈',d:'유무선 · 독거미 IP 콜라보 · 소복눈 스위치'},
-        ]},
-        {col:'purple',label:'뒷줄 B',sub:'ABKO ACH105 오피스워커 (2종)',items:[
-          {t:'ACH105 라벤더 — HAIMU 바다소금 (저소음 택타일)',d:'104키 · Tri-mode BT · 핫스왑 · 라벤더'},
-          {t:'ACH105 엘리스블루 — HAIMU 바다소금 (저소음 택타일)',d:'104키 · Tri-mode BT · 핫스왑 · 블루'},
-        ]},
-        {col:'gray',label:'뒷줄 C',sub:'타건 체험 + 브랜드 POP',items:[
-          {t:'Chilkey ND104 타건 체험 키보드 1대',d:'BREEZE vs WS Silent 비교 체험 가능'},
-          {t:'ABKO AF108PRO 독거미 콜라보 POP 카드',d:'IP 스토리·스위치 특징 안내'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: Chilkey TKL 3컬러 + ABKO A108K 3종 + COX CS108 2종 → 중간줄: ND104 3컬러 × 2스위치 비교진열 → 뒷줄: 독거미 콜라보 AF108PRO ★ + ACH105 + 체험존',
-  },
-  { name:'평대 B — ABKO AS104 오피스네비게이터 (컬러·스위치 전 라인)',
-    sub:'1,600×900mm · 앞줄(3컬러 전 SKU) → 중간줄(체험·히어로) → 뒷줄(컬러 구역별 분리)',
-    rows:[
-      [
-        {col:'teal',label:'앞줄 A',sub:'AS104 기본컬러 — 딥사운드 vs 조약돌 (2종)',items:[
-          {t:'AS104 무소음 리니어 — deep sound',d:'104키 · Tri-mode BT · 핫스왑 · 딥사운드 스위치'},
-          {t:'AS104 조약돌 리니어 — pebble',d:'104키 · Tri-mode BT · 핫스왑 · 조약돌 스위치'},
-        ]},
-        {col:'gray',label:'앞줄 B',sub:'AS104 네온블랙 — 딥사운드 vs 조약돌 (2종)',items:[
-          {t:'AS104 딥사운드 스위치 — 네온블랙',d:'104키 · Tri-mode BT · 핫스왑 · 블랙 색상'},
-          {t:'AS104 조약돌 스위치 — 네온블랙',d:'104키 · Tri-mode BT · 핫스왑 · 블랙 색상'},
-        ]},
-        {col:'pink',label:'앞줄 C',sub:'AS104 핑크그레이 — 딥사운드 vs 조약돌 (2종)',items:[
-          {t:'AS104 딥사운드 스위치 — 핑크그레이',d:'104키 · Tri-mode BT · 핫스왑 · 핑크 색상'},
-          {t:'AS104 조약돌 스위치 — 핑크그레이',d:'104키 · Tri-mode BT · 핫스왑 · 핑크 색상'},
-        ]},
-      ],
-      [
-        {col:'teal',label:'중간 A',sub:'스위치 비교 체험존 (딥사운드 vs 조약돌)',items:[
-          {t:'딥사운드 (Deep Sound) 체험 키보드',d:'무소음 리니어 · 깊고 묵직한 타건감'},
-          {t:'조약돌 (Pebble) 체험 키보드',d:'저소음 리니어 · 부드럽고 가벼운 타건감'},
-        ]},
-        {col:'amber',label:'중간 B ★',sub:'AS104 히어로 — 베스트 컬러 강조',items:[
-          {t:'AS104 딥사운드_핑크그레이 ★ 히어로',d:'가장 인기 컬러+스위치 조합 · 단독 강조 연출'},
-          {t:'AS104 조약돌_네온블랙 ★ 히어로',d:'직관적 색상 대비 · 오피스 사용자 인기'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'오피스네비게이터 브랜드 POP',items:[
-          {t:'ABKO AS104 제품 특징 안내 POP',d:'퀵스왑·Tri-mode·BT5.0 기능 요약 카드'},
-          {t:'스위치 특성 비교표',d:'딥사운드 vs 조약돌 소음·타건감 비교 안내'},
-        ]},
-      ],
-      [
-        {col:'gray',label:'뒷줄 A',sub:'네온블랙 컬러 존 (2종)',items:[
-          {t:'AS104 딥사운드_네온블랙',d:'블랙 색상 · 딥사운드 스위치'},
-          {t:'AS104 조약돌_네온블랙',d:'블랙 색상 · 조약돌 스위치'},
-        ]},
-        {col:'pink',label:'뒷줄 B',sub:'핑크그레이 컬러 존 (2종)',items:[
-          {t:'AS104 딥사운드_핑크그레이',d:'핑크 색상 · 딥사운드 스위치'},
-          {t:'AS104 조약돌_핑크그레이',d:'핑크 색상 · 조약돌 스위치'},
-        ]},
-        {col:'teal',label:'뒷줄 C',sub:'기본컬러 + 가격 안내',items:[
-          {t:'AS104 딥사운드 기본 / 조약돌 기본',d:'화이트 계열 · 입문 모델'},
-          {t:'가격표 + 구매 안내 카드',d:'AS104 전 컬러·스위치 구성 한눈에 확인'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: 3컬러 × 2스위치 전 SKU 진열 → 중간줄: 딥사운드·조약돌 직접 체험 + 히어로 강조 → 뒷줄: 컬러별 구역 분리(네온블랙·핑크그레이·기본)',
-  },
-]},
-// ══════════════════════════════════
-// 🟠 주연테크 — 아일랜드 평대 1대
-// ══════════════════════════════════
-{id:'juyeon', label:'🟠 주연테크', info:'아일랜드 평대 1대 · 11종 (베스트 판매 순위 기준)', fixtures:[
-  { name:'평대 — 베스트 판매 11종 · 앞→뒤 판매순위 순 배치',
-    sub:'1,600×900mm · 앞줄(TKL 소형) → 중간줄(풀배열) → 뒷줄(프리미엄 히어로)',
-    rows:[
-      [
-        {col:'coral',label:'앞줄 A',sub:'GKG87 TKL ★1위 · ★2위',items:[
-          {t:'GKG87 뭉돌 WH ★1위',d:'TKL 유무선 · 54,900원'},
-          {t:'GKG87AQ MD ★2위',d:'TKL 유무선 · 마크다운 에디션 · 65,900원'},
-        ]},
-        {col:'coral',label:'앞줄 B',sub:'GKG87 TKL ★6위 · GK02 ★3위',items:[
-          {t:'GKG87 뭉돌 BK ★6위',d:'TKL 유무선 · 54,900원'},
-          {t:'GeekStar GK02 ★3위',d:'풀배열 저소음 · 21,900원 · 히어로'},
-        ]},
-        {col:'teal',label:'앞줄 C',sub:'포켓몬 장패드 세로 전시',items:[
-          {t:'포켓몬 장패드 뮤 / 피카츄',d:'2종 · 29,000원 · 세로 세워 전시'},
-        ]},
-      ],
-      [
-        {col:'coral',label:'중간 A',sub:'GKG108 풀배열 ★4위 · ★5위',items:[
-          {t:'GKG108AQ MD ★4위',d:'풀배열 유무선 · 75,900원'},
-          {t:'GKG108SS ★5위',d:'풀배열 유무선 · 79,900원'},
-        ]},
-        {col:'gray',label:'중간 B',sub:'GKG108 ★7위 · ★8위 · ★9위',items:[
-          {t:'GKG108 뭉돌 WH ★7위',d:'풀배열 유무선 · 89,000원'},
-          {t:'GKG108 저소음 WH ★8위',d:'풀배열 유무선 · 94,000원'},
-          {t:'GKG108 뭉돌 BK ★9위',d:'풀배열 유무선 · 89,000원'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'타건 체험',items:[
-          {t:'체험용 키보드 1대',d:'GKG108 계열 타건 체험 가능'},
-        ]},
-      ],
-      [
-        {col:'gray',label:'뒷줄 A',sub:'Epomaker TH99 PRO ★10위',items:[
-          {t:'TH99 PRO White Blue ★10위',d:'99K 유무선 · 139,000원 · ⚠️재고 소량(8개)'},
-        ]},
-        {col:'gray',label:'뒷줄 B ★',sub:'Epomaker TH108 ★11위 히어로',items:[
-          {t:'TH108 White Blue ★11위',d:'풀배열 유무선 · 119,000원 · 프리미엄 히어로'},
-        ]},
-        {col:'teal',label:'뒷줄 C',sub:'포켓몬 장패드 세로 전시',items:[
-          {t:'포켓몬 장패드 세로 연출',d:'평대 뒷줄 모서리 세워 전시 · 시각 포인트'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: TKL 소형 키보드(GKG87) + GK02 히어로 + 포켓몬패드 → 중간줄: GKG108 풀배열 9종 체험 → 뒷줄: Epomaker TH 프리미엄',
-  },
-]},
-// ══════════════════════════════════
-// 🎀 로이체 — 아일랜드 평대 1대 (v5 업데이트)
-// ══════════════════════════════════
-{id:'royche', label:'🎀 로이체', info:'아일랜드 평대 1대 · 80종+ · 캐릭터 IP 8종 (몬치치 신규)', fixtures:[
-  { name:'평대 — 1,600×900mm · 탑뷰 배치 (2026.04.03 업데이트)',
-    sub:'산리오·잔망루피·미피·스누피·조앤·BTS·다이노탱·몬치치⭐NEW · IP 핸디팬 전 캐릭터 · 아크릴 박스 통합존',
-    rows:[
-      [
-        {col:'pink',label:'앞줄 A',sub:'산리오 — 소품 평면',items:[
-          {t:'모니터 방향제 3종',d:'마이멜로디·쿠로미·시나모롤 · 평면 진열'},
-          {t:'키캡 키링 3종 ⭐NEW',d:'시나모롤·포차코·헬로키티 · 04/10↑ · ₩19,900'},
-        ]},
-        {col:'blue',label:'앞줄 B',sub:'잔망루피 — 패드 평면',items:[
-          {t:'마우스패드 · 손목쿠션패드',d:'평면 진열 · ₩5,400 / ₩11,900'},
-        ]},
-        {col:'amber',label:'앞줄 C',sub:'스누피·미피·몬치치 소품',items:[
-          {t:'스누피 마우스패드 2종',d:'바이올렛·베이지'},
-          {t:'미피 마우스패드 · 차량용방향제 2종',d:'미피·보리스 · ₩14,900'},
-          {t:'몬치치 마우스패드 ⭐NEW',d:'230×230mm · ₩9,900'},
-        ]},
-      ],
-      [
-        {col:'teal',label:'🔲 아크릴박스',sub:'레진 키캡 전종 + 전 캐릭터 피규어 통합 — 투명 아크릴 박스 1개',span:3,items:[
-          {t:'레진 포인트 키캡: 산리오 5종 · 잔망루피 2종 · 조앤 1종 (MX호환 · ₩22,900~26,900)',d:'아크릴 박스 내 진열'},
-          {t:'산리오 모니터피규어 4종 + 교복피규어 5종⭐(4/20↑) · 잔망루피 모니터피규어 6종',d:'캐릭터별 구역 분리'},
-          {t:'스누피 피규어 2종 · 미피 피규어 2종 · 조앤 모니터피규어 1종(4/10↑)',d:'₩6,900~₩22,800'},
-        ]},
-      ],
-      [
-        {col:'pink',label:'중간 A',sub:'산리오·잔망루피 박스',items:[
-          {t:'무소음 미니 탁상시계 3종',d:'쿠로미·시나모롤·헬로키티 · ₩17,900'},
-          {t:'헬로키티 BT 노래방 스피커',d:'BT5.4 · 5W · ₩52,900'},
-          {t:'잔망루피 멀티페어링·피규어 마우스',d:'₩24,900 / ₩27,900'},
-          {t:'잔망루피 탁상시계·BT스피커세트',d:'₩17,900 / ₩46,900'},
-        ]},
-        {col:'amber',label:'중간 B',sub:'스누피·미피·조앤·몬치치',items:[
-          {t:'스누피 무선 마우스 3종 · 피규어 마우스',d:'₩24,900 / ₩29,900'},
-          {t:'스누피 USB허브',d:'PD60W · ₩29,900'},
-          {t:'미피 멀티페어링 마우스·방향제',d:'₩26,900 / ₩19,900'},
-          {t:'조앤 마우스(4/8↑) · 탁상시계(4/10↑)',d:'₩28,000 / ₩53,800'},
-          {t:'몬치치 멀티페어링 마우스⭐(4/30↑)',d:'₩24,900'},
-        ]},
-        {col:'blue',label:'중간 C',sub:'잔망루피 BT 스피커류',items:[
-          {t:'2024 BT 스피커 마이크세트',d:'BT5.4 · 5W · ₩46,900'},
-          {t:'2023 BT 마이크 · 2023 BT 스피커',d:'₩39,900 / ₩36,900'},
-        ]},
-      ],
-      [
-        {col:'pink',label:'뒷줄 A',sub:'버티컬 마우스 라인업',items:[
-          {t:'산리오 버티컬 마우스 3종',d:'헬로키티·포차코·쿠로미 · ₩54,900'},
-          {t:'잔망루피 버티컬 마우스',d:'₩54,900'},
-          {t:'스누피 버티컬 마우스',d:'₩56,900'},
-        ]},
-        {col:'teal',label:'뒷줄 B 🌀',sub:'IP 핸디팬 전 캐릭터',items:[
-          {t:'산리오 핸디팬 4종 (4/10↑)',d:'쿠로미·시나모롤·포차코·헬로키티 · ₩29,900'},
-          {t:'베이비잔망루피·미피·스누피 핸디팬',d:'₩29,900 · 미피·스누피 입고완료'},
-          {t:'조앤 쿨링 핸디팬(4/7↑) · 몬치치 핸디팬⭐',d:'₩39,900 / ₩25,900'},
-          {t:'몬치치 데스크팬⭐(4/24↑)',d:'180도회전 · 100단계풍량 · ₩31,900'},
-        ]},
-        {col:'purple',label:'뒷줄 C ★',sub:'히어로 제품',items:[
-          {t:'BTS 기계식 키보드 ★',d:'98키 · Tri-mode · ₩129,000'},
-          {t:'조앤프렌즈 멀티페어링 키보드 ★⭐',d:'BT+무선 · 피규어포함 · ₩59,800 · 4/8↑'},
-          {t:'다이노탱 무선충전 무드등 ★',d:'15W QC3.0 · ₩44,900'},
-          {t:'조앤프렌즈 피규어 무드등 ★⭐(4/30↑)',d:'터치식·밝기조절 · ₩42,800'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: 마우스패드·방향제·키링 평면 → 아크릴박스: 레진키캡+전캐릭터피규어 통합 → 중간줄: 마우스·시계·스피커 → 뒷줄: 버티컬마우스 + IP핸디팬 전종 + BTS·조앤·다이노탱 히어로',
-  },
-]},
-// ══════════════════════════════════
-// ⚫ SteelSeries — 아일랜드 평대 1대
-// ══════════════════════════════════
-{id:'steelseries', label:'⚫ SteelSeries', info:'아일랜드 평대 1대 · 12종 · 헤드셋/키보드/마우스/패드', fixtures:[
-  { name:'평대 — 헤드셋 · 키보드 · 마우스 · 마우스패드 12종',
-    sub:'1,600×900mm · 앞줄(패드·마우스 소품) → 중간줄(헤드셋·키보드 체험) → 뒷줄(프리미엄 히어로)',
-    rows:[
-      [
-        {col:'gray',label:'앞줄 A',sub:'QcK 마우스패드 평면 진열',items:[
-          {t:'QcK Heavy Large',d:'스테디셀러 · 450×400×6mm · ₩42,400'},
-          {t:'QcK Heavy XXL 블랙/화이트',d:'스테디셀러 · 900×400×4mm · ₩52,400'},
-        ]},
-        {col:'gray',label:'앞줄 B',sub:'마우스 입문 라인',items:[
-          {t:'Prime Gaming Mouse',d:'유선 · 18000dpi/450ips/50G · 69g · ₩89,000'},
-          {t:'Rival 3 WL Gen 2 블랙/화이트',d:'무선 · 2.4GHz/BT · 18000dpi · 95g · ₩89,000'},
-        ]},
-        {col:'teal',label:'앞줄 C',sub:'Aerox 3 Wireless Gen 2 ⭐NEW',items:[
-          {t:'Aerox 3 Wireless Gen 2 블랙/화이트/마젠타',d:'⭐4월 신제품 · 4K폴링 · 26000dpi · IP54방수 · 68g · ₩149,000'},
-        ]},
-      ],
-      [
-        {col:'blue',label:'중간 A',sub:'Arctis GameBuds · Nova 5',items:[
-          {t:'Arctis GameBuds 블랙/화이트/오렌지',d:'게이밍 이어폰 · 2.4GHz/BT · ₩239,000'},
-          {t:'Arctis Nova 5 블랙/화이트',d:'헤드셋 스테디셀러 · ₩199,000'},
-        ]},
-        {col:'blue',label:'중간 B',sub:'Arctis Nova 7 Gen 2',items:[
-          {t:'Arctis Nova 7 Gen 2 블랙/화이트/마젠타',d:'2.4GHz+블루투스 동시재생 · ₩299,000'},
-        ]},
-        {col:'gray',label:'중간 C',sub:'Apex Pro TKL Gen 3 체험',items:[
-          {t:'Apex Pro TKL Gen 3 KR 블랙/화이트',d:'TKL · 자석축 래피드 트리거 · 3중흡음재 · ₩359,000'},
-        ]},
-      ],
-      [
-        {col:'gray',label:'뒷줄 A ★',sub:'Apex Pro Gen 3 풀사이즈 히어로',items:[
-          {t:'Apex Pro Gen 3 US 블랙',d:'풀사이즈 · 자석축 래피드 트리거 · 키 개별 윤활 · ₩399,000'},
-        ]},
-        {col:'gray',label:'뒷줄 B',sub:'QcK Pro Balance 세워 전시',items:[
-          {t:'QcK Pro Balance Large',d:'프리미엄 패드 · 490×420×3.5mm · 세워 전시 · ₩74,900'},
-        ]},
-        {col:'gray',label:'뒷줄 C ★',sub:'Arctis Nova Elite 최고가 히어로',items:[
-          {t:'Arctis Nova Elite 블랙/세이지&골드',d:'무선 Hi-Res 인증 · 프리미엄 최고가 · ₩979,000'},
-        ]},
-      ],
-    ],
-    guide:'앞줄: QcK 패드 평면 + 마우스 입문 + Aerox3 신제품 → 중간줄: 헤드셋 라인업 + TKL 키보드 체험 → 뒷줄: Apex Pro 풀배열·Nova Elite 프리미엄 히어로',
-  },
-]},
-]; // end BRANDS
 
-// ─── SVG 렌더링 ─────────────────────────────────────────────────
-function buildSVG(fx) {
-  const PAD=14,GAP=10,USABLE=660,TOTAL_W=680;
-  function rowZoneW(row){
-    const nonNull=row.filter(z=>z!==null);
-    const totalSpan=nonNull.reduce((s,z)=>(s+(z.span||1)),0);
-    return (USABLE-(totalSpan-1)*GAP-PAD*2)/totalSpan;
+<div class="container">
+
+  <!-- Header -->
+  <header class="header">
+    <div>
+      <h1>GT GEAR <em>부천중동 팝업</em> 14일 종합 매출</h1>
+      <div class="header-meta">
+        <strong>2026.04.17 ~ 04.30 (14일 마감)</strong> · 15개 매대 운영사 / 397 SKU · 매장 전체 통합 분석
+        <span class="verified-pill">✓ VERIFIED</span>
+        <span class="closing-pill">CLOSED</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO Banner -->
+  <div class="hero-banner">
+    <div class="hero-tag">▲ 14일 팝업 종합 마감 결과 · 매대 운영사 기준</div>
+    <div class="hero-headline">
+      14일간 총매출 <em>6,562만원</em> ·  
+      <em>3,849개</em> 판매 ·  
+      일평균 <em>469만원</em>
+    </div>
+    <div class="hero-sub">
+      주말(5일) 일평균 895만원 / 평일(9일) 일평균 298만원으로 <strong>주말이 평일의 3.0배</strong> 매출 견인.
+      매장 1위 매대는 <strong>키케이션 1,859만원 (28.3%)</strong>, 2위 <strong>로이체 1,292만원 (19.7%)</strong>, 3위 <strong>Keychron 1,039만원 (15.8%)</strong>.
+      매대 운영사 15개 / 397 SKU. IP·캐릭터(48.0%) + 키보드(37.4%)가 매장 매출의 85% 점유.
+    </div>
+    <div class="hero-roi">
+      <div class="hero-roi-label">14일 총매출</div>
+      <div class="hero-roi-val">6,562<small>만원</small></div>
+    </div>
+  </div>
+
+  <!-- KPI Strip -->
+  <div class="kpi-strip">
+    <div class="kpi-card good">
+      <div class="kpi-label">14일 총매출</div>
+      <div class="kpi-value">6,562<small>만원</small></div>
+      <div class="kpi-change">14일 누적 65,617,360원</div>
+    </div>
+    <div class="kpi-card info">
+      <div class="kpi-label">14일 총 수량</div>
+      <div class="kpi-value">3,849<small>개</small></div>
+      <div class="kpi-change">일평균 275개 / SKU 398종</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">일평균 매출</div>
+      <div class="kpi-value">469<small>만원/일</small></div>
+      <div class="kpi-change">매장 평균 객단가 17,000원</div>
+    </div>
+    <div class="kpi-card good">
+      <div class="kpi-label">주말 일평균 (5일)</div>
+      <div class="kpi-value">895<small>만원/일</small></div>
+      <div class="kpi-change up">▲ 평일 대비 3.0배</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">평일 일평균 (9일)</div>
+      <div class="kpi-value">298<small>만원/일</small></div>
+      <div class="kpi-change">최저 04.21(화) 203만원</div>
+    </div>
+  </div>
+
+  <!-- Daily Sales Wave -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">📈 14일 일자별 매출 추세 <small>· 주말 정점 패턴 + 평일 안정 매출</small></div>
+      <div style="display: flex; gap: 16px; font-size: 11px;">
+        <span style="color: var(--gold);">● 주말</span>
+        <span style="color: var(--info);">● 평일</span>
+      </div>
+    </div>
+    <div class="wave-wrapper">
+      <svg class="wave-chart" id="dailyWave" viewBox="0 0 1400 320" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="insight-card good" style="margin-top: 16px;">
+      <div class="insight-tag">▲ 추세 분석</div>
+      <strong>5번의 주말 정점</strong>이 매출 견인 — 04.18(토) 8.82M, 04.19(일) 8.58M, 04.25(토) 9.36M, 04.26(일) 9.04M, 04.30(목·마지막날) 4.09M.
+      W2 마지막 주말이 W1 첫 주말 대비 +6.1% 성장. <strong>04.30(목) 마감일 매출 4.09M</strong>는 마감 효과로 평일 평균(2.98M) 대비 +37%.
+    </div>
+  </section>
+
+  <!-- Brand Ranking + Category Groups -->
+  <div class="row row-2">
+    <section>
+      <div class="section-header">
+        <div class="section-title">🏆 15개 매대 운영사 매출 순위 <small>· 14일 누적 · 운영사(브랜드) 구조</small></div>
+      </div>
+      <div class="brand-rank-list" id="brandRankList"></div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-title">📦 카테고리 그룹 <small>· 매장 정체성</small></div>
+      </div>
+      <div class="cat-grid" style="grid-template-columns: 1fr;">
+        <div class="cat-card k1">
+          <div class="cat-name">🎀 IP·캐릭터/키링·키캡</div>
+          <div class="cat-stats">
+            <span class="cat-rev">3,151만원</span>
+            <span class="cat-pct">48.0% / 3,385개</span>
+          </div>
+          <div class="cat-detail">키케이션 + 로이체 (2개 운영사 / 266 SKU)</div>
+        </div>
+        <div class="cat-card k2">
+          <div class="cat-name">⌨️ 키보드</div>
+          <div class="cat-stats">
+            <span class="cat-rev">2,452만원</span>
+            <span class="cat-pct">37.4% / 320개</span>
+          </div>
+          <div class="cat-detail">Keychron · ABKO · 주연테크 · Razer · 키붐(팬텀) · COX · Chilkey · 제이웍스(체리·포메일) · 주연테크(에포메이커·한성) (9개 운영사)</div>
+        </div>
+        <div class="cat-card k4">
+          <div class="cat-name">🪑 액세서리/팜레스트</div>
+          <div class="cat-stats">
+            <span class="cat-rev">435만원</span>
+            <span class="cat-pct">6.6% / 68개</span>
+          </div>
+          <div class="cat-detail">그루브스톤 · 제이웍스(에포메이커: 구름젤+DW) (2개 운영사)</div>
+        </div>
+        <div class="cat-card k3">
+          <div class="cat-name">🖱 게이밍 마우스/패드</div>
+          <div class="cat-stats">
+            <span class="cat-rev">483만원</span>
+            <span class="cat-pct">7.4% / 75개</span>
+          </div>
+          <div class="cat-detail">Pulsar (1개 운영사)</div>
+        </div>
+        <div class="cat-card k5">
+          <div class="cat-name">🏎 레이싱</div>
+          <div class="cat-stats">
+            <span class="cat-rev">40만원</span>
+            <span class="cat-pct">0.6%</span>
+          </div>
+          <div class="cat-detail">MOZA (1개 운영사)</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Stacked Area: TOP 7 brands daily contribution -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">📊 TOP 7 브랜드 일자별 기여도 (Stacked Area) <small>· 매장 매출 구성 변화</small></div>
+    </div>
+    <div class="wave-wrapper">
+      <svg class="stacked-chart" id="stackedChart" viewBox="0 0 1400 360" preserveAspectRatio="none"></svg>
+    </div>
+    <div id="stackedLegend" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; justify-content: center;"></div>
+  </section>
+
+  <!-- W1 vs W2 Compare for top 7 -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">⚖️ W1 vs W2 브랜드별 일평균 매출 비교 <small>· W1=6일(04.17~22) / W2=8일(04.23~30)</small></div>
+    </div>
+    <div class="w-compare-grid" id="wCompareGrid"></div>
+    <div class="insight-card info" style="margin-top: 16px;">
+      <div class="insight-tag">⬢ 주차별 분석</div>
+      <strong>W1 누적 29.0M (6일 일평균 4.84M) → W2 누적 36.6M (8일 일평균 4.58M)</strong>.
+      W2가 일평균 약간 감소(-5.4%)했지만, 키케이션·로이체·Keychron 등 핵심 브랜드는 안정 유지. ABKO·COX·Chilkey 한국 키보드 3사가 W2 페이스 둔화로 전체 평균 끌어내림.
+    </div>
+  </section>
+
+  <!-- Performance Matrix -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">💎 객단가 × 매출 매트릭스 <small>· 매대 효율성 시각화</small></div>
+    </div>
+    <div class="matrix-wrap">
+      <svg class="matrix" id="matrixChart" viewBox="0 0 1400 380" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="insight-card gold" style="margin-top: 16px;">
+      <div class="insight-tag">▲ 매대 효율 인사이트</div>
+      <strong>4분면 분석</strong>: 우상단(고객단가+고매출)에는 Keychron(59K, 10.4M)과 로이체(25K, 12.9M)가 위치. 우하단(저객단가+고매출) 키케이션(6K, 17.4M)은 <strong>"수량으로 매장 활성화"</strong> 역할.
+      Razer(185K), 키붐(199K), 체리(265K) 등 초고가 라인은 좌상단 — <strong>매장 평균 객단가(17K) 대비 +10~16배 객단가</strong>로 매대 효율 압도적.
+    </div>
+  </section>
+
+  <!-- TOP 20 SKU -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">🏆 매장 전체 TOP 20 SKU <small>· 14일 누적</small></div>
+    </div>
+    <table class="top-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>단품명</th>
+          <th>브랜드</th>
+          <th class="num">단가</th>
+          <th class="num">수량</th>
+          <th class="num">매출</th>
+          <th class="num">매장 비중</th>
+        </tr>
+      </thead>
+      <tbody id="topSkuBody"></tbody>
+    </table>
+  </section>
+
+  <!-- 핵심 인사이트 -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">💡 매장 전체 핵심 인사이트 6가지</div>
+    </div>
+
+    <div class="insight-card good">
+      <div class="insight-tag">▲ STRUCTURAL 01</div>
+      <strong>이중 매출 구조 검증 — "캐릭터 + 키보드"</strong> —
+      IP·캐릭터(46.1%) + 키보드(37.1%) = 83% 점유. <strong>키케이션·로이체가 객수(트래픽) 만들고, Keychron 외 키보드 브랜드가 객단가 만든다</strong>는 매장 운영 가설 명확히 검증. 5월 판교에도 동일 구조 유지 권장.
+    </div>
+
+    <div class="insight-card gold">
+      <div class="insight-tag">▲ POSITIVE 01</div>
+      <strong>주말 = 평일 3.0배 매출 (895만원 vs 298만원)</strong> —
+      14일 매출의 <strong>68%가 주말 5일</strong>에서 발생. 5월 판교(05.08~21, 14일 중 주말 4일)에서 주말 인력·재고 1.5~2배 확대 권고.
+    </div>
+
+    <div class="insight-card info">
+      <div class="insight-tag">⬢ STRUCTURAL 02</div>
+      <strong>매장 객단가 17,000원, 그러나 브랜드별 양극화</strong> —
+      체리 26만5천원, 키붐 19만9천원, Razer 18만4천원 등 초고가 라인이 <strong>매대 면적 대비 매출 효율 1군</strong>. 키케이션 6,200원은 "트래픽 빌더" 역할. <strong>판교에선 매대 면적 배분 차별화 필요</strong> — 키케이션 매대는 공간 효율 우선, Keychron·Razer는 정면 배치.
+    </div>
+
+    <div class="insight-card good">
+      <div class="insight-tag">▲ POSITIVE 02</div>
+      <strong>SKU 활성화율 우수 (398/등록)</strong> —
+      14일 안에 398개 SKU가 1개 이상 판매. Razer 7/7, ABKO·COX·Chilkey 14/14, Keychron 49종 모두 활성. <strong>큐레이션 자체는 검증 완료</strong>. 5월 판교는 컬러·시리즈별 발주량 차별화에 집중.
+    </div>
+
+    <div class="insight-card warn">
+      <div class="insight-tag">▼ ATTENTION 01</div>
+      <strong>W2 일평균 -5.4% 감소</strong> —
+      W1 484만원/일 → W2 458만원/일. 핵심 브랜드(키케이션·로이체·Keychron)는 안정이지만, <strong>한국 키보드 3사(ABKO·COX·Chilkey)와 액세서리 카테고리 W2 페이스 둔화</strong>가 원인. 5월 판교 매대 위치 사수 + POP 강화 필요.
+    </div>
+
+    <div class="insight-card gold">
+      <div class="insight-tag">▲ POSITIVE 03</div>
+      <strong>로이체 핸디팬 단일 SKU 260만원 매출</strong> —
+      "2025 스누피 미니 고속 핸디팬" 87개 / 260만원은 매장 매출의 4.0%. 단일 SKU가 매장 4% 견인하는 건 매우 드문 케이스. <strong>5월 판교(여름 시즌 본격) 핸디팬 발주 대폭 확대 권장</strong>. 미피·산리오 핸디팬 라인업 동시 강화.
+    </div>
+  </section>
+
+  <!-- 저성과 SKU 섹션 (OUT 후보) -->
+  <section>
+    <div class="section-header">
+      <div class="section-title">⚠️ 저성과 SKU — OUT 후보 리스트 <small>· 14일간 0~3개 판매 · 다음 시즌 발주 의사결정용</small></div>
+      <div style="display: flex; gap: 12px; font-size: 11px;">
+        <span style="color: var(--warn);">● 0개 판매</span>
+        <span style="color: var(--accent);">● 1~2개 판매</span>
+        <span style="color: var(--txt-3);">● 3개 판매</span>
+      </div>
+    </div>
+
+    <div class="insight-card warn" style="margin-bottom: 16px;">
+      <div class="insight-tag">📌 데이터 한계 안내</div>
+      <strong>POS 일별 데이터 특성상 "매장에 진열만 됐고 14일 내내 0개 판매" 인 SKU는 3종만 명확히 추적됩니다.</strong>
+      대신 "14일 동안 1~3개만 판매된 저성과 SKU(196종)"가 훨씬 더 액셔너블한 정보입니다.
+      → <strong>이 196종이 다음 시즌(5월 판교/6월 목동) OUT 후보</strong>입니다. 매대 효율 측면에서 신규 SKU로 교체 검토 필요.
+    </div>
+
+    <div id="unsoldBrandsContainer"></div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    GT GEAR · 투비네트웍스글로벌 · 부천중동점 팝업 마감 종합 보고서<br>
+    데이터 출처: 부천중동점 POS 일별 단품별 매출 (04.17–04.30, 14일 마감) · 작성일 2026.05.01
+  </div>
+
+</div>
+
+<script>
+// ============ 한국식 만원 단위 포맷 ============
+function fmtKR(val) {
+  if (val >= 100000000) {
+    const eok = Math.floor(val / 100000000);
+    const man = Math.round((val % 100000000) / 10000);
+    return man > 0 ? `${eok}억${man.toLocaleString()}만` : `${eok}억`;
   }
-  function zoneH(zone){if(!zone)return 0;return 44+zone.items.length*34;}
-  function rowH(row){return Math.max(...row.map(z=>zoneH(z)));}
-  const rows=fx.rows;
-  const rHeights=rows.map(rowH);
-  const y_first=62,ROW_GAP=10;
-  let yPositions=[],y=y_first;
-  rHeights.forEach(h=>{yPositions.push(y);y+=h+ROW_GAP;});
-  const guideY=y+4,guideH=fx.guide?56:0;
-  const outerBottom=guideY+guideH+8;
-  const SVG_H=outerBottom+12;
-  let s='';
-  s+=`<rect width="${TOTAL_W}" height="${SVG_H}" fill="white" rx="10"/>`;
-  s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="13" font-weight="700" x="${TOTAL_W/2}" y="18" text-anchor="middle" fill="#1a1a18">${fx.name}</text>`;
-  s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="${TOTAL_W/2}" y="32" text-anchor="middle" fill="#888">${fx.sub}</text>`;
-  s+=`<rect x="10" y="40" width="660" height="${outerBottom-40}" rx="10" fill="none" stroke="#bbb" stroke-width="1.5"/>`;
-  rows.forEach((row,rowIdx)=>{
-    const ry=yPositions[rowIdx];
-    const unitW=rowZoneW(row);
-    if(rowIdx===0) s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="10" x="${TOTAL_W/2}" y="55" text-anchor="middle" fill="#aaa">▲ 앞면 — 방문객 주동선</text>`;
-    let cx=PAD;
-    row.forEach((zone)=>{
-      if(!zone){cx+=unitW+GAP;return;}
-      const span=zone.span||1;
-      const zw=unitW*span+GAP*(span-1);
-      const zh=zoneH(zone);
-      const C=COLORS[zone.col]||COLORS.gray;
-      const midX=cx+zw/2;
-      s+=`<rect x="${cx}" y="${ry}" width="${zw}" height="${zh}" rx="6" fill="${C.bg}" stroke="${C.bd}" stroke-width="0.8"/>`;
-      const bw=Math.min(zw-10, 68),bh=16;
-      s+=`<rect x="${cx+6}" y="${ry+6}" width="${bw}" height="${bh}" rx="3" fill="${C.bd}"/>`;
-      s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="700" x="${cx+6+bw/2}" y="${ry+17}" text-anchor="middle" fill="white">${zone.label}</text>`;
-      s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="600" x="${midX}" y="${ry+30}" text-anchor="middle" fill="${C.th}">${zone.sub}</text>`;
-      zone.items.forEach((item,i)=>{
-        const iy=ry+36+i*34, ix=cx+5, iw=zw-10;
-        s+=`<rect x="${ix}" y="${iy}" width="${iw}" height="30" rx="4" fill="rgba(255,255,255,0.65)" stroke="${C.bd}" stroke-width="0.5"/>`;
-        s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="600" x="${ix+iw/2}" y="${iy+11}" text-anchor="middle" fill="${C.th}">${item.t}</text>`;
-        s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="8" x="${ix+iw/2}" y="${iy+22}" text-anchor="middle" fill="${C.ts}">${item.d}</text>`;
-      });
-      cx+=zw+GAP;
+  if (val >= 10000) {
+    return Math.round(val/10000).toLocaleString() + '만';
+  }
+  if (val >= 1000) {
+    return val.toLocaleString();
+  }
+  return val.toLocaleString();
+}
+
+// 짧은 버전 (천 단위)
+function fmtKRShort(val) {
+  if (val >= 10000) return Math.round(val/10000).toLocaleString() + '만';
+  if (val >= 1000) return Math.round(val/1000) + '천';
+  return val.toLocaleString();
+}
+
+// ============ DATA ============
+const DAILY = [
+  { date: '04.17', dow: '금', rev: 3712910, qty: 218, type: 'weekday' },
+  { date: '04.18', dow: '토', rev: 8820620, qty: 527, type: 'weekend' },
+  { date: '04.19', dow: '일', rev: 8582340, qty: 431, type: 'weekend' },
+  { date: '04.20', dow: '월', rev: 2318100, qty: 172, type: 'weekday' },
+  { date: '04.21', dow: '화', rev: 2034820, qty: 135, type: 'weekday' },
+  { date: '04.22', dow: '수', rev: 3554000, qty: 208, type: 'weekday' },
+  { date: '04.23', dow: '목', rev: 2804600, qty: 146, type: 'weekday' },
+  { date: '04.24', dow: '금', rev: 3985600, qty: 294, type: 'weekday' },
+  { date: '04.25', dow: '토', rev: 9360760, qty: 509, type: 'weekend' },
+  { date: '04.26', dow: '일', rev: 9042060, qty: 443, type: 'weekend' },
+  { date: '04.27', dow: '월', rev: 2516700, qty: 177, type: 'weekday' },
+  { date: '04.28', dow: '화', rev: 2572200, qty: 144, type: 'weekday' },
+  { date: '04.29', dow: '수', rev: 2226360, qty: 192, type: 'weekday' },
+  { date: '04.30', dow: '목', rev: 4086290, qty: 253, type: 'weekday' },
+];
+
+const BRANDS = [
+  { rank: 1, brand: '키케이션', rev: 18587300, qty: 2878, sku: 209, aov: 6458, share: 28.33, color: '#ff8fab', tag: 'kication' },
+  { rank: 2, brand: '로이체', rev: 12923400, qty: 507, sku: 57, aov: 25489, share: 19.70, color: '#b392f0', tag: 'loyche' },
+  { rank: 3, brand: 'Keychron', rev: 10390900, qty: 177, sku: 49, aov: 58705, share: 15.84, color: '#59c2ff', tag: 'keychron' },
+  { rank: 4, brand: 'Pulsar', rev: 4830060, qty: 75, sku: 30, aov: 64400, share: 7.36, color: '#ffd93d', tag: 'pulsar' },
+  { rank: 5, brand: 'ABKO', rev: 2808300, qty: 37, sku: 8, aov: 75900, share: 4.28, color: '#e63946', tag: 'abko' },
+  { rank: 6, brand: '주연테크', rev: 2728800, qty: 40, sku: 7, aov: 68220, share: 4.16, color: '#06d6a0', tag: 'jooyon' },
+  { rank: 7, brand: '그루브스톤', rev: 2715000, qty: 20, sku: 7, aov: 135750, share: 4.14, color: '#c9a96e', tag: 'groovestone' },
+  { rank: 8, brand: 'Razer', rev: 2402500, qty: 13, sku: 10, aov: 184807, share: 3.66, color: '#44d62c', tag: 'razer' },
+  { rank: 9, brand: '키붐(팬텀)', rev: 2189000, qty: 11, sku: 4, aov: 199000, share: 3.34, color: '#ff6b9d', tag: 'kiboom' },
+  { rank: 10, brand: 'COX', rev: 1671400, qty: 26, sku: 2, aov: 64284, share: 2.55, color: '#ff9854', tag: 'cox' },
+  { rank: 11, brand: '제이웍스(에포메이커)', rev: 1639200, qty: 48, sku: 6, aov: 34150, share: 2.50, color: '#bc4b51', tag: 'default' },
+  { rank: 12, brand: '제이웍스(체리)', rev: 1236000, qty: 6, sku: 3, aov: 206000, share: 1.88, color: '#c2185b', tag: 'default' },
+  { rank: 13, brand: 'Chilkey', rev: 977500, qty: 9, sku: 4, aov: 108611, share: 1.49, color: '#c2d94c', tag: 'default' },
+  { rank: 14, brand: 'MOZA', rev: 399000, qty: 1, sku: 1, aov: 399000, share: 0.61, color: '#4a6fa5', tag: 'default' },
+  { rank: 15, brand: '주연테크(에포메이커)', rev: 119000, qty: 1, sku: 1, aov: 119000, share: 0.18, color: '#2c3e50', tag: 'default' },
+];
+
+const TOP_SKUS = [
+  { rank: 1, name: '2025 스누피 미니 고속 핸디팬', brand: '로이체', tag: 'loyche', price: 29900, qty: 87, rev: 2601300 },
+  { rank: 2, name: '4구 키링', brand: '키케이션', tag: 'kication', price: 12900, qty: 180, rev: 2322000 },
+  { rank: 3, name: '3구 키링', brand: '키케이션', tag: 'kication', price: 9900, qty: 197, rev: 1950300 },
+  { rank: 4, name: '2025 미피 미니 고속 핸디팬', brand: '로이체', tag: 'loyche', price: 29900, qty: 58, rev: 1734200 },
+  { rank: 5, name: '2026 산리오 피규어 키링 키캡 포차코', brand: '로이체', tag: 'loyche', price: 19900, qty: 63, rev: 1253700 },
+  { rank: 6, name: 'ABKO A108K(마일드블루) 맘모스', brand: 'ABKO', tag: 'abko', price: 69900, qty: 17, rev: 1188300 },
+  { rank: 7, name: '2구 키링', brand: '키케이션', tag: 'kication', price: 6900, qty: 158, rev: 1090200 },
+  { rank: 8, name: 'COX CS108(소프트스카이) 맘모스', brand: 'COX', tag: 'cox', price: 62900, qty: 17, rev: 1069300 },
+  { rank: 9, name: '(K10M-H9F) K10 MAX Wood W 저소음', brand: 'Keychron', tag: 'keychron', price: 159800, qty: 6, rev: 958800 },
+  { rank: 10, name: '(K10P-PR11) K10 Pro SE 파스텔 라저바', brand: 'Keychron', tag: 'keychron', price: 114000, qty: 8, rev: 912000 },
+  { rank: 11, name: '2026 산리오 피규어 키링 키캡 헬로키티', brand: '로이체', tag: 'loyche', price: 19900, qty: 45, rev: 895500 },
+  { rank: 12, name: '(EX75-A1) EX75 HE 8K RGB 마그네틱', brand: 'Keychron', tag: 'keychron', price: 79000, qty: 11, rev: 869000 },
+  { rank: 13, name: '팬텀 98 아크릴 유무선 키보드 투명', brand: '키붐(팬텀)', tag: 'kiboom', price: 279000, qty: 3, rev: 837000 },
+  { rank: 14, name: '팬텀 81 라이트 유무선 키보드 그린', brand: '키붐(팬텀)', tag: 'kiboom', price: 139000, qty: 6, rev: 834000 },
+  { rank: 15, name: '(K10M-H11F) K10 MAX Wood W 라이트', brand: 'Keychron', tag: 'keychron', price: 159800, qty: 5, rev: 799000 },
+  { rank: 16, name: 'GKG108AQ(MD)', brand: '주연테크', tag: 'jooyon', price: 75900, qty: 10, rev: 759000 },
+  { rank: 17, name: '2026 산리오 핸디팬 헬로키티', brand: '로이체', tag: 'loyche', price: 29900, qty: 23, rev: 687700 },
+  { rank: 18, name: '탱글탱글', brand: '키케이션', tag: 'kication', price: 24900, qty: 27, rev: 672300 },
+  { rank: 19, name: 'GKG87 몽돌(BK)', brand: '주연테크', tag: 'jooyon', price: 54900, qty: 12, rev: 658800 },
+  { rank: 20, name: '그루브스톤 GV10 애플라떼 밀키S축38g', brand: '그루브스톤', tag: 'groovestone', price: 129000, qty: 5, rev: 645000 },
+];
+
+const TOTAL_REV = 65617360;
+
+// W1 vs W2 (top 7 brands)
+const W1W2 = [
+  { brand: '키케이션', w1: 1314800, w2: 1424700, change: 8.4 },
+  { brand: '로이체', w1: 1163800, w2: 752625, change: -35.3 },
+  { brand: 'Keychron', w1: 707483, w2: 642988, change: -9.1 },
+  { brand: 'Pulsar', w1: 258955, w2: 269763, change: 4.2 },
+  { brand: 'ABKO', w1: 220267, w2: 185913, change: -15.6 },
+  { brand: '주연테크', w1: 175933, w2: 195925, change: 11.4 },
+  { brand: '그루브스톤', w1: 270500, w2: 195250, change: -27.8 },
+];
+
+// ============ Smooth path util ============
+function smoothPath(points) {
+  if (points.length < 2) return '';
+  let path = `M ${points[0].x} ${points[0].y}`;
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i - 1] || points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] || p2;
+    const t = 0.4;
+    const cp1x = p1.x + (p2.x - p0.x) / 6 * (1 - t) * 2;
+    const cp1y = p1.y + (p2.y - p0.y) / 6 * (1 - t) * 2;
+    const cp2x = p2.x - (p3.x - p1.x) / 6 * (1 - t) * 2;
+    const cp2y = p2.y - (p3.y - p1.y) / 6 * (1 - t) * 2;
+    path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
+  }
+  return path;
+}
+
+// ============ Daily Wave Chart ============
+function renderDailyWave() {
+  const W = 1400, H = 320;
+  const PAD = { top: 50, right: 40, bottom: 50, left: 80 };
+  const chartW = W - PAD.left - PAD.right;
+  const chartH = H - PAD.top - PAD.bottom;
+  
+  const maxVal = Math.max(...DAILY.map(d => d.rev));
+  const xStep = chartW / (DAILY.length - 1);
+  
+  const points = DAILY.map((d, i) => ({
+    x: PAD.left + i * xStep,
+    y: PAD.top + chartH - (d.rev / maxVal) * chartH,
+    val: d.rev, qty: d.qty, date: d.date, dow: d.dow, type: d.type
+  }));
+  
+  let yGrid = '';
+  for (let i = 0; i <= 4; i++) {
+    const y = PAD.top + (chartH * i) / 4;
+    const val = maxVal * (4 - i) / 4;
+    yGrid += `
+      <line x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}"
+            stroke="#2c3445" stroke-width="1" stroke-dasharray="${i === 4 ? '0' : '2 4'}"/>
+      <text x="${PAD.left - 10}" y="${y + 4}" text-anchor="end"
+            fill="#6b7686" font-size="11" font-family="JetBrains Mono">${fmtKRShort(val)}원</text>
+    `;
+  }
+  
+  let xLabels = '';
+  DAILY.forEach((d, i) => {
+    const x = PAD.left + i * xStep;
+    const dowColor = d.type === 'weekend' ? '#ffd166' : '#59c2ff';
+    xLabels += `
+      <text x="${x}" y="${PAD.top + chartH + 18}" text-anchor="middle"
+            fill="#6b7686" font-size="10" font-family="JetBrains Mono">${d.date}</text>
+      <text x="${x}" y="${PAD.top + chartH + 33}" text-anchor="middle"
+            fill="${dowColor}" font-size="10" font-family="JetBrains Mono" font-weight="700">${d.dow}</text>
+    `;
+  });
+  
+  const linePath = smoothPath(points);
+  const fillPath = linePath + ` L ${points[points.length-1].x} ${PAD.top + chartH} L ${points[0].x} ${PAD.top + chartH} Z`;
+  
+  let dots = '';
+  points.forEach((p, i) => {
+    const d = DAILY[i];
+    const color = d.type === 'weekend' ? '#ffd166' : '#59c2ff';
+    const r = d.type === 'weekend' ? 8 : 6;
+    dots += `
+      <circle cx="${p.x}" cy="${p.y}" r="${r + 4}" fill="${color}" opacity="0.2"/>
+      <circle cx="${p.x}" cy="${p.y}" r="${r}" fill="${color}" stroke="#0a0e13" stroke-width="2"/>
+    `;
+    dots += `
+      <text x="${p.x}" y="${p.y - 14}" text-anchor="middle"
+            fill="${color}" font-size="11" font-weight="700" font-family="JetBrains Mono">${fmtKRShort(d.rev)}</text>
+    `;
+  });
+  
+  document.getElementById('dailyWave').innerHTML = `
+    <defs>
+      <linearGradient id="dailyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ffd166" stop-opacity="0.7"/>
+        <stop offset="50%" stop-color="#ffb454" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#59c2ff" stop-opacity="0.05"/>
+      </linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    ${yGrid}
+    ${xLabels}
+    <path d="${fillPath}" fill="url(#dailyGrad)"/>
+    <path d="${linePath}" fill="none" stroke="#ffd166" stroke-width="3"
+          stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+    ${dots}
+    <line x1="${PAD.left}" y1="${PAD.top}" x2="${PAD.left}" y2="${PAD.top + chartH}"
+          stroke="#3a4255" stroke-width="2"/>
+  `;
+}
+
+// ============ Brand Ranking ============
+function renderBrandRank() {
+  const maxRev = BRANDS[0].rev;
+  const html = BRANDS.map(b => {
+    const rankClass = b.rank <= 3 ? 'gold' : '';
+    const pctClass = b.rank <= 3 ? 'gold' : '';
+    return `
+      <div class="brand-rank-item">
+        <div class="br-rank ${rankClass}">${b.rank}</div>
+        <div class="br-info">
+          <div class="br-name" style="color: ${b.color};">
+            ${b.brand}
+            <span class="br-qty">· ${b.qty.toLocaleString('ko-KR')}개 · ${b.sku} SKU</span>
+          </div>
+          <div class="br-bar-wrap">
+            <div class="br-bar-fill" style="width: ${(b.rev/maxRev)*100}%; background: linear-gradient(90deg, ${b.color}cc, ${b.color});"></div>
+          </div>
+        </div>
+        <div class="br-rev">${fmtKR(b.rev)}원</div>
+        <div class="br-pct ${pctClass}">${b.share}%</div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('brandRankList').innerHTML = html;
+}
+
+// ============ Stacked Area Chart (TOP 7 brands) ============
+function renderStackedArea() {
+  const W = 1400, H = 360;
+  const PAD = { top: 30, right: 40, bottom: 50, left: 80 };
+  const chartW = W - PAD.left - PAD.right;
+  const chartH = H - PAD.top - PAD.bottom;
+  
+  // TOP 7 brands daily data
+  const TOP7 = [
+    { brand: '키케이션', color: '#ff8fab', daily: [1294700, 2361100, 1958000, 586900, 509600, 1077200, 601300, 1342000, 2292400, 1973500, 911400, 460000, 794200, 1265500] },
+    { brand: '로이체', color: '#b392f0', daily: [839400, 1833700, 1486500, 761600, 266000, 795800, 825500, 1049200, 1791300, 1499000, 366700, 296600, 417300, 581000] },
+    { brand: 'Keychron', color: '#59c2ff', daily: [493100, 1459500, 1195300, 346700, 190000, 560300, 573400, 310400, 1792600, 1763500, 193600, 309200, 255300, 948000] },
+    { brand: 'Pulsar', color: '#ffd93d', daily: [454510, 487620, 288840, 0, 222460, 104300, 0, 398780, 524060, 913280, 104300, 143100, 114660, 463890] },
+    { brand: 'ABKO', color: '#e63946', daily: [158000, 400900, 618800, 69900, 0, 74000, 222900, 139800, 357700, 267900, 79000, 139800, 69900, 209700] },
+    { brand: '주연테크', color: '#06d6a0', daily: [198800, 341500, 240600, 0, 75900, 198800, 130800, 75900, 185700, 727400, 185700, 223800, 89000, 54900] },
+    { brand: '그루브스톤', color: '#c9a96e', daily: [0, 521000, 715000, 129000, 0, 258000, 129000, 0, 0, 546000, 129000, 159000, 129000, 0] },
+  ];
+  
+  // 누적 합계 계산
+  const dates = DAILY.map(d => d.date);
+  const stackedData = TOP7.map(b => ({...b, cumulative: []}));
+  
+  // 각 일자별로 stacked 위치 계산
+  const dailyStacks = dates.map((_, dayIdx) => {
+    let cumSum = 0;
+    return TOP7.map((b, brandIdx) => {
+      const value = b.daily[dayIdx];
+      const start = cumSum;
+      cumSum += value;
+      return { start, end: cumSum, value, brand: b.brand, color: b.color, brandIdx };
     });
   });
-  if(fx.guide){
-    s+=`<rect x="18" y="${guideY}" width="644" height="${guideH-4}" rx="6" fill="none" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4 3"/>`;
-    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" font-weight="700" x="${TOTAL_W/2}" y="${guideY+13}" text-anchor="middle" fill="#aaa">배치 가이드</text>`;
-    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" x="${TOTAL_W/2}" y="${guideY+28}" text-anchor="middle" fill="#888">${fx.guide}</text>`;
-    s+=`<text font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="9" x="648" y="${outerBottom+6}" text-anchor="end" fill="#bbb">1,600 × 900 mm · 아일랜드 평대</text>`;
+  
+  // 최대 누적값
+  const maxStack = Math.max(...dailyStacks.map(s => s[s.length-1].end));
+  const xStep = chartW / (dates.length - 1);
+  
+  // Y축
+  let yGrid = '';
+  for (let i = 0; i <= 4; i++) {
+    const y = PAD.top + (chartH * i) / 4;
+    const val = maxStack * (4 - i) / 4;
+    yGrid += `
+      <line x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}"
+            stroke="#2c3445" stroke-width="1" stroke-dasharray="${i === 4 ? '0' : '2 4'}"/>
+      <text x="${PAD.left - 10}" y="${y + 4}" text-anchor="end"
+            fill="#6b7686" font-size="11" font-family="JetBrains Mono">${fmtKRShort(val)}원</text>
+    `;
   }
-  return `<svg class="diagram" viewBox="0 0 ${TOTAL_W} ${SVG_H}" xmlns="http://www.w3.org/2000/svg">${s}</svg>`;
+  
+  // X축 라벨
+  let xLabels = '';
+  DAILY.forEach((d, i) => {
+    const x = PAD.left + i * xStep;
+    const dowColor = d.type === 'weekend' ? '#ffd166' : '#59c2ff';
+    xLabels += `
+      <text x="${x}" y="${PAD.top + chartH + 18}" text-anchor="middle"
+            fill="#6b7686" font-size="10" font-family="JetBrains Mono">${d.date}</text>
+      <text x="${x}" y="${PAD.top + chartH + 33}" text-anchor="middle"
+            fill="${dowColor}" font-size="10" font-family="JetBrains Mono" font-weight="700">${d.dow}</text>
+    `;
+  });
+  
+  // Stacked area paths (각 브랜드)
+  let areas = '';
+  TOP7.forEach((b, brandIdx) => {
+    const topPoints = dailyStacks.map((s, dayIdx) => ({
+      x: PAD.left + dayIdx * xStep,
+      y: PAD.top + chartH - (s[brandIdx].end / maxStack) * chartH
+    }));
+    const bottomPoints = dailyStacks.map((s, dayIdx) => ({
+      x: PAD.left + dayIdx * xStep,
+      y: PAD.top + chartH - (s[brandIdx].start / maxStack) * chartH
+    }));
+    
+    const topPath = smoothPath(topPoints);
+    // 아래쪽 포인트 역순으로 닫기
+    const reversedBottom = [...bottomPoints].reverse();
+    const bottomPath = reversedBottom.map((p, i) => 
+      i === 0 ? `L ${p.x} ${p.y}` : `L ${p.x} ${p.y}`
+    ).join(' ');
+    
+    const fullPath = topPath + ' ' + bottomPath + ' Z';
+    
+    areas += `<path d="${fullPath}" fill="${b.color}" opacity="0.85" stroke="${b.color}" stroke-width="0.5"/>`;
+  });
+  
+  document.getElementById('stackedChart').innerHTML = `
+    ${yGrid}
+    ${xLabels}
+    ${areas}
+    <line x1="${PAD.left}" y1="${PAD.top}" x2="${PAD.left}" y2="${PAD.top + chartH}"
+          stroke="#3a4255" stroke-width="2"/>
+  `;
+  
+  // Legend
+  document.getElementById('stackedLegend').innerHTML = TOP7.map(b => `
+    <div style="display: flex; align-items: center; gap: 6px; font-size: 11px;">
+      <div style="width: 14px; height: 14px; background: ${b.color}; border-radius: 2px;"></div>
+      <span>${b.brand}</span>
+    </div>
+  `).join('');
 }
 
-// ─── 탭 + 콘텐츠 ──────────────────────────────────────────────
-const tabsEl=document.getElementById('tabs');
-const sectsEl=document.getElementById('sects');
-BRANDS.forEach((brand,bi)=>{
-  const btn=document.createElement('button');
-  btn.className='tab'+(bi===0?' on':'');
-  btn.textContent=brand.label;
-  btn.onclick=()=>{
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
-    document.querySelectorAll('.sect').forEach(s=>s.classList.remove('on'));
-    btn.classList.add('on');
-    document.getElementById('sect-'+brand.id).classList.add('on');
-  };
-  tabsEl.appendChild(btn);
-  const sect=document.createElement('div');
-  sect.className='sect'+(bi===0?' on':'');
-  sect.id='sect-'+brand.id;
-  let html=`<div class="brand-info">${brand.info}</div>`;
-  brand.fixtures.forEach((fx,fi)=>{
-    html+=`<div class="fx-wrap">
-      <div class="fx-title">${fx.name}</div>
-      ${buildSVG(fx)}
-      <div class="fx-dl"><button class="dl-btn" onclick="dlSVG('${brand.id}-${fi}')">SVG 저장</button></div>
-    </div>`;
-  });
-  sect.innerHTML=html;
-  sectsEl.appendChild(sect);
-});
-function dlSVG(id){
-  const parts=id.split('-');
-  const fi=parseInt(parts[parts.length-1]);
-  const brandId=parts.slice(0,parts.length-1).join('-');
-  const sect=document.getElementById('sect-'+brandId);
-  const svg=sect.querySelectorAll('svg.diagram')[fi];
-  if(!svg)return;
-  const blob=new Blob([new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download=`배치도_${id}.svg`;
-  a.click();
+// ============ W1 vs W2 Compare ============
+function renderWCompare() {
+  const maxVal = Math.max(...W1W2.flatMap(b => [b.w1, b.w2]));
+  const html = W1W2.map(b => {
+    const w1H = (b.w1/maxVal)*60;
+    const w2H = (b.w2/maxVal)*60;
+    const changeClass = b.change > 5 ? 'up' : b.change < -5 ? 'down' : 'flat';
+    const arrow = b.change > 5 ? '▲' : b.change < -5 ? '▼' : '─';
+    return `
+      <div class="w-compare-card">
+        <div class="wc-brand">${b.brand}</div>
+        <div class="wc-bars">
+          <div class="wc-bar w1" style="height: ${w1H}px;" title="W1: ${b.w1.toLocaleString()}원/일"></div>
+          <div class="wc-bar w2" style="height: ${w2H}px;" title="W2: ${b.w2.toLocaleString()}원/일"></div>
+        </div>
+        <div style="font-size: 10px; color: var(--txt-3); margin-bottom: 4px;">
+          W1: ${fmtKRShort(b.w1)} → W2: ${fmtKRShort(b.w2)}
+        </div>
+        <div class="wc-change ${changeClass}">${arrow} ${Math.abs(b.change).toFixed(1)}%</div>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('wCompareGrid').innerHTML = html;
 }
+
+// ============ Performance Matrix (객단가 × 매출 산점도) ============
+function renderMatrix() {
+  const W = 1400, H = 380;
+  const PAD = { top: 30, right: 60, bottom: 60, left: 100 };
+  const chartW = W - PAD.left - PAD.right;
+  const chartH = H - PAD.top - PAD.bottom;
+  
+  // Top 12개만 표시
+  const items = BRANDS.slice(0, 12);
+  
+  // X축: 객단가 (log scale 흉내)
+  const maxAov = Math.max(...items.map(b => b.aov));
+  const minAov = Math.min(...items.map(b => b.aov));
+  // X scale: log
+  const xScale = (v) => {
+    const logV = Math.log(v);
+    const logMin = Math.log(minAov);
+    const logMax = Math.log(maxAov);
+    return PAD.left + ((logV - logMin) / (logMax - logMin)) * chartW;
+  };
+  
+  // Y축: 매출
+  const maxRev = Math.max(...items.map(b => b.rev));
+  const yScale = (v) => PAD.top + chartH - (v / maxRev) * chartH;
+  
+  // 4분면 라벨
+  const midX = (PAD.left + W - PAD.right) / 2;
+  const midY = (PAD.top + chartH + PAD.top) / 2;
+  const quadrants = `
+    <line x1="${midX}" y1="${PAD.top}" x2="${midX}" y2="${PAD.top + chartH}" stroke="#2c3445" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="${PAD.left}" y1="${midY}" x2="${W - PAD.right}" y2="${midY}" stroke="#2c3445" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="${PAD.left + 10}" y="${PAD.top + 20}" fill="#6b7686" font-size="10" font-family="JetBrains Mono" font-style="italic">저객단가 · 고매출</text>
+    <text x="${W - PAD.right - 10}" y="${PAD.top + 20}" fill="#6b7686" font-size="10" font-family="JetBrains Mono" text-anchor="end" font-style="italic">고객단가 · 고매출 ⭐</text>
+    <text x="${PAD.left + 10}" y="${PAD.top + chartH - 10}" fill="#6b7686" font-size="10" font-family="JetBrains Mono" font-style="italic">저객단가 · 저매출</text>
+    <text x="${W - PAD.right - 10}" y="${PAD.top + chartH - 10}" fill="#6b7686" font-size="10" font-family="JetBrains Mono" text-anchor="end" font-style="italic">고객단가 · 저매출 (매대 효율 높음)</text>
+  `;
+  
+  // X축 그리드 (객단가)
+  let xGrid = '';
+  [10000, 30000, 100000, 300000].forEach(v => {
+    if (v >= minAov && v <= maxAov) {
+      const x = xScale(v);
+      xGrid += `
+        <line x1="${x}" y1="${PAD.top}" x2="${x}" y2="${PAD.top + chartH}" stroke="#2c3445" stroke-width="0.5" stroke-dasharray="2 4"/>
+        <text x="${x}" y="${PAD.top + chartH + 18}" text-anchor="middle" fill="#6b7686" font-size="10" font-family="JetBrains Mono">${fmtKRShort(v)}</text>
+      `;
+    }
+  });
+  xGrid += `<text x="${midX}" y="${H - 10}" text-anchor="middle" fill="#6b7686" font-size="11" font-family="JetBrains Mono">→ 객단가 (log scale, 단위: 원)</text>`;
+  
+  // Y축 그리드 (매출)
+  let yGrid = '';
+  for (let i = 0; i <= 4; i++) {
+    const y = PAD.top + (chartH * i) / 4;
+    const val = maxRev * (4 - i) / 4;
+    yGrid += `
+      <line x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" stroke="#2c3445" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <text x="${PAD.left - 10}" y="${y + 4}" text-anchor="end" fill="#6b7686" font-size="10" font-family="JetBrains Mono">${fmtKRShort(val)}</text>
+    `;
+  }
+  yGrid += `<text x="${PAD.left - 60}" y="${midY}" fill="#6b7686" font-size="11" font-family="JetBrains Mono" transform="rotate(-90 ${PAD.left - 60} ${midY})" text-anchor="middle">↑ 14일 매출 (만원)</text>`;
+  
+  // 점 그리기 (크기 = 수량)
+  const maxQty = Math.max(...items.map(b => b.qty));
+  let bubbles = '';
+  items.forEach(b => {
+    const x = xScale(b.aov);
+    const y = yScale(b.rev);
+    const r = Math.max(8, Math.min(30, 8 + (b.qty / maxQty) * 22));
+    bubbles += `
+      <circle cx="${x}" cy="${y}" r="${r + 2}" fill="${b.color}" opacity="0.2"/>
+      <circle cx="${x}" cy="${y}" r="${r}" fill="${b.color}" opacity="0.7" stroke="#0a0e13" stroke-width="1.5">
+        <title>${b.brand}\n매출: ${fmtKR(b.rev)}원\n수량: ${b.qty}개\n객단가: ${b.aov.toLocaleString()}원</title>
+      </circle>
+      <text x="${x}" y="${y + r + 14}" text-anchor="middle" fill="${b.color}" font-size="11" font-weight="700" font-family="IBM Plex Sans KR">${b.brand}</text>
+    `;
+  });
+  
+  // 매장 평균 객단가 라인 (17K)
+  const avgX = xScale(17302);
+  const avgLine = `
+    <line x1="${avgX}" y1="${PAD.top}" x2="${avgX}" y2="${PAD.top + chartH}" stroke="#ffb454" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.6"/>
+    <text x="${avgX}" y="${PAD.top - 8}" text-anchor="middle" fill="#ffb454" font-size="10" font-family="JetBrains Mono" font-weight="700">매장 평균 17,000원</text>
+  `;
+  
+  document.getElementById('matrixChart').innerHTML = `
+    ${quadrants}
+    ${xGrid}
+    ${yGrid}
+    ${avgLine}
+    ${bubbles}
+    <line x1="${PAD.left}" y1="${PAD.top}" x2="${PAD.left}" y2="${PAD.top + chartH}" stroke="#3a4255" stroke-width="2"/>
+    <line x1="${PAD.left}" y1="${PAD.top + chartH}" x2="${W - PAD.right}" y2="${PAD.top + chartH}" stroke="#3a4255" stroke-width="2"/>
+  `;
+}
+
+// ============ TOP 20 SKU ============
+function renderTopSkus() {
+  const html = TOP_SKUS.map(s => {
+    const rankClass = s.rank <= 3 ? 'gold' : '';
+    const sharePct = ((s.rev / TOTAL_REV) * 100).toFixed(2);
+    return `
+      <tr>
+        <td><span class="rank ${rankClass}">${s.rank}</span></td>
+        <td>${s.name}</td>
+        <td><span class="brand-tag bt-${s.tag}">${s.brand}</span></td>
+        <td class="num">${s.price.toLocaleString('ko-KR')}</td>
+        <td class="num">${s.qty}</td>
+        <td class="num"><strong>${s.rev.toLocaleString('ko-KR')}</strong></td>
+        <td class="num">${sharePct}%</td>
+      </tr>
+    `;
+  }).join('');
+  document.getElementById('topSkuBody').innerHTML = html;
+}
+
+// ============ Unsold/Low Performance SKUs ============
+const UNSOLD_DATA = {"Keychron":{"total_sku":49,"unsold_count":0,"low_perf_count":33,"items":[{"name":"(K10M-H4W) K10 MAX Wood B 바나나","price":159800,"qty":1,"rev":159800,"days_listed":1},{"name":"(K10M-RP9) K10 MAX 파스텔 저소음바나나","price":149800,"qty":1,"rev":149800,"days_listed":1},{"name":"(K8M-Q9) K8 MAX 화이트 ALU 저소음바나나","price":149800,"qty":1,"rev":149800,"days_listed":1},{"name":"(V10P-PR9) V10 PRO 파스텔 저소음바나나","price":124000,"qty":1,"rev":124000,"days_listed":1},{"name":"(K10P-PR4) K10 Pro SE 파스텔 바나나","price":114000,"qty":1,"rev":114000,"days_listed":1},{"name":"(K10P-RB4) K10 Pro SE 블랙 바나나축","price":114000,"qty":1,"rev":114000,"days_listed":1},{"name":"(K10P-RZ9) K10ProSE 쉘화이트저소음바나나","price":114000,"qty":1,"rev":114000,"days_listed":1},{"name":"(K3SE2-SA6Z) K3 SE V2 화이트 저소음","price":89000,"qty":1,"rev":89000,"days_listed":1},{"name":"(EX75-A6) EX75 HE 8K 저소음마그네틱","price":79000,"qty":1,"rev":79000,"days_listed":3},{"name":"(X3-A1) X3 블랙 Red LED 기계식 적축","price":49000,"qty":1,"rev":49000,"days_listed":1},{"name":"(G315) K Pro 헤비저소음바나나 110pcs","price":32000,"qty":1,"rev":32000,"days_listed":1},{"name":"(G293) 하이무 미드나잇 리니어 스위치 110pcs","price":24000,"qty":1,"rev":24000,"days_listed":1},{"name":"(Cab-30) 파스텔 항공케이블 앵글 8K 화이트","price":19800,"qty":1,"rev":19800,"days_listed":1},{"name":"(Cab-31) 파스텔 항공케이블 Str. 핑크오렌지","price":19800,"qty":1,"rev":19800,"days_listed":1},{"name":"(Cab-32) 파스텔 항공케이블 Str. 라이트핑크","price":19800,"qty":1,"rev":19800,"days_listed":1},{"name":"(Cab-34) 파스텔 항공케이블 Str. 라이트퍼플","price":19800,"qty":1,"rev":19800,"days_listed":1},{"name":"(Cab-42) 파스텔 항공케이블 앵글 8K 핑크오렌지","price":19800,"qty":1,"rev":19800,"days_listed":1},{"name":"(K10M-H9W) K10 MAX Wood B 저소음","price":159800,"qty":2,"rev":319600,"days_listed":2},{"name":"(K10P-RA4) K10 Pro SE 블루 바나나축","price":114000,"qty":2,"rev":228000,"days_listed":2},{"name":"(K10P-RA9) K10 Pro SE 블루저소음바나나","price":114000,"qty":2,"rev":228000,"days_listed":2},{"name":"(K10PSE-R9D) K10 Pro SE 저소음바나나","price":114000,"qty":2,"rev":228000,"days_listed":2},{"name":"(M5SE-A61) M5 SE 블랙 무선 마우스","price":69000,"qty":2,"rev":138000,"days_listed":2},{"name":"(B6P-K8) B6 Pro 바닐라크림 슬림 풀배열","price":42500,"qty":2,"rev":85000,"days_listed":2},{"name":"(B2P-K1) B2 Pro 스페이스그레이 슬림","price":39800,"qty":2,"rev":79600,"days_listed":2},{"name":"(B2P-K8) B2 Pro 아이보리화이트 슬림","price":39800,"qty":2,"rev":79600,"days_listed":2},{"name":"(G189) 하이무 바다소금 리니어 스위치 110pcs","price":24000,"qty":2,"rev":48000,"days_listed":2},{"name":"(PR66) 실리콘 팜레스트 그레이 K8 K8P","price":17800,"qty":2,"rev":35600,"days_listed":2},{"name":"(G316) K Pro 라이트저소음바나나 45pcs","price":16000,"qty":2,"rev":32000,"days_listed":2},{"name":"(K8M-H11W) K8 MAX Wood 블랙 저소음","price":159800,"qty":3,"rev":479400,"days_listed":3},{"name":"(M5-A29) M5 버티컬 블랙 무선 어고노믹","price":59000,"qty":3,"rev":177000,"days_listed":3},{"name":"(B6P-K1) B6 Pro 스페이스그레이 슬림 풀배열","price":42500,"qty":3,"rev":127500,"days_listed":3},{"name":"(G211) K Pro 저소음바나나 110pcs","price":32000,"qty":3,"rev":96000,"days_listed":3},{"name":"(P11BLK) 키무브 키캡 풀러 블랙","price":8900,"qty":3,"rev":26700,"days_listed":2}]},"Razer":{"total_sku":10,"unsold_count":1,"low_perf_count":10,"items":[{"name":"Viper V4 Pro White","price":249900,"qty":0,"rev":0,"days_listed":2},{"name":"Huntsman V3 Pro 8KHz KR","price":379000,"qty":1,"rev":379000,"days_listed":1},{"name":"Huntsman V3 Pro 8KHz TKL KR","price":329000,"qty":1,"rev":329000,"days_listed":1},{"name":"DeathAdder V4 Pro White","price":259000,"qty":1,"rev":259000,"days_listed":1},{"name":"Viper V4 Pro","price":249900,"qty":1,"rev":249900,"days_listed":1},{"name":"BlackShark V3 X HS Xbox White","price":159000,"qty":1,"rev":159000,"days_listed":1},{"name":"Gigantus V2 Pro Speed","price":76900,"qty":1,"rev":76900,"days_listed":1},{"name":"Gigantus V2 XXL EVA-02 Edition","price":69000,"qty":1,"rev":69000,"days_listed":1},{"name":"Gigantus V2 Pro Max Control","price":76900,"qty":2,"rev":153800,"days_listed":1},{"name":"BlackShark V3 X HS for Xbox","price":159000,"qty":3,"rev":477000,"days_listed":3}]},"ABKO":{"total_sku":8,"unsold_count":0,"low_perf_count":4,"items":[{"name":"ABKO AS104 딥사운드 네온블랙","price":99000,"qty":1,"rev":99000,"days_listed":1},{"name":"ABKO AS104 딥사운드 리니어","price":99000,"qty":1,"rev":99000,"days_listed":2},{"name":"ABKO AS104 조약돌 리니어","price":99000,"qty":1,"rev":99000,"days_listed":1},{"name":"ABKO AS104 조약돌 핑크그레이","price":99000,"qty":1,"rev":99000,"days_listed":1}]},"Chilkey":{"total_sku":4,"unsold_count":0,"low_perf_count":3,"items":[{"name":"Chilkey ND104 소프트핑크 WS사일런트","price":265000,"qty":1,"rev":265000,"days_listed":1},{"name":"Chilkey ND TKL 스카이블루","price":159500,"qty":1,"rev":159500,"days_listed":1},{"name":"ABKO ACH105 라벤더 HAIMU바다소금","price":79000,"qty":1,"rev":79000,"days_listed":1}]},"주연테크":{"total_sku":7,"unsold_count":0,"low_perf_count":3,"items":[{"name":"GKG108 저소음(WH)","price":89000,"qty":1,"rev":89000,"days_listed":2},{"name":"GKG108 몽돌(WH)","price":54900,"qty":1,"rev":54900,"days_listed":1},{"name":"GKG108SS","price":79900,"qty":2,"rev":159800,"days_listed":2}]},"Pulsar":{"total_sku":22,"unsold_count":0,"low_perf_count":17,"items":[{"name":"Pulsar eS FS-1 eS Blue","price":207000,"qty":1,"rev":207000,"days_listed":1},{"name":"Pulsar TenZ Signature ED","price":152100,"qty":1,"rev":152100,"days_listed":1},{"name":"Pulsar X2 CL M BA Nonomi","price":152100,"qty":1,"rev":152100,"days_listed":1},{"name":"Pulsar X2 CL M BA Shiroko","price":152100,"qty":1,"rev":152100,"days_listed":1},{"name":"Pulsar X2 CL PRX ED","price":143100,"qty":1,"rev":143100,"days_listed":1},{"name":"Pulsar X2 CL Aqua Zest","price":104300,"qty":1,"rev":104300,"days_listed":1},{"name":"Pulsar X2 CL Seoul ED","price":104300,"qty":1,"rev":104300,"days_listed":1},{"name":"Pulsar X2N CL Mini Uyuni White","price":104300,"qty":1,"rev":104300,"days_listed":2},{"name":"GP6 레드 마우스패드 460x400","price":26900,"qty":1,"rev":26900,"days_listed":1},{"name":"Pulsar eS Open Palm Sleeve L B","price":13860,"qty":1,"rev":13860,"days_listed":1},{"name":"Pulsar ZYWOO Chosen Mini White","price":170100,"qty":2,"rev":340200,"days_listed":1},{"name":"Pulsar Lab.X2F Mini Black","price":152100,"qty":2,"rev":304200,"days_listed":2},{"name":"Pulsar X2 CL Volt Shadow","price":104300,"qty":2,"rev":208600,"days_listed":2},{"name":"Pulsar X2N CL Mini Wild Ocean","price":104300,"qty":2,"rev":208600,"days_listed":2},{"name":"Pulsar UHMW-PE Dot Skates","price":6230,"qty":2,"rev":12460,"days_listed":2},{"name":"Pulsar X2 CL T1 ED Black","price":143100,"qty":3,"rev":429300,"days_listed":3},{"name":"Pulsar Xlite CL Jet Black","price":104300,"qty":3,"rev":312900,"days_listed":2}]},"체리":{"total_sku":2,"unsold_count":0,"low_perf_count":2,"items":[{"name":"MX 8.2 PRO TMR 8K 메카브레이크 TKL","price":280000,"qty":2,"rev":560000,"days_listed":2},{"name":"MX 8.2 PRO TMR 8K 블랙 TKL","price":249000,"qty":2,"rev":498000,"days_listed":2}]},"그루브스톤":{"total_sku":7,"unsold_count":0,"low_perf_count":4,"items":[{"name":"그루브스톤 GV10 젤리냥 밀키S축38g","price":134000,"qty":1,"rev":134000,"days_listed":1},{"name":"그루브스톤 GV10 따뜻한크레용 밀키S45g","price":129000,"qty":1,"rev":129000,"days_listed":1},{"name":"그루브스톤 GV10 젤리냥 밀키S축45g","price":134000,"qty":2,"rev":268000,"days_listed":2},{"name":"그루브스톤 GV10 애플라떼 밀키S축45g","price":129000,"qty":3,"rev":387000,"days_listed":3}]},"키붐(팬텀)":{"total_sku":4,"unsold_count":0,"low_perf_count":3,"items":[{"name":"팬텀 98 아크릴 유무선 키보드 보라","price":279000,"qty":1,"rev":279000,"days_listed":1},{"name":"팬텀 81 V3 아크릴 유무선 키보드 핑크","price":239000,"qty":1,"rev":239000,"days_listed":1},{"name":"팬텀 98 아크릴 유무선 키보드 투명","price":279000,"qty":3,"rev":837000,"days_listed":3}]}};
+
+// 브랜드 색상 매핑
+const BRAND_COLORS = {
+  'Keychron': '#59c2ff', 'Razer': '#44d62c', 'ABKO': '#e63946',
+  'COX': '#ff9854', 'Chilkey': '#c2d94c', 'Pulsar': '#ffd93d',
+  '주연테크': '#06d6a0', '키붐(팬텀)': '#ff6b9d', '체리': '#c2185b',
+  '그루브스톤': '#c9a96e', '키케이션': '#ff8fab', '로이체': '#b392f0'
+};
+
+// 키케이션·로이체 추가 (대량 데이터 - 필터링됨)
+const ADDITIONAL_UNSOLD = {"키케이션":{"total_sku":206,"unsold_count":2,"low_perf_count":72,"items":[{"name":"토끼","price":24900,"qty":0,"rev":0,"days_listed":2},{"name":"핫도그 1.5u","price":18900,"qty":0,"rev":0,"days_listed":1},{"name":"BTS 기계식 키보드","price":129000,"qty":1,"rev":129000,"days_listed":1},{"name":"Cybrix 29 SILVER","price":119000,"qty":1,"rev":119000,"days_listed":1},{"name":"Geekstar GK02","price":87000,"qty":1,"rev":21900,"days_listed":2},{"name":"2D스타일 퍼플","price":44900,"qty":1,"rev":44900,"days_listed":1},{"name":"크림멍멍","price":39900,"qty":1,"rev":39900,"days_listed":2},{"name":"세포라 누디","price":29900,"qty":1,"rev":29900,"days_listed":2},{"name":"불상 금색","price":21900,"qty":1,"rev":21900,"days_listed":3},{"name":"멍멍 까망","price":18900,"qty":1,"rev":18900,"days_listed":2},{"name":"멍멍 초코","price":18900,"qty":1,"rev":18900,"days_listed":1},{"name":"좌불상","price":18900,"qty":1,"rev":18900,"days_listed":1},{"name":"햄버거 소프트콘","price":18900,"qty":1,"rev":18900,"days_listed":1},{"name":"화이트 하트버튼","price":18900,"qty":1,"rev":18900,"days_listed":3},{"name":"블럭 레드","price":14900,"qty":1,"rev":14900,"days_listed":1},{"name":"이지스실 실리콘 키캡 세트 PURPLE","price":36000,"qty":2,"rev":72000,"days_listed":2},{"name":"이지스실 실리콘 키캡 세트 WHITE","price":36000,"qty":2,"rev":72000,"days_listed":2},{"name":"양","price":24900,"qty":2,"rev":49800,"days_listed":2},{"name":"코끼리","price":24900,"qty":2,"rev":49800,"days_listed":2},{"name":"좌불상 금색","price":21900,"qty":2,"rev":43800,"days_listed":2},{"name":"카메라 블랙","price":21900,"qty":2,"rev":43800,"days_listed":2},{"name":"카메라 화이트","price":21900,"qty":2,"rev":43800,"days_listed":2},{"name":"고양이발 레오파드 블랙","price":18900,"qty":2,"rev":37800,"days_listed":2},{"name":"다마고치 블루","price":18900,"qty":2,"rev":37800,"days_listed":2},{"name":"다마고치 핑크","price":18900,"qty":2,"rev":37800,"days_listed":2},{"name":"다소곳 냥","price":18900,"qty":2,"rev":37800,"days_listed":2},{"name":"버튼 아이보리","price":18900,"qty":2,"rev":37800,"days_listed":1},{"name":"조이스틱 스틱 블랙","price":18900,"qty":2,"rev":37800,"days_listed":2},{"name":"블럭 화이트","price":14900,"qty":2,"rev":29800,"days_listed":2},{"name":"운활키링 (오울랩 런던포그)","price":14900,"qty":2,"rev":29800,"days_listed":2}],"_note":"단가 14,900원 이상만 표시 / 전체 72종 중 30종"},"로이체":{"total_sku":57,"unsold_count":0,"low_perf_count":34,"items":[{"name":"산리오 버티컬 마우스 쿠로미","price":54900,"qty":1,"rev":54900,"days_listed":1},{"name":"2023 잔망루피 블루투스 스피커","price":36900,"qty":1,"rev":36900,"days_listed":1},{"name":"산리오 레진 포인트 키캡 (쿠로미)","price":24900,"qty":1,"rev":24900,"days_listed":1},{"name":"잔망루피 멀티페어링 블루투스 무선 마우스","price":24900,"qty":1,"rev":24900,"days_listed":1},{"name":"피너츠 스누피 무선겸용 BT 마우스 (바이올렛)","price":24900,"qty":1,"rev":24900,"days_listed":1},{"name":"2025 베이비 잔망루피 실리콘 무선 무드등","price":22900,"qty":1,"rev":22900,"days_listed":1},{"name":"잔망루피 레진 포인트 키캡 (껄껄루피)","price":22900,"qty":1,"rev":22900,"days_listed":1},{"name":"산리오 모니터 걸이형 방향제 (마이멜로디)","price":19900,"qty":1,"rev":19900,"days_listed":1},{"name":"산리오 모니터 걸이형 방향제 (시나모롤)","price":19900,"qty":1,"rev":19900,"days_listed":3},{"name":"2026 산리오 교복 피규어 마이멜로디","price":9900,"qty":1,"rev":9900,"days_listed":1},{"name":"2026 산리오 교복 피규어 시나모롤","price":9900,"qty":1,"rev":9900,"days_listed":1},{"name":"2026 산리오 교복 피규어 쿠로미","price":9900,"qty":1,"rev":9900,"days_listed":1},{"name":"2026 산리오 교복 피규어 헬로키티","price":9900,"qty":1,"rev":9900,"days_listed":1},{"name":"모니터 피규어 스누피","price":9900,"qty":1,"rev":9900,"days_listed":1},{"name":"미피 미니 피규어","price":8900,"qty":1,"rev":8900,"days_listed":1},{"name":"미피 보리스 미니 피규어","price":8900,"qty":1,"rev":8900,"days_listed":1},{"name":"피너츠 스투피 버티컬 마우스 C타입 충전식","price":56900,"qty":2,"rev":113800,"days_listed":2},{"name":"산리오 버티컬 마우스 포차코","price":54900,"qty":2,"rev":109800,"days_listed":2},{"name":"산리오 버티컬 마우스 헬로키티","price":54900,"qty":2,"rev":109800,"days_listed":2},{"name":"2026 조앤프렌즈 멀티페어링 마우스","price":28000,"qty":2,"rev":56000,"days_listed":2},{"name":"2026 조앤프렌즈 레진 키캡","price":26900,"qty":2,"rev":53800,"days_listed":2},{"name":"산리오 레진 포인트 키캡 (포차코)","price":24900,"qty":2,"rev":49800,"days_listed":2},{"name":"피너츠 스누피 무선겸용 BT 마우스 (베이지)","price":24900,"qty":2,"rev":49800,"days_listed":1},{"name":"잔망루피 레진 포인트 키캡 (포근루피)","price":22900,"qty":2,"rev":45800,"days_listed":2},{"name":"미피 모니터 걸이형 방향제 (2025 신규)","price":19900,"qty":2,"rev":39800,"days_listed":2},{"name":"2026 산리오 교복 피규어 포차코","price":9900,"qty":2,"rev":19800,"days_listed":2},{"name":"잔망루피 피규어A (감격)","price":6900,"qty":2,"rev":13800,"days_listed":2},{"name":"잔망루피 피규어D (어쩔)","price":6900,"qty":2,"rev":13800,"days_listed":2},{"name":"잔망루피 마우스패드","price":5400,"qty":2,"rev":10800,"days_listed":2},{"name":"2026 조앤프렌즈 탁상시계","price":53800,"qty":3,"rev":161400,"days_listed":3},{"name":"2026 조앤프렌즈 쿨링 핸디팬","price":39800,"qty":3,"rev":119400,"days_listed":3},{"name":"산리오 모니터 걸이형 방향제 (쿠로미)","price":19900,"qty":3,"rev":59700,"days_listed":2},{"name":"산리오 무소음 키링 미니 탁상시계 (헬로키티)","price":17900,"qty":3,"rev":53700,"days_listed":3},{"name":"스누피 마우스패드 (베이지)","price":4900,"qty":3,"rev":14700,"days_listed":3}]}};
+
+// 두 데이터 병합
+Object.assign(UNSOLD_DATA, ADDITIONAL_UNSOLD);
+
+function renderUnsoldSection() {
+  const container = document.getElementById('unsoldBrandsContainer');
+  let html = '';
+  
+  // 브랜드별로 카드 생성 (저성과 SKU 수 많은 순)
+  const sorted = Object.entries(UNSOLD_DATA).sort((a, b) => b[1].low_perf_count - a[1].low_perf_count);
+  
+  sorted.forEach(([brand, data], idx) => {
+    const color = BRAND_COLORS[brand] || '#6b7280';
+    const ratio = ((data.low_perf_count / data.total_sku) * 100).toFixed(0);
+    
+    // 첫 카드만 자동 펼침
+    const openClass = idx === 0 ? 'open' : '';
+    
+    let itemsHtml = '';
+    data.items.forEach(item => {
+      const qtyClass = item.qty === 0 ? 'zero' : item.qty <= 2 ? 'low' : 'three';
+      const qtyText = item.qty === 0 ? '0' : item.qty;
+      itemsHtml += `
+        <div class="unsold-item">
+          <div class="unsold-name">${item.name}</div>
+          <div class="unsold-qty-badge ${qtyClass}">${qtyText}개</div>
+          <div class="unsold-price">${item.price.toLocaleString()}원</div>
+          <div class="unsold-rev">${item.rev > 0 ? fmtKR(item.rev) + '원' : '-'}</div>
+        </div>
+      `;
+    });
+    
+    // 키케이션은 부분 표시 안내 추가
+    let noteHtml = '';
+    if (data._note) {
+      noteHtml = `<div style="padding: 8px 16px; background: rgba(255, 180, 84, 0.1); font-size: 11px; color: var(--accent); border-bottom: 1px dotted var(--line);">📌 ${data._note} (저단가 1U 키캡 등 42종 생략)</div>`;
+    }
+    
+    html += `
+      <div class="unsold-brand-card ${openClass}">
+        <div class="unsold-brand-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="unsold-brand-name">
+            <span style="color: ${color};">●</span> ${brand}
+            <span style="font-size: 11px; color: var(--txt-3); font-weight: 400;">(${data.total_sku}종 중 ${data.low_perf_count}종 저성과)</span>
+          </div>
+          <div class="unsold-brand-stats">
+            <span>저성과율 <strong>${ratio}%</strong></span>
+            ${data.unsold_count > 0 ? `<span style="color: var(--warn);">완전 0개: ${data.unsold_count}종</span>` : ''}
+            <span class="unsold-toggle">▶</span>
+          </div>
+        </div>
+        <div class="unsold-list">
+          ${noteHtml}
+          ${itemsHtml}
+        </div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
+// Init
+renderDailyWave();
+renderBrandRank();
+renderStackedArea();
+renderWCompare();
+renderMatrix();
+renderTopSkus();
+renderUnsoldSection();
+
+window.addEventListener('resize', () => {
+  renderDailyWave();
+  renderStackedArea();
+  renderMatrix();
+});
 </script>
+
 </body>
 </html>
